@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -16,6 +17,7 @@ namespace Aggregator.Services
 	public class WaniKaniService : IWaniKaniService
 	{
 		private const string ApiKeyEnvironmentVariable = "WK_INFO_API_KEY";
+		private static readonly string AllLevels = FormAllLevels();
 
 		private readonly string ApiUrl;
 		private readonly string ApiVocabularyUrl;
@@ -33,8 +35,8 @@ namespace Aggregator.Services
 			}
 
 			ApiUrl = $"https://www.wanikani.com/api/user/{apiKey}";
-			ApiVocabularyUrl = $"{ApiUrl}/vocabulary";
-			ApiKanjiUrl = $"{ApiUrl}/kanji";
+			ApiVocabularyUrl = $"{ApiUrl}/vocabulary/{AllLevels}";
+			ApiKanjiUrl = $"{ApiUrl}/kanji/{AllLevels}";
 
 			var contractResolver = new DefaultContractResolver
 			{
@@ -71,6 +73,16 @@ namespace Aggregator.Services
 			}
 
 			throw new ErrorException("Request failed.");
+		}
+
+		private static string FormAllLevels()
+		{
+			var list = new List<int>();
+			for (var i = 1; i <= 60; i++)
+			{
+				list.Add(i);
+			}
+			return string.Join(',', list);
 		}
 	}
 }

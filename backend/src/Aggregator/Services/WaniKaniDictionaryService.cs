@@ -41,7 +41,7 @@ namespace Aggregator.Services
 
 			Kanjis = kanjisTask.Result.RequestedInformation.ToSafeMap(x => x.Character);
 
-			var (Filtered, Ignored) = FilterVocabs(vocabsTask.Result.RequestedInformation.General);
+			var (Filtered, Ignored) = FilterVocabs(vocabsTask.Result.RequestedInformation);
 			Vocabs = Filtered;
 			IgnoredVocabs = Ignored;
 		}

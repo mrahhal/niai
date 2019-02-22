@@ -17,15 +17,10 @@ namespace Aggregator.Services
 		public string Meaning { get; set; }
 	}
 
-	public class WaniKaniVocabModelRequestedInformation
-	{
-		public List<WaniKaniVocab> General { get; set; }
-	}
-
 	public class WaniKaniVocabModel
 	{
 		public WaniKaniUserInformation UserInformation { get; set; }
-		public WaniKaniVocabModelRequestedInformation RequestedInformation { get; set; }
+		public List<WaniKaniVocab> RequestedInformation { get; set; }
 	}
 
 	public class WaniKaniKanji

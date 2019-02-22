@@ -27,6 +27,8 @@ namespace Niai
 
 			services.ConfigureFromAttributes(typeof(Startup).Assembly);
 
+			services.AddResponseCompression();
+
 			var entryAssembly = Assembly.GetExecutingAssembly();
 			var mapperConfiguration = new MapperConfiguration(config =>
 			{
@@ -62,6 +64,8 @@ namespace Niai
 			{
 				app.UseDeveloperExceptionPage();
 			}
+
+			app.UseResponseCompression();
 
 			app.UseMvc();
 		}

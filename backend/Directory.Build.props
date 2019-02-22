@@ -1,0 +1,20 @@
+﻿<Project>
+
+  <Import Project="build\version.props" />
+
+  <PropertyGroup>
+    <Product>Niai</Product>
+    <Authors>Mohammad Rahhal</Authors>
+    <Copyright>Copyright © mrahhal. All rights Reserved</Copyright>
+    <RepositoryUrl>https://github.com/mrahhal/niai</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
+    <NoWarn>$(NoWarn);1591;1587</NoWarn>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AspNetCoreVersion>2.2.0</AspNetCoreVersion>
+  </PropertyGroup>
+
+</Project>

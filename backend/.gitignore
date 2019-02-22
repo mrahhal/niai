@@ -1,0 +1,13 @@
+.vs/
+bin/
+obj/
+artifacts/
+/tools/
+
+/src/*/Properties/PublishProfiles/
+/src/*/*.cert
+/src/*/appsettings.local.json
+/src/*/appsettings.Staging.json
+/src/*/appsettings.Production.json
+/src/*/appsettings.deploy.json
+/src/*/logs/

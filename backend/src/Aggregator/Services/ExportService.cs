@@ -17,12 +17,13 @@ namespace Aggregator.Services
 		public async Task ExportAsync(AggregationResult result)
 		{
 			var standardModels = ConvertToStandardKanjiModel(result);
-			var directory = Directory.GetCurrentDirectory();
-			var filePath = Path.Combine(directory, "../Niai/data/kanjis.json");
-			Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+			var metadata = new Metadata
+			{
+				KanjiCount = standardModels.Count,
+			};
 
-			var json = JsonConvert.SerializeObject(standardModels, Formatting.Indented);
-			await File.WriteAllTextAsync(filePath, json);
+			await WriteJsonFileAsync(standardModels, "kanjis");
+			await WriteJsonFileAsync(metadata, "metadata");
 		}
 
 		private List<Kanji> ConvertToStandardKanjiModel(AggregationResult result)
@@ -38,6 +39,16 @@ namespace Aggregator.Services
 				WaniKaniLevel = x.WaniKaniLevel,
 				//Similar =
 			}).ToList();
+		}
+
+		private static async Task WriteJsonFileAsync(object obj, string name)
+		{
+			var directory = Directory.GetCurrentDirectory();
+			var filePath = Path.Combine(directory, $"../Niai/data/{name}.json");
+			Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+
+			var json = JsonConvert.SerializeObject(obj, Formatting.Indented);
+			await File.WriteAllTextAsync(filePath, json);
 		}
 	}
 }

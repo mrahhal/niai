@@ -24,16 +24,24 @@ namespace Niai.Controllers
 		public ActionResult<IEnumerable<KanjiDto>> Get(string q)
 		{
 			var kanjis = _dataProvider.Kanjis;
-			if (!kanjis.TryGetValue(q, out var kanji))
+
+			var list = new List<KanjiDto>();
+
+			foreach (var character in q)
 			{
-				return Ok(new List<KanjiDto>());
+				if (!kanjis.TryGetValue(character.ToString(), out var kanji))
+				{
+					continue;
+				}
+
+				var similar = kanji.Similar.Select(x => kanjis[x]);
+				var dto = _mapper.Map<KanjiDto>(kanji);
+				dto.Similar = similar.Select(x => _mapper.Map<KanjiSummaryDto>(x)).ToList();
+
+				list.Add(dto);
 			}
 
-			var similar = kanji.Similar.Select(x => kanjis[x]);
-			var dto = _mapper.Map<KanjiDto>(kanji);
-			dto.Similar = similar.Select(x => _mapper.Map<KanjiSummaryDto>(x)).ToList();
-
-			return Ok(new List<KanjiDto> { dto });
+			return Ok(list);
 		}
 	}
 }

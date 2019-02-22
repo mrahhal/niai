@@ -7,6 +7,8 @@ namespace Aggregator.Services
 {
 	public interface IDictionaryProvider
 	{
+		Task<FileInfo> GetFileAsync(string dictionaryName);
+
 		Task<List<FileInfo>> CollectFilesAsync(string dictionaryName, string fileNamePrefix);
 	}
 
@@ -29,6 +31,9 @@ namespace Aggregator.Services
 
 		public static Task<List<FileInfo>> CollectVocabTagFilesAsync(this IDictionaryProvider dictionaryProvider) =>
 			dictionaryProvider.CollectFilesAsync(DictionaryConstants.Names.Vocab, "tag_bank_");
+
+		public static Task<FileInfo> GetSimilarKeiseiFileAsync(this IDictionaryProvider dictionaryProvider) =>
+			dictionaryProvider.GetFileAsync("from_keisei.json");
 	}
 
 	public class DictionaryProvider : IDictionaryProvider
@@ -38,6 +43,13 @@ namespace Aggregator.Services
 		public DictionaryProvider()
 		{
 			_dictionariesDirectory = Path.Combine(Directory.GetCurrentDirectory(), "data/dictionaries");
+		}
+
+		public Task<FileInfo> GetFileAsync(string dictionaryName)
+		{
+			var dictionary = Path.Combine(_dictionariesDirectory, dictionaryName);
+
+			return Task.FromResult(new FileInfo(dictionary));
 		}
 
 		public Task<List<FileInfo>> CollectFilesAsync(string dictionaryName, string fileNamePrefix)

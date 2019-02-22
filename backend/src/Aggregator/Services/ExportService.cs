@@ -37,7 +37,7 @@ namespace Aggregator.Services
 				Tags = x.Tags.Select(t => new Tag { Key = t.Key, Value = t.Value }).ToList(),
 				Character = x.Kanji,
 				WaniKaniLevel = x.WaniKaniLevel,
-				//Similar =
+				Similar = x.Similar,
 			}).ToList();
 		}
 

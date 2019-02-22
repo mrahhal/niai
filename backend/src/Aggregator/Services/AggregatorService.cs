@@ -15,17 +15,20 @@ namespace Aggregator.Services
 		private readonly IFrequencyDictionaryService _frequencyDictionaryService;
 		private readonly IKanjiDictionaryService _kanjiDictionaryService;
 		private readonly IVocabDictionaryService _vocabDictionaryService;
+		private readonly ISimilarKeiseiDictionaryService _similarKeiseiDictionaryService;
 
 		public AggregatorService(
 			IWaniKaniDictionaryService waniKaniDictionaryService,
 			IFrequencyDictionaryService frequencyDictionaryService,
 			IKanjiDictionaryService kanjiDictionaryService,
-			IVocabDictionaryService vocabDictionaryService)
+			IVocabDictionaryService vocabDictionaryService,
+			ISimilarKeiseiDictionaryService similarKeiseiDictionaryService)
 		{
 			_waniKaniDictionaryService = waniKaniDictionaryService;
 			_frequencyDictionaryService = frequencyDictionaryService;
 			_kanjiDictionaryService = kanjiDictionaryService;
 			_vocabDictionaryService = vocabDictionaryService;
+			_similarKeiseiDictionaryService = similarKeiseiDictionaryService;
 		}
 
 		public async Task<AggregationResult> AggregateDataAsync()
@@ -52,12 +55,14 @@ namespace Aggregator.Services
 					var character = kanji.Key;
 					var waniKaniKanji = _waniKaniDictionaryService.Kanjis[character];
 					var frequencyModel = _frequencyDictionaryService.Kanjis[character];
+					var similar = _similarKeiseiDictionaryService.Model[character];
 
 					return new AggregateKanjiModel
 					{
 						WaniKaniKanji = waniKaniKanji,
 						FrequencyModel = frequencyModel,
 						KanjiModel = kanji.Value,
+						Similar = similar ?? new List<string>(),
 					};
 				})
 				.ToList());

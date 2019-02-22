@@ -18,6 +18,8 @@ namespace Aggregator.Services
 		public List<TagModel> Tags => KanjiModel.Tags;
 
 		public int? Frequency => FrequencyModel?.Frequency;
+
+		public List<string> Similar { get; set; }
 	}
 
 	public class AggregateVocabModel

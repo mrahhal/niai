@@ -11,6 +11,7 @@
     <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
     <NoWarn>$(NoWarn);1591;1587</NoWarn>
     <LangVersion>latest</LangVersion>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <PropertyGroup>

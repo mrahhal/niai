@@ -1,22 +1,15 @@
 <template>
-  <span>{{text}}</span>
+  <div class="niai-search">
+    <input >
+    <span>{{text}}</span>
+  </div>
 </template>
 
 <script lang="ts" src="./niai-search.ts"></script>
 
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+input {
+  background: gray;
+  border: none;
 }
 </style>

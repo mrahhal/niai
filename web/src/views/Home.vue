@@ -1,9 +1,8 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
+  <div>
+    <niai-search></niai-search>
 
-    <h3>Hello!!!</h3>
+    NIAI
   </div>
 </template>
 

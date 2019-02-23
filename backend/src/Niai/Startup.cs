@@ -29,6 +29,14 @@ namespace Niai
 
 			services.AddResponseCompression();
 
+			services.AddCors(options =>
+			{
+				options.AddDefaultPolicy(p => p
+					.AllowAnyHeader()
+					.AllowAnyMethod()
+					.AllowAnyOrigin());
+			});
+
 			var entryAssembly = Assembly.GetExecutingAssembly();
 			var mapperConfiguration = new MapperConfiguration(config =>
 			{
@@ -64,6 +72,8 @@ namespace Niai
 			{
 				app.UseDeveloperExceptionPage();
 			}
+
+			app.UseCors();
 
 			app.UseResponseCompression();
 

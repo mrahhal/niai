@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2",
+    "axios": "^0.18.0",
     "lodash": "^4.17.11",
     "rxjs": "^6.4.0",
     "vue": "^2.6.6",

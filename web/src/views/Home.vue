@@ -1,8 +1,6 @@
 <template>
   <div>
-    <niai-search></niai-search>
-
-    NIAI
+    <niai-search @input="onSearch"></niai-search>
   </div>
 </template>
 

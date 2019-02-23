@@ -10,13 +10,24 @@
   },
   "rules": {
     "arrow-parens": false,
+    "array-type": false,
     "indent": [true, "spaces", 2],
     "interface-name": false,
-    "no-consecutive-blank-lines": false,
+    "member-access": false,
+    "no-consecutive-blank-lines": true,
     "no-console": false,
+    "no-duplicate-variable": true,
+    "no-empty": false,
+    "no-empty-interface": false,
+    "no-namespace": [true, "allow-declarations"],
+    "no-var-requires": false,
     "object-literal-sort-keys": false,
-    "ordered-imports": false,
-    "quotemark": [true, "single"],
-    "semicolon": true
+    "one-variable-per-declaration": [true, "ignore-for-loop"],
+    "quotemark": [true, "single", "jsx-double"],
+    "semicolon": [true, "always"],
+    "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
+    "type-literal-delimiter": true,
+    "variable-name": [true, "allow-leading-underscore"],
+    "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-module"]
   }
 }

@@ -17,7 +17,7 @@ export default class Home extends Vue {
     this.subject.pipe(
       throttleTime(500, undefined, { leading: true, trailing: true }),
       tap(() => this.loading = true),
-      switchMap(value => value ? api.search(value).catch(() => null) : []),
+      switchMap(value => value ? api.search(value).catch(() => null) : Promise.resolve([])),
     ).subscribe(data => {
       this.loading = false;
       this.kanjis = data || [];

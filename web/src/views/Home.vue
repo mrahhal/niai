@@ -4,8 +4,8 @@
 
     <div style="margin-top: 20px"></div>
 
-    <template v-for="kanji in kanjis">
-      <div v-if="kanji.similar.length" :key="kanji.character" style="margin-bottom: 30px">
+    <template v-for="(kanji, index) in kanjis">
+      <div v-if="kanji.similar.length" :key="index" style="margin-bottom: 30px">
         <div style="font-size: 30px">{{kanji.character}}</div>
         <kanji-card-list :kanjis="kanji.similar"></kanji-card-list>
       </div>

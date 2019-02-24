@@ -1,0 +1,11 @@
+.kanji-card {
+  width: 200px;
+  border-radius: var(--border-radius);
+  background: var(--color-fg);
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+}
+
+.kanji-card-character {
+  font-size: 40px;
+}

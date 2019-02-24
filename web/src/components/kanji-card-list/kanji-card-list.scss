@@ -1,0 +1,8 @@
+.kanji-card-list {
+  display: flex;
+  flex-flow: row wrap;
+
+  .kanji-card {
+    margin-right: 20px;
+  }
+}

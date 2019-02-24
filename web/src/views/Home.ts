@@ -1,3 +1,4 @@
+import { Kanji } from '@/models/kanji';
 import { api } from '@/services/api';
 import { Subject } from 'rxjs';
 import { filter, throttleTime } from 'rxjs/operators';
@@ -5,20 +6,19 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Home extends Vue {
-  private _subject = new Subject<string>();
+  private subject = new Subject<string>();
+  private kanjis: Kanji[] = [];
 
-  constructor() {
-    super();
-
-    this._subject.pipe(
+  created() {
+    this.subject.pipe(
       filter(value => !!value),
-      throttleTime(500, undefined, { leading: true, trailing: true }))
-      .subscribe(value => {
-        api.search(value).then(x => console.log(x));
-      });
+      throttleTime(500, undefined, { leading: true, trailing: true }),
+    ).subscribe(value => {
+      api.search(value).then(kanjis => this.kanjis = kanjis);
+    });
   }
 
-  onSearch = (value: string) => {
-    this._subject.next(value);
+  private onSearch = (value: string) => {
+    this.subject.next(value);
   }
 }

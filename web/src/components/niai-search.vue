@@ -21,5 +21,6 @@ input {
   background: var(--color-fg);
   outline: none;
   width: 100%;
+  font-size: 20px;
 }
 </style>

@@ -1,14 +1,24 @@
-:root {
+#app {
   --navbar-width: 200px;
 
   --color-text: #333;
   --color-primary: #673AB7;
   --color-separator: #ddd;
-  --color-bg: white;
-  --color-bg-2: #eee;
-  --color-bg-3: #ccc;
+  --color-bg: #f2f2f2;
+  --color-fg: white;
+  --color-blue: #3DB4F2;
 
   --padding-main: 15px;
 
   --box-shadow: 0 1px 10px 0 rgba(0, 0, 0, .1);
+}
+
+#app.theme-dark {
+  --color-text: white;
+  --color-primary: #673AB7;
+  --color-separator: #333;
+  --color-bg: #272C38;
+  --color-fg: #1F232D;
+
+  --box-shadow: 0 1px 10px 0 rgba(255, 255, 255, .1);
 }

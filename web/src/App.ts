@@ -12,10 +12,6 @@ export default class App extends Vue {
     });
   }
 
-  update() {
-    this.theme = this.theme;
-  }
-
   toggleTheme() {
     const newTheme = getTheme() === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);

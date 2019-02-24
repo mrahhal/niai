@@ -107,9 +107,11 @@ input {
 .label-list {
   display: flex;
   flex-flow: row wrap;
+  margin-right: -5px;
 
   .label {
     margin-right: 5px;
+    margin-bottom: 5px;
   }
 }
 

@@ -1,8 +1,5 @@
 .kanji-card-list {
-  display: flex;
-  flex-flow: row wrap;
-
-  .kanji-card {
-    margin-right: 20px;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: var(--spacer-3);
 }

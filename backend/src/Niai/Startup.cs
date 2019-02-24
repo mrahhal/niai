@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using AutoMapper;
@@ -6,9 +8,11 @@ using AutoMapper.Mappers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MR.AttributeDI.ServiceCollection;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Niai
 {
@@ -64,6 +68,27 @@ namespace Niai
 
 			services.AddSingleton<AutoMapper.IConfigurationProvider>(mapperConfiguration);
 			services.AddSingleton(mapper);
+
+			services.AddSwaggerGen(c =>
+			{
+				c.SwaggerDoc("v0.1", new Info { Title = entryAssembly.GetName().Name, Version = "v0.1" });
+				c.CustomSchemaIds(x => x.FullName);
+				c.DescribeAllEnumsAsStrings();
+				c.DescribeStringEnumsInCamelCase();
+				c.DescribeAllParametersInCamelCase();
+
+				//c.TagActionsBy(api =>
+				//{
+				//	return new List<string>
+				//	{
+				//		((ControllerActionDescriptor)api.ActionDescriptor).ControllerTypeInfo.Namespace
+				//	};
+				//});
+
+				var xmlFile = $"{entryAssembly.GetName().Name}.xml";
+				var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+				c.IncludeXmlComments(xmlPath);
+			});
 		}
 
 		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -76,6 +101,14 @@ namespace Niai
 			app.UseCors();
 
 			app.UseResponseCompression();
+
+			app.UseSwagger();
+
+			var apiAssemblyName = Assembly.GetCallingAssembly().GetName().Name;
+			app.UseSwaggerUI(c =>
+			{
+				c.SwaggerEndpoint("/swagger/v0.1/swagger.json", apiAssemblyName);
+			});
 
 			app.UseMvc();
 		}

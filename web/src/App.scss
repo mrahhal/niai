@@ -42,7 +42,7 @@ input {
   flex-shrink: 0;
   display: flex;
   flex-flow: column;
-  box-shadow: var(--box-shadow);
+  border-right: 1px solid var(--color-separator);
 
   a {
     @include flex-center();

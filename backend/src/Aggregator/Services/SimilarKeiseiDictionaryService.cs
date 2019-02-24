@@ -12,7 +12,6 @@ namespace Aggregator.Services
 
 	public class SimilarKeiseiDictionaryService : ISimilarKeiseiDictionaryService
 	{
-
 		private readonly IDictionaryProvider _dictionaryProvider;
 
 		public SimilarKeiseiDictionaryService(

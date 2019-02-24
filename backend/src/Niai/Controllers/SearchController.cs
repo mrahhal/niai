@@ -34,7 +34,7 @@ namespace Niai.Controllers
 					continue;
 				}
 
-				var similar = kanji.Similar.Select(x => kanjis[x]);
+				var similar = kanji.Similar.Select(x => kanjis[x]).Where(x => x != null);
 				var dto = _mapper.Map<KanjiDto>(kanji);
 				dto.Similar = similar.Select(x => _mapper.Map<KanjiSummaryDto>(x)).ToList();
 

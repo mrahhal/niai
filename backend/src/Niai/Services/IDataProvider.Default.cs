@@ -19,7 +19,7 @@ namespace Niai.Services
 			_dataFileProvider = dataFileProvider;
 		}
 
-		public Dictionary<string, Kanji> Kanjis { get; private set; }
+		public SafeMap<Kanji> Kanjis { get; private set; }
 
 		public Metadata Metadata { get; private set; }
 
@@ -27,7 +27,7 @@ namespace Niai.Services
 		{
 			var kanjisJson = await _dataFileProvider.GetKanjisContentsAsync();
 			var kanjis = JsonConvert.DeserializeObject<List<Kanji>>(kanjisJson);
-			Kanjis = kanjis.ToDictionary(x => x.Character);
+			Kanjis = kanjis.ToSafeMap(x => x.Character);
 
 			var metadataJson = await _dataFileProvider.GetMetadataContentsAsync();
 			Metadata = JsonConvert.DeserializeObject<Metadata>(metadataJson);

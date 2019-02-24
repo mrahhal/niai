@@ -5,7 +5,7 @@ namespace Niai.Services
 {
 	public interface IDataProvider
 	{
-		Dictionary<string, Kanji> Kanjis { get; }
+		SafeMap<Kanji> Kanjis { get; }
 
 		Metadata Metadata { get; }
 	}

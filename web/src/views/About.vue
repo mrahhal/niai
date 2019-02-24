@@ -5,7 +5,7 @@
     </div>
 
     <div>
-      <a href="github.com/mrahhal" target="_blank">GitHub</a>
+      <a href="https://github.com/mrahhal" target="_blank">GitHub</a>
     </div>
   </div>
 </template>

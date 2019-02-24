@@ -10,7 +10,11 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
+      redirect: '/similar',
+    },
+    {
+      path: '/similar',
+      name: 'similar',
       component: Home,
     },
     {

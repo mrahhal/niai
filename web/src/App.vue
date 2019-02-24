@@ -2,7 +2,7 @@
   <div id="app" :class="['theme-' + theme]">
     <div id="app-nav">
       <div class="nav-main">
-        <router-link to="/">Niai</router-link>
+        <router-link to="/similar">Niai</router-link>
         <router-link to="/about">About</router-link>
       </div>
       <div class="nav-footer">

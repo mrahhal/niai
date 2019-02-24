@@ -8,9 +8,15 @@ export default class NiaiSearch extends Vue {
     this.inputElement.focus();
   }
 
-  setValue(value: string) {
+  setValue(value: string | null) {
+    if (!value) {
+      value = '';
+    }
+
     this.inputElement.value = value;
     this.emitValue();
+
+    this.inputElement.focus();
   }
 
   private emitValue() {

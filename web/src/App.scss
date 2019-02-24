@@ -10,7 +10,12 @@ body {
 
 a {
   color: var(--color-blue);
+  opacity: .7;
   cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 input {
@@ -55,7 +60,7 @@ input {
       opacity: 1;
     }
 
-    &.router-link-exact-active {
+    &.router-link-active {
       opacity: 1;
       border-right-color: var(--color-primary);
     }

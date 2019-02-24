@@ -14,7 +14,7 @@
     <div class="text-2" v-if="!kanjis.length">
       Just start typing to search.
       <br>For example, type
-      <a @click="onSampleClick('枝談')">枝談</a> to lookup several kanjis together!
+      <a @click="setSearchValue('枝談')">枝談</a> to lookup several kanjis together!
     </div>
   </div>
 </template>

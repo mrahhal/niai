@@ -15,6 +15,10 @@ export default class NiaiSearch extends Vue {
       value = '';
     }
 
+    if (this.inputElement.value === value) {
+      return;
+    }
+
     this.inputElement.value = value;
     this.emitValue();
 

@@ -2,6 +2,7 @@
   <div class="kanji-card">
     <div class="kanji-card-top">
       <div class="kanji-card-character">{{kanji.character}}</div>
+      <div style="flex: 1"></div>
       <div class="label">{{kanji.frequency}}</div>
     </div>
     <div class="kanji-card-meaning mt-1">{{kanji.meanings.join(', ')}}</div>

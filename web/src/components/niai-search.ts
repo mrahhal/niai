@@ -1,7 +1,9 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class NiaiSearch extends Vue {
+  @Prop() loading: boolean = false;
+
   private get inputElement() { return this.$refs.input as HTMLInputElement; }
 
   mounted() {

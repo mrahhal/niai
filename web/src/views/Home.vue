@@ -1,6 +1,6 @@
 <template>
   <div>
-    <niai-search @input="onSearch" ref="search"></niai-search>
+    <niai-search :loading="loading" @input="onSearch" ref="search"></niai-search>
 
     <div style="margin-top: 20px"></div>
 

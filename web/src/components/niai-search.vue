@@ -3,7 +3,7 @@
     <input
       ref="input"
       placeholder="Start typing to search"
-      @input="$emit('input', $event.target.value)"
+      @input="emitValue"
     >
   </div>
 </template>

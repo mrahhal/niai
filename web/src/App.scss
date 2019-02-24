@@ -10,10 +10,15 @@ body {
 
 a {
   color: var(--color-blue);
+  cursor: pointer;
 }
 
 input {
   color: inherit;
+}
+
+.text-2 {
+  color: var(--color-text-2);
 }
 
 #app {

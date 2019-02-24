@@ -1,7 +1,8 @@
+import NiaiSearch from '@/components/niai-search';
 import { Kanji } from '@/models/kanji';
 import { api } from '@/services/api';
 import { Subject } from 'rxjs';
-import { filter, throttleTime } from 'rxjs/operators';
+import { throttleTime } from 'rxjs/operators';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
@@ -11,14 +12,21 @@ export default class Home extends Vue {
 
   created() {
     this.subject.pipe(
-      filter(value => !!value),
       throttleTime(500, undefined, { leading: true, trailing: true }),
     ).subscribe(value => {
+      if (!value) {
+        this.kanjis = [];
+        return;
+      }
       api.search(value).then(kanjis => this.kanjis = kanjis);
     });
   }
 
-  private onSearch = (value: string) => {
+  private onSampleClick(value: string) {
+    (this.$refs.search as NiaiSearch).setValue(value);
+  }
+
+  private onSearch(value: string) {
     this.subject.next(value);
   }
 }

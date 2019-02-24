@@ -2,3 +2,4 @@ node_modules/
 
 *.nupkg
 *.user
+web/deploy.ps1

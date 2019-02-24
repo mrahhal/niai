@@ -103,3 +103,23 @@ input {
     box-shadow: var(--box-shadow);
   }
 }
+
+.label-list {
+  display: flex;
+  flex-flow: row wrap;
+
+  .label {
+    margin-right: 5px;
+  }
+}
+
+.label {
+  background: var(--color-bg);
+  border-radius: 10px;
+  padding: 2px 8px;
+  font-size: var(--font-size-sm);
+}
+
+.mt-1 {
+  margin-top: var(--spacer-1);
+}

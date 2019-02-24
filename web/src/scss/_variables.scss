@@ -2,7 +2,7 @@
   --navbar-width: 200px;
 
   --color-text: #333;
-  --color-text-2: #555;
+  --color-text-2: #777;
   --color-primary: #673AB7;
   --color-separator: #ddd;
   --color-bg: #f2f2f2;
@@ -14,6 +14,13 @@
   --box-shadow: 0 1px 10px 0 rgba(0, 0, 0, .1);
 
   --border-radius: 3px;
+
+  --font-size-sm: 12px;
+  --font-size: 14px;
+
+  --spacer-1: 5px;
+  --spacer-2: 10px;
+  --spacer-3: 15px;
 }
 
 #app.theme-dark {

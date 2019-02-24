@@ -65,6 +65,7 @@ input {
   flex: 1;
   padding: var(--padding-main);
   background: var(--color-bg);
+  overflow-y: auto;
 }
 
 .icon-btn {

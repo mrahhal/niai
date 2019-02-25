@@ -9,12 +9,11 @@ body {
 }
 
 a {
-  color: var(--color-blue);
-  opacity: .7;
+  color: var(--color-blue-300);
   cursor: pointer;
 
   &:hover {
-    opacity: 1;
+    color: var(--color-blue);
   }
 }
 

@@ -10,13 +10,13 @@ This solution consists of several modules listed below.
 
 This is a console application that incorporates several dictionaries, as well as data from [WaniKani](https://www.wanikani.com), and produces various aggregated data readily available for usage in the backend.
 
-This is basically run only once to produce the json files.
+This is basically run only once to produce the json files. You can execute `./produce.ps1` to produce the files.
 
 Technology stack: .Net Core
 
 ### Niai
 
-This is the web api that powers everything.
+This is the web api that powers everything. A swagger document is also published at "/swagger".
 
 Technology stack: Asp.Net Core
 

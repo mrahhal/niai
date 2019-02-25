@@ -1,16 +1,15 @@
+@import 'colors';
+
 #app {
   --navbar-width: 200px;
 
+  @include set-color-vars();
+
   --color-text: #333;
   --color-text-2: #777;
-  --color-primary: #673AB7;
   --color-separator: #ddd;
   --color-bg: #f2f2f2;
   --color-fg: white;
-  --color-blue-300: #64B5F6;
-  --color-blue: #2196F3;
-  --color-green-100: #f3fcf7;
-  --color-green: #2ecc71;
 
   --padding-main: 15px;
 
@@ -29,7 +28,6 @@
 #app.theme-dark {
   --color-text: white;
   --color-text-2: #ddd;
-  --color-primary: #673AB7;
   --color-separator: #333;
   --color-bg: #272C38;
   --color-fg: #1F232D;

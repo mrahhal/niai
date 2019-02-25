@@ -48,7 +48,7 @@ input {
   font-size: 20px;
 
   &:focus {
-    border-bottom-color: var(--color-primary);
+    border-bottom-color: var(--color-primary-500);
   }
 }
 </style>

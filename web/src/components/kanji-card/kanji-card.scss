@@ -1,7 +1,7 @@
 .kanji-card {
   border-radius: var(--border-radius);
   border: 1px solid var(--color-separator);
-  border-bottom: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary-500);
   background: var(--color-fg);
   padding: 10px;
   transition: box-shadow linear .1s;
@@ -22,10 +22,8 @@
   font-size: 40px;
   padding: 5px 10px;
   border-radius: var(--border-radius);
-  color: rgb(46, 204, 113);
-  background: rgba(46, 204, 113, .1);
-  // color: var(--color-green);
-  // background: var(--color-green-100);
+  color: var(color-var(green));
+  background: rgba(color(green), .1);
   border: 1px solid var(--color-separator);
 }
 

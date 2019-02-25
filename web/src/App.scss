@@ -13,7 +13,7 @@ a {
   cursor: pointer;
 
   &:hover {
-    color: var(--color-blue);
+    color: var(--color-blue-500);
   }
 }
 
@@ -61,7 +61,7 @@ input {
 
     &.router-link-active {
       opacity: 1;
-      border-right-color: var(--color-primary);
+      border-right-color: var(--color-primary-500);
     }
   }
 

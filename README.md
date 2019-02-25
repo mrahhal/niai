@@ -2,7 +2,7 @@
 
 A web app that shows similar looking kanjis.
 
-This solution consistes of several modules listed below.
+This solution consists of several modules listed below.
 
 ## Modules
 
@@ -24,7 +24,7 @@ Technology stack: Asp.Net Core
 
 This is the website.
 
-Technology stack: vue.js, scss, webpack
+Technology stack: vue.js, TypeScript, scss
 
 ## Usage
 

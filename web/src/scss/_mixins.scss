@@ -11,3 +11,13 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+@mixin anchor-unstyled() {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}

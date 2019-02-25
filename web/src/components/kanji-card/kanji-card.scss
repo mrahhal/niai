@@ -4,6 +4,12 @@
   border-bottom: 2px solid var(--color-primary);
   background: var(--color-fg);
   padding: 10px;
+  transition: box-shadow linear .1s;
+  @include anchor-unstyled();
+
+  &:hover {
+    box-shadow: var(--box-shadow);
+  }
 }
 
 .kanji-card-top {

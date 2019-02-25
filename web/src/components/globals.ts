@@ -12,10 +12,6 @@ const requireComponent = require.context(
 
 // For each matching file name...
 requireComponent.keys().forEach((fileName) => {
-  if (fileName.indexOf('globals.ts') > -1) {
-    return;
-  }
-
   // Get the component config
   const componentConfig = requireComponent(fileName);
 

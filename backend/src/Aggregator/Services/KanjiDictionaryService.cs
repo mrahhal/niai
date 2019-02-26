@@ -63,6 +63,8 @@ namespace Aggregator.Services
 
 						var meanings = ((JArray)l[4]).ToObject<List<string>>();
 
+						var extras = ((JObject)l[5]).ToObject<Dictionary<string, string>>();
+
 						return new KanjiModel
 						{
 							Kanji = (string)l[0],
@@ -70,6 +72,9 @@ namespace Aggregator.Services
 							Kunyomi = (string)l[2],
 							Tags = tagModels,
 							Meanings = meanings,
+							Grade = extras.ContainsKey("grade") ? int.Parse(extras["grade"]) : (int?)null,
+							Jlpt = extras.ContainsKey("jlpt") ? int.Parse(extras["jlpt"]) : (int?)null,
+							Strokes = int.Parse(extras["strokes"]),
 						};
 					});
 

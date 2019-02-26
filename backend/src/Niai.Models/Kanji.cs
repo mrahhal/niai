@@ -18,6 +18,12 @@ namespace Niai.Models
 
 		public int? Frequency { get; set; }
 
+		public int Strokes { get; set; }
+
+		public int? Jlpt { get; set; }
+
+		public int? Grade { get; set; }
+
 		public List<string> Similar { get; set; }
 	}
 }

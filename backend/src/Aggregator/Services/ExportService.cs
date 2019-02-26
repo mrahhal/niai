@@ -38,6 +38,9 @@ namespace Aggregator.Services
 				Character = x.Kanji,
 				WaniKaniLevel = x.WaniKaniLevel,
 				Similar = x.Similar,
+				Grade = x.KanjiModel.Grade,
+				Jlpt = x.KanjiModel.Jlpt,
+				Strokes = x.KanjiModel.Strokes,
 			}).ToList();
 		}
 

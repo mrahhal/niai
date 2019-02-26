@@ -17,6 +17,12 @@ namespace Niai.Models.Dtos
 		public List<Tag> Tags { get; set; }
 
 		public int? Frequency { get; set; }
+
+		public int Strokes { get; set; }
+
+		public int? Jlpt { get; set; }
+
+		public int? Grade { get; set; }
 	}
 
 	public class KanjiDto : KanjiSummaryDto

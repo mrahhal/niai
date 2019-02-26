@@ -18,6 +18,12 @@ export interface KanjiSummary {
   tags: Tag[];
 
   frequency: number | null;
+
+  strokes: number;
+
+  jlpt: number | null;
+
+  grade: number | null;
 }
 
 export interface Kanji extends KanjiSummary {

@@ -15,19 +15,25 @@ $kanji-card-padding: 10px;
   }
 }
 
-.kanji-card-frequency {
-  margin-top: -$kanji-card-padding;
-  margin-right: -$kanji-card-padding;
-  border-radius: 5px;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-  border-bottom-right-radius: 0;
-  padding: 5px;
-  border: 1px solid var(--color-separator);
-  border-top: none;
-  border-right: none;
-  background: var(--color-bg);
+.kanji-card-poku-list {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+}
+
+.kanji-card-poku {
+  display: flex;
   font-size: var(--font-size-sm);
+  align-items: center;
+
+  svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.kanji-card-poku-text {
+  margin-right: 5px;
 }
 
 .kanji-card-top {

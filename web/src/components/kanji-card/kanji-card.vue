@@ -18,7 +18,21 @@
           <div class="kanji-card-link-text">{{kanji.waniKaniLevel}}</div>
         </a>
       </div>
-      <div class="kanji-card-frequency" title="Frequency">{{kanji.frequency}}</div>
+      <div class="kanji-card-poku-list">
+        <div class="kanji-card-poku" v-if="kanji.frequency" title="Frequency">
+          <div class="kanji-card-poku-text">{{kanji.frequency}}</div>
+          <div class="kanji-card-poku-icon">
+            <svg-clock></svg-clock>
+          </div>
+        </div>
+
+        <div class="kanji-card-poku" v-if="kanji.grade" title="Grade">
+          <div class="kanji-card-poku-text">{{kanji.grade}}</div>
+          <div class="kanji-card-poku-icon">
+            <svg-school></svg-school>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="kanji-card-meaning mt-1">{{kanji.meanings.join(', ')}}</div>
     <div class="kanji-card-reading mt-1">
@@ -28,6 +42,7 @@
     <div class="flex-1"></div>
     <div class="kanji-card-footer">
       <div class="label-list mt-1">
+        <div class="label" v-if="kanji.jlpt">N{{kanji.jlpt}}</div>
         <div class="label" v-for="tag in kanji.tags" :title="tag.value" :key="tag.key">{{tag.key}}</div>
       </div>
     </div>

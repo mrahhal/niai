@@ -34,9 +34,14 @@
         </div>
       </div>
     </div>
-    <div class="kanji-card-meaning mt-1">{{kanji.meanings.join(', ')}}</div>
-    <div class="kanji-card-reading mt-1">
+    <div class="kanji-card-table">
+      <div class="kanji-card-table-label">Meanings</div>
+      <div class="kanji-card-meaning">{{kanji.meanings.join(', ')}}</div>
+
+      <div class="kanji-card-table-label">音読み</div>
       <div class="kanji-card-reading-on">{{kanji.onyomi}}</div>
+
+      <div class="kanji-card-table-label">訓読み</div>
       <div class="kanji-card-reading-kun">{{kanji.kunyomi}}</div>
     </div>
     <div class="flex-1"></div>

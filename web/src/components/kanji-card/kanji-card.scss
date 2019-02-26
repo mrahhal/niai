@@ -92,6 +92,26 @@ $kanji-card-padding: 10px;
   font-size: var(--font-size-sm);
 }
 
+// .kanji-card-table {
+//   display: grid;
+//   grid-template-columns: 30px 1fr;
+//   grid-gap: 5px;
+// }
+
+.kanji-card-table-label {
+  padding: 3px;
+  @include flex-center();
+  font-size: var(--font-size-sm);
+  background: var(--color-bg);
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+  &:first-child {
+    margin-top: 4px;
+  }
+}
+
 .kanji-card-reading {
   color: var(--color-text-2);
 }

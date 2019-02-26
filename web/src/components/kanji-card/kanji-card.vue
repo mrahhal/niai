@@ -1,22 +1,37 @@
 <template>
-  <a class="kanji-card" :href="href" target="_absolute">
+  <div class="kanji-card">
     <div class="kanji-card-top">
       <div class="kanji-card-character">{{kanji.character}}</div>
-      <div style="flex: 1"></div>
-      <div>
-        <div class="label">{{kanji.frequency}}</div>
-        <div class="label mt-1" v-if="kanji.waniKaniLevel">WK: {{kanji.waniKaniLevel}}</div>
+      <div class="kanji-card-links">
+        <a class="kanji-card-link" :href="jishoHref" target="_blank" title="Jisho">
+          <img class="kanji-card-link-img a-bit-smaller" src="@/assets/jisho.png">
+        </a>
+
+        <a
+          class="kanji-card-link"
+          v-if="kanji.waniKaniLevel"
+          :href="waniKaniHref"
+          target="_blank"
+          title="WaniKani"
+        >
+          <img class="kanji-card-link-img" src="@/assets/wanikani.png">
+          <div class="kanji-card-link-text">{{kanji.waniKaniLevel}}</div>
+        </a>
       </div>
+      <div class="kanji-card-frequency" title="Frequency">{{kanji.frequency}}</div>
     </div>
     <div class="kanji-card-meaning mt-1">{{kanji.meanings.join(', ')}}</div>
     <div class="kanji-card-reading mt-1">
       <div class="kanji-card-reading-on">{{kanji.onyomi}}</div>
       <div class="kanji-card-reading-kun">{{kanji.kunyomi}}</div>
     </div>
-    <div class="label-list mt-1">
-      <div class="label" v-for="tag in kanji.tags" :title="tag.value" :key="tag.key">{{tag.key}}</div>
+    <div class="flex-1"></div>
+    <div class="kanji-card-footer">
+      <div class="label-list mt-1">
+        <div class="label" v-for="tag in kanji.tags" :title="tag.value" :key="tag.key">{{tag.key}}</div>
+      </div>
     </div>
-  </a>
+  </div>
 </template>
 
 <script lang="ts" src="./kanji-card.ts"></script>

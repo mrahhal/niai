@@ -5,8 +5,13 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 export default class KanjiCard extends Vue {
   @Prop() kanji!: KanjiSummary;
 
-  private get href() {
+  private get waniKaniHref() {
     const c = this.kanji.character;
-    return this.kanji.waniKaniLevel ? `http://wanikani.com/kanji/${c}` : `https://jisho.org/search/${c}`;
+    return `http://wanikani.com/kanji/${c}`;
+  }
+
+  private get jishoHref() {
+    const c = this.kanji.character;
+    return `https://jisho.org/search/${c}`;
   }
 }

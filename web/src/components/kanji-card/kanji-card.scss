@@ -1,15 +1,33 @@
+$kanji-card-padding: 10px;
+
 .kanji-card {
   border-radius: var(--border-radius);
   border: 1px solid var(--color-separator);
   border-bottom: 2px solid var(--color-primary-500);
   background: var(--color-fg);
-  padding: 10px;
+  padding: $kanji-card-padding;
   transition: box-shadow linear .1s;
-  @include anchor-unstyled();
+  display: flex;
+  flex-flow: column;
 
   &:hover {
     box-shadow: var(--box-shadow);
   }
+}
+
+.kanji-card-frequency {
+  margin-top: -$kanji-card-padding;
+  margin-right: -$kanji-card-padding;
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 5px;
+  border: 1px solid var(--color-separator);
+  border-top: none;
+  border-right: none;
+  background: var(--color-bg);
+  font-size: var(--font-size-sm);
 }
 
 .kanji-card-top {
@@ -27,6 +45,56 @@
   border: 1px solid var(--color-separator);
 }
 
+.kanji-card-links {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+
+  .kanji-card-link {
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.kanji-card-link {
+  display: flex;
+  align-items: center;
+  @include anchor-unstyled();
+  padding: 3px;
+  transition: all linear .1s;
+  opacity: .6;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.kanji-card-link-img {
+  @include user-select-none();
+  border-radius: 2px;
+  margin-right: 3px;
+  width: 30px;
+
+  &.a-bit-smaller {
+    width: 22px;
+    margin: 0 4px;
+  }
+}
+
+.kanji-card-link-text {
+  font-size: var(--font-size-sm);
+}
+
 .kanji-card-reading {
   color: var(--color-text-2);
+}
+
+.kanji-card-footer {
+  margin-top: 5px;
+  margin-left: -$kanji-card-padding;
+  margin-right: -$kanji-card-padding;
+  margin-bottom: -$kanji-card-padding;
+  background: var(--color-bg);
+  padding: $kanji-card-padding / 2 $kanji-card-padding;
 }

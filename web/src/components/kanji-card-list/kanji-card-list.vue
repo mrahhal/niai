@@ -1,7 +1,7 @@
 <template>
-  <div class="kanji-card-list">
+  <transition-group name="kanji-card-appear" tag="div" class="kanji-card-list" appear>
     <kanji-card v-for="kanji in kanjis" :kanji="kanji" :key="kanji.character"></kanji-card>
-  </div>
+  </transition-group>
 </template>
 
 <script lang="ts" src="./kanji-card-list.ts"></script>

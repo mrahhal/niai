@@ -3,3 +3,12 @@
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: var(--spacer-3);
 }
+
+.kanji-card-appear-enter-active {
+  transition: all .5s ease-out !important;
+}
+
+.kanji-card-appear-enter {
+  opacity: 0;
+  transform: translateY(50px);
+}

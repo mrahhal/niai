@@ -1,6 +1,9 @@
 # niai
 
-A web app that shows similar looking kanjis.
+Lookup similar looking kanjis and more!
+
+![snap_light](images/snap_light.png)
+![snap_light](images/snap_dark.png)
 
 This solution consists of several modules listed below.
 

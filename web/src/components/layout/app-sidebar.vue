@@ -15,21 +15,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import { getTheme, themeChanges } from "../../services/theme";
-import { Component, Vue } from "vue-property-decorator";
-
-@Component
-export default class AppSidebar extends Vue {
-  private theme = getTheme();
-
-  created() {
-    themeChanges.subscribe(theme => {
-      this.theme = theme;
-    });
-  }
-}
-</script>
+<script lang="ts" src="./app-sidebar.ts"></script>
 
 <style scoped lang="scss">
 #app-sidebar {

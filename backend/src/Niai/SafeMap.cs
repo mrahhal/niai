@@ -5,7 +5,6 @@ using System.Linq;
 
 namespace Niai
 {
-	// TODO: Share this between the aggregator proj and this proj.
 	public static class SafeMapExtensions
 	{
 		public static SafeMap<T> ToSafeMap<T>(this Dictionary<string, T> dictionary)

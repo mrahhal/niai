@@ -12,6 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="..\Niai\SafeMap.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Niai.Models\Niai.Models.csproj" />
   </ItemGroup>
 

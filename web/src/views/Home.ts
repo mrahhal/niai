@@ -1,4 +1,5 @@
 import NiaiSearch from '@/components/niai-search';
+import { SearchResult } from '@/models';
 import { Kanji } from '@/models/kanji';
 import { api } from '@/services/api';
 import { Subject } from 'rxjs';
@@ -8,19 +9,23 @@ import { Component, Vue, Watch } from 'vue-property-decorator';
 @Component
 export default class Home extends Vue {
   private subject = new Subject<string>();
-  private kanjis: Kanji[] = [];
+  private result: SearchResult | null = null;
   private loading = false;
 
   private get qParam() { return this.$route.query.q as string; }
+
+  private get kanjis() { return this.result && this.result.kanjis || []; }
+  private get homonyms() { return this.result && this.result.homonyms || []; }
+  private get synonyms() { return this.result && this.result.synonyms || []; }
 
   created() {
     this.subject.pipe(
       throttleTime(500, undefined, { leading: true, trailing: true }),
       tap(() => this.loading = true),
-      switchMap(value => value ? api.search(value).catch(() => null) : Promise.resolve([])),
+      switchMap(value => value ? api.search(value).catch(() => null) : Promise.resolve(null)),
     ).subscribe(data => {
       this.loading = false;
-      this.kanjis = data || [];
+      this.result = data;
     });
   }
 

@@ -4,15 +4,37 @@
 
     <div style="margin-top: 20px"></div>
 
-    <div class="similar-section similar-kanji">
-      <template v-for="kanji in kanjis">
-        <div class="similar-list-container" v-if="kanji.similar.length" :key="kanji.character">
-          <kanji-card-list :kanjis="[kanji, ...kanji.similar]"></kanji-card-list>
-        </div>
-      </template>
-    </div>
+    <template v-if="result">
+      <div class="similar-section similar-kanji">
+        <template v-for="kanji in kanjis">
+          <div class="similar-list-container" v-if="kanji.similar.length" :key="kanji.character">
+            <card-list>
+              <kanji-card
+                v-for="kanji in [kanji, ...kanji.similar]"
+                :kanji="kanji"
+                :key="kanji.character"
+              ></kanji-card>
+            </card-list>
+          </div>
+        </template>
+      </div>
 
-    <div class="text-2" v-if="!kanjis.length">
+      <div class="similar-section similar-homonyms" v-if="homonyms.length">
+        <div>Homonyms</div>
+        <card-list>
+          <vocab-card v-for="(homonym, index) in homonyms" :vocab="homonym" :key="index"></vocab-card>
+        </card-list>
+      </div>
+
+      <div class="similar-section similar-synonyms" v-if="synonyms.length">
+        <div>Synonyms</div>
+        <card-list>
+          <vocab-card v-for="(synonym, index) in synonyms" :vocab="synonym" :key="index"></vocab-card>
+        </card-list>
+      </div>
+    </template>
+
+    <div class="text-2" v-else>
       Just start typing to search.
       <br>For example, type
       <a @click="setSearchValue('枝方寄')">枝方寄</a> to lookup several kanjis at the same time!

@@ -1,8 +1,4 @@
-export interface Tag {
-  key: string;
-
-  value: string;
-}
+import { Tag } from './tag';
 
 export interface KanjiSummary {
   character: string;

@@ -1,5 +1,5 @@
 <template>
-  <div class="kanji-card" :class="{'original-item': isOriginal}">
+  <div class="card kanji-card" :class="{'original-item': isOriginal}">
     <div class="kanji-card-top">
       <div class="kanji-card-character">{{kanji.character}}</div>
       <div class="kanji-card-links">
@@ -54,7 +54,7 @@
       <div class="kanji-card-reading-kun">{{kanji.kunyomi}}</div>
     </div>
     <div class="flex-1"></div>
-    <div class="kanji-card-footer">
+    <div class="card-footer kanji-card-footer">
       <div class="label-list mt-1">
         <div class="label" v-if="kanji.jlpt">N{{kanji.jlpt}}</div>
         <div

@@ -1,21 +1,6 @@
 $kanji-card-padding: 10px;
 
 .kanji-card {
-  border-radius: var(--border-radius);
-  border: 1px solid var(--color-separator);
-  background: var(--color-fg);
-  padding: $kanji-card-padding;
-  transition: box-shadow linear .1s;
-  display: flex;
-  flex-flow: column;
-
-  &:hover {
-    box-shadow: var(--box-shadow);
-  }
-
-  &:not(.original-item) {
-    border-bottom: 2px solid var(--color-primary-500);
-  }
 }
 
 .kanji-card-poku-list {
@@ -108,13 +93,4 @@ $kanji-card-padding: 10px;
   &:first-child {
     margin-top: 4px;
   }
-}
-
-.kanji-card-footer {
-  margin-top: 5px;
-  margin-left: -$kanji-card-padding;
-  margin-right: -$kanji-card-padding;
-  margin-bottom: -$kanji-card-padding;
-  background: var(--color-fg-focus);
-  padding: $kanji-card-padding / 2 $kanji-card-padding;
 }

@@ -7,7 +7,7 @@
     <template v-for="(kanji, index) in kanjis">
       <div v-if="kanji.similar.length" :key="index" style="margin-bottom: 30px">
         <div style="font-size: 30px">{{kanji.character}}</div>
-        <kanji-card-list :kanjis="kanji.similar"></kanji-card-list>
+        <kanji-card-list :kanjis="[kanji, ...kanji.similar]"></kanji-card-list>
       </div>
     </template>
 

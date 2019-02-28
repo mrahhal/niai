@@ -1,5 +1,5 @@
 <template>
-  <div class="kanji-card">
+  <div class="kanji-card" :class="{'original-item': isOriginal}">
     <div class="kanji-card-top">
       <div class="kanji-card-character">{{kanji.character}}</div>
       <div class="kanji-card-links">

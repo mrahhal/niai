@@ -1,9 +1,13 @@
-import { KanjiSummary } from '@/models/kanji';
+import { Kanji, KanjiSummary } from '@/models/kanji';
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class KanjiCard extends Vue {
   @Prop() kanji!: KanjiSummary;
+
+  private get isOriginal() {
+    return !!(this.kanji as Kanji).similar;
+  }
 
   private get waniKaniHref() {
     const c = this.kanji.character;

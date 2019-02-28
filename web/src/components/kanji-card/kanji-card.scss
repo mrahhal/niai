@@ -3,7 +3,6 @@ $kanji-card-padding: 10px;
 .kanji-card {
   border-radius: var(--border-radius);
   border: 1px solid var(--color-separator);
-  border-bottom: 2px solid var(--color-primary-500);
   background: var(--color-fg);
   padding: $kanji-card-padding;
   transition: box-shadow linear .1s;
@@ -12,6 +11,10 @@ $kanji-card-padding: 10px;
 
   &:hover {
     box-shadow: var(--box-shadow);
+  }
+
+  &:not(.original-item) {
+    border-bottom: 2px solid var(--color-primary-500);
   }
 }
 

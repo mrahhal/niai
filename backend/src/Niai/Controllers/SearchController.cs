@@ -29,7 +29,15 @@ namespace Niai.Controllers
 
 			foreach (var character in q)
 			{
-				if (!kanjis.TryGetValue(character.ToString(), out var kanji))
+				var c = character.ToString();
+
+				if (!kanjis.TryGetValue(c, out var kanji))
+				{
+					continue;
+				}
+
+				// Ignore if we already saw the character.
+				if (list.Any(x => x.Character == c))
 				{
 					continue;
 				}

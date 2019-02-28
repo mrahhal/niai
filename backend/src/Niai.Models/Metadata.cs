@@ -3,5 +3,7 @@
 	public class Metadata
 	{
 		public int KanjiCount { get; set; }
+
+		public int VocabCount { get; set; }
 	}
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using MR.AttributeDI;
 using Newtonsoft.Json;
@@ -21,6 +20,8 @@ namespace Niai.Services
 
 		public SafeMap<Kanji> Kanjis { get; private set; }
 
+		public SafeMap<Vocab> Vocabs { get; private set; }
+
 		public Metadata Metadata { get; private set; }
 
 		public async Task SetupAsync()
@@ -28,6 +29,10 @@ namespace Niai.Services
 			var kanjisJson = await _dataFileProvider.GetKanjisContentsAsync();
 			var kanjis = JsonConvert.DeserializeObject<List<Kanji>>(kanjisJson);
 			Kanjis = kanjis.ToSafeMap(x => x.Character);
+
+			var vocabsJson = await _dataFileProvider.GetVocabsContentsAsync();
+			var vocabs = JsonConvert.DeserializeObject<List<Vocab>>(vocabsJson);
+			Vocabs = vocabs.ToSafeMap(x => x.Kana);
 
 			var metadataJson = await _dataFileProvider.GetMetadataContentsAsync();
 			Metadata = JsonConvert.DeserializeObject<Metadata>(metadataJson);

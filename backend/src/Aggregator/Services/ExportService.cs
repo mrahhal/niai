@@ -16,13 +16,16 @@ namespace Aggregator.Services
 	{
 		public async Task ExportAsync(AggregationResult result)
 		{
-			var standardModels = ConvertToStandardKanjiModel(result);
+			var kanjis = ConvertToStandardKanjiModel(result);
+			var vocabs = ConvertToStandardVocabModel(result);
 			var metadata = new Metadata
 			{
-				KanjiCount = standardModels.Count,
+				KanjiCount = kanjis.Count,
+				VocabCount = vocabs.Count,
 			};
 
-			await WriteJsonFileAsync(standardModels, "kanjis");
+			await WriteJsonFileAsync(kanjis, "kanjis");
+			await WriteJsonFileAsync(vocabs, "vocabs");
 			await WriteJsonFileAsync(metadata, "metadata");
 		}
 
@@ -41,6 +44,18 @@ namespace Aggregator.Services
 				Grade = x.KanjiModel.Grade,
 				Jlpt = x.KanjiModel.Jlpt,
 				Strokes = x.KanjiModel.Strokes,
+			}).ToList();
+		}
+
+		private List<Vocab> ConvertToStandardVocabModel(AggregationResult result)
+		{
+			return result.Vocabs.Select(x => new Vocab
+			{
+				Frequency = x.Frequency,
+				Kana = x.Kana == "" ? x.Vocab : x.Kana,
+				Kanji = x.Vocab == "〃" ? x.Kana : x.Vocab,
+				Meanings = x.Meanings,
+				Tags = x.Tags.Select(t => new Tag { Key = t.Key, Value = t.Value }).ToList(),
 			}).ToList();
 		}
 

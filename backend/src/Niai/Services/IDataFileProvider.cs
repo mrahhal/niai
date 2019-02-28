@@ -12,6 +12,9 @@ namespace Niai.Services
 		public static Task<string> GetKanjisContentsAsync(this IDataFileProvider @this) =>
 			@this.GetContentsAsync("kanjis");
 
+		public static Task<string> GetVocabsContentsAsync(this IDataFileProvider @this) =>
+			@this.GetContentsAsync("vocabs");
+
 		public static Task<string> GetMetadataContentsAsync(this IDataFileProvider @this) =>
 			@this.GetContentsAsync("metadata");
 	}

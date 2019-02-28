@@ -7,6 +7,7 @@ namespace Niai.Services
 	{
 		SafeMap<Kanji> Kanjis { get; }
 
+		SafeMap<Vocab> Vocabs { get; }
 		Metadata Metadata { get; }
 	}
 }

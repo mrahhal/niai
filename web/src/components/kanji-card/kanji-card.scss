@@ -102,7 +102,7 @@ $kanji-card-padding: 10px;
   padding: 3px;
   @include flex-center();
   font-size: var(--font-size-sm);
-  background: var(--color-bg);
+  background: var(--color-fg-focus);
   border-radius: 3px;
   margin-top: 10px;
   margin-bottom: 5px;
@@ -112,15 +112,11 @@ $kanji-card-padding: 10px;
   }
 }
 
-.kanji-card-reading {
-  color: var(--color-text-2);
-}
-
 .kanji-card-footer {
   margin-top: 5px;
   margin-left: -$kanji-card-padding;
   margin-right: -$kanji-card-padding;
   margin-bottom: -$kanji-card-padding;
-  background: var(--color-bg);
+  background: var(--color-fg-focus);
   padding: $kanji-card-padding / 2 $kanji-card-padding;
 }

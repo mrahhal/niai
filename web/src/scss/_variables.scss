@@ -1,8 +1,6 @@
 @import 'colors';
 
 #app {
-  --sidebar-width: 200px;
-
   @include set-color-vars();
 
   --color-text: #333;
@@ -10,6 +8,7 @@
   --color-separator: #ddd;
   --color-bg: #f2f2f2;
   --color-fg: white;
+  --color-fg-focus: #eee;
 
   --padding-main: 15px;
 
@@ -23,14 +22,17 @@
   --spacer-1: 5px;
   --spacer-2: 10px;
   --spacer-3: 15px;
+
+  --sidebar-width: 200px;
 }
 
 #app.theme-dark {
   --color-text: white;
   --color-text-2: #ddd;
-  --color-separator: #333;
+  --color-separator: #444;
   --color-bg: #272C38;
   --color-fg: #1F232D;
+  --color-fg-focus: #323948;
 
   --box-shadow: 0 1px 10px 0 rgba(255, 255, 255, .1);
 }

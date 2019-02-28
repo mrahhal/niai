@@ -1,11 +1,11 @@
 <template>
-  <div id="app" :class="['theme-' + theme]">
-    <div id="app-nav">
-      <div class="nav-main">
+  <div id="app" :class="['theme-' + theme, {'sidebar-expanded': expanded}]">
+    <div id="app-sidebar">
+      <div class="sidebar-main">
         <router-link to="/similar">Niai</router-link>
         <router-link to="/about">About</router-link>
       </div>
-      <div class="nav-footer">
+      <div class="sidebar-footer">
         <div class="theme-btn">
           <div class="icon-btn" @click="toggleTheme">
             <svg-sun v-if="theme == 'dark'"></svg-sun>
@@ -15,6 +15,11 @@
       </div>
     </div>
     <div id="app-view">
+      <div id="mobile-navbar">
+        <div class="icon-btn" type="button" @click="toggleExpansion">
+          <svg-bars></svg-bars>
+        </div>
+      </div>
       <router-view/>
     </div>
   </div>

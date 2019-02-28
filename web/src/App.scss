@@ -35,9 +35,9 @@ input {
   display: flex;
 }
 
-#app-nav {
+#app-sidebar {
   background: var(--color-fg);
-  width: var(--navbar-width);
+  width: var(--sidebar-width);
   flex-shrink: 0;
   display: flex;
   flex-flow: column;
@@ -64,7 +64,7 @@ input {
     }
   }
 
-  .nav-main {
+  .sidebar-main {
     flex: 1;
   }
 }
@@ -74,6 +74,43 @@ input {
   padding: var(--padding-main);
   background: var(--color-bg);
   overflow-y: auto;
+}
+
+#mobile-navbar {
+  display: none;
+  margin: calc(-1 * var(--padding-main));
+  margin-bottom: var(--padding-main);
+  padding: 5px var(--padding-main);
+  background: var(--color-fg);
+}
+
+@media (max-width: 800px) {
+  #app {}
+
+  #app-sidebar {
+    position: absolute;
+    height: 100%;
+    transition: transform ease-in-out .1s;
+    transform: translateX(calc(-1 * var(--sidebar-width)));
+  }
+
+  #app-view {
+    transition: transform ease-in-out .1s;
+  }
+
+  #mobile-navbar {
+    display: block;
+  }
+
+  .sidebar-expanded {
+    #app-sidebar {
+      transform: none;
+    }
+
+    #app-view {
+      transform: translateX(var(--sidebar-width));
+    }
+  }
 }
 
 .icon-btn {

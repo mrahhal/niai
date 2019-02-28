@@ -5,6 +5,7 @@ import { getTheme, setTheme, themeChanges } from './services/theme';
 @Component
 export default class App extends Vue {
   private theme = getTheme();
+  private expanded = false;
 
   created() {
     themeChanges.subscribe(theme => {
@@ -15,5 +16,9 @@ export default class App extends Vue {
   toggleTheme() {
     const newTheme = getTheme() === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
+  }
+
+  toggleExpansion() {
+    this.expanded = !this.expanded;
   }
 }

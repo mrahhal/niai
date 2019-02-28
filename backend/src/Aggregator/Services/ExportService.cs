@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,14 +19,20 @@ namespace Aggregator.Services
 		{
 			var kanjis = ConvertToStandardKanjiModel(result);
 			var vocabs = ConvertToStandardVocabModel(result);
+			var homonyms = ComputeHomonyms(vocabs);
+			var synonyms = ComputeSynonyms(vocabs);
 			var metadata = new Metadata
 			{
 				KanjiCount = kanjis.Count,
 				VocabCount = vocabs.Count,
+				HomonymCount = homonyms.Where(x => x.Value.Count > 1).Count(),
+				SynonymCount = synonyms.Where(x => x.Value.Count > 1).Count(),
 			};
 
 			await WriteJsonFileAsync(kanjis, "kanjis");
 			await WriteJsonFileAsync(vocabs, "vocabs");
+			await WriteJsonFileAsync(homonyms, "homonyms");
+			await WriteJsonFileAsync(synonyms, "synonyms");
 			await WriteJsonFileAsync(metadata, "metadata");
 		}
 
@@ -57,6 +64,42 @@ namespace Aggregator.Services
 				Meanings = x.Meanings,
 				Tags = x.Tags.Select(t => new Tag { Key = t.Key, Value = t.Value }).ToList(),
 			}).ToList();
+		}
+
+		private Dictionary<string, List<string>> ComputeHomonyms(List<Vocab> vocabs)
+		{
+			var homonyms = vocabs.GroupBy(v => v.Kana)
+				.Select(g => new { Reading = g.Key, Items = g.Select(x => x.Kanji).ToList() })
+				.ToDictionary(x => x.Reading, x => x.Items);
+
+			return homonyms;
+		}
+
+		private Dictionary<string, List<string>> ComputeSynonyms(List<Vocab> vocabs)
+		{
+			var map = new Dictionary<string, List<string>>();
+
+			foreach (var vocab in vocabs)
+			{
+				foreach (var meaning in vocab.Meanings)
+				{
+					var list = default(List<string>);
+
+					if (map.ContainsKey(meaning))
+					{
+						list = map[meaning];
+					}
+					else
+					{
+						list = new List<string>();
+						map[meaning] = list;
+					}
+
+					list.Add(vocab.Kanji);
+				}
+			}
+
+			return map;
 		}
 
 		private static async Task WriteJsonFileAsync(object obj, string name)

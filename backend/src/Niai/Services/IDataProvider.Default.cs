@@ -22,6 +22,10 @@ namespace Niai.Services
 
 		public SafeMap<Vocab> Vocabs { get; private set; }
 
+		public SafeMap<List<string>> Homonyms { get; private set; }
+
+		public SafeMap<List<string>> Synonyms { get; private set; }
+
 		public Metadata Metadata { get; private set; }
 
 		public async Task SetupAsync()
@@ -32,7 +36,15 @@ namespace Niai.Services
 
 			var vocabsJson = await _dataFileProvider.GetVocabsContentsAsync();
 			var vocabs = JsonConvert.DeserializeObject<List<Vocab>>(vocabsJson);
-			Vocabs = vocabs.ToSafeMap(x => x.Kana);
+			Vocabs = vocabs.ToSafeMap(x => x.Kanji);
+
+			var homonymsJson = await _dataFileProvider.GetHomonymsContentsAsync();
+			var homonyms = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(homonymsJson);
+			Homonyms = homonyms.ToSafeMap();
+
+			var synonymsJson = await _dataFileProvider.GetSynonymsContentsAsync();
+			var synonyms = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(synonymsJson);
+			Synonyms = synonyms.ToSafeMap();
 
 			var metadataJson = await _dataFileProvider.GetMetadataContentsAsync();
 			Metadata = JsonConvert.DeserializeObject<Metadata>(metadataJson);

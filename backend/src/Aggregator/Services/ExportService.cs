@@ -51,7 +51,7 @@ namespace Aggregator.Services
 				Grade = x.KanjiModel.Grade,
 				Jlpt = x.KanjiModel.Jlpt,
 				Strokes = x.KanjiModel.Strokes,
-			}).ToList();
+			}).OrderBy(x => x.Character).ToList();
 		}
 
 		private List<Vocab> ConvertToStandardVocabModel(AggregationResult result)
@@ -63,13 +63,14 @@ namespace Aggregator.Services
 				Kanji = x.Vocab == "〃" ? x.Kana : x.Vocab,
 				Meanings = x.Meanings,
 				Tags = CreateTags(x.Tags),
-			}).ToList();
+			}).OrderBy(x => x.Kana).ThenBy(x => x.Frequency).ToList();
 		}
 
 		private List<Tag> CreateTags(List<TagModel> tagModels)
 		{
 			return tagModels
 				.Distinct(TagModelEqualityComparer.Instance)
+				.OrderBy(t => t.Order)
 				.Select(t => new Tag { Key = t.Key, Value = t.Value })
 				.ToList();
 		}
@@ -77,7 +78,7 @@ namespace Aggregator.Services
 		private Dictionary<string, List<string>> ComputeHomonyms(List<Vocab> vocabs)
 		{
 			var homonyms = vocabs.GroupBy(v => v.Kana)
-				.Select(g => new { Reading = g.Key, Items = g.Select(x => x.Kanji).ToList() })
+				.Select(g => new { Reading = g.Key, Items = g.Select(x => x.Kanji).OrderBy(x => x).ToList() })
 				.ToDictionary(x => x.Reading, x => x.Items);
 
 			return homonyms;

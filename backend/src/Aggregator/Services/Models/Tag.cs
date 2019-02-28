@@ -15,4 +15,19 @@ namespace Aggregator.Services
 	public class TagModelRaw : List<List<object>>
 	{
 	}
+
+	public class TagModelEqualityComparer : IEqualityComparer<TagModel>
+	{
+		public static readonly TagModelEqualityComparer Instance = new TagModelEqualityComparer();
+
+		public bool Equals(TagModel x, TagModel y)
+		{
+			return x.Key == y.Key;
+		}
+
+		public int GetHashCode(TagModel obj)
+		{
+			return obj.Key.GetHashCode();
+		}
+	}
 }

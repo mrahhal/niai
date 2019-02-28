@@ -44,7 +44,7 @@ namespace Aggregator.Services
 				Kunyomi = x.Kunyomi,
 				Meanings = x.Meanings,
 				Onyomi = x.Onyomi,
-				Tags = x.Tags.Select(t => new Tag { Key = t.Key, Value = t.Value }).ToList(),
+				Tags = CreateTags(x.Tags),
 				Character = x.Kanji,
 				WaniKaniLevel = x.WaniKaniLevel,
 				Similar = x.Similar,
@@ -62,8 +62,16 @@ namespace Aggregator.Services
 				Kana = x.Kana == "" ? x.Vocab : x.Kana,
 				Kanji = x.Vocab == "〃" ? x.Kana : x.Vocab,
 				Meanings = x.Meanings,
-				Tags = x.Tags.Select(t => new Tag { Key = t.Key, Value = t.Value }).ToList(),
+				Tags = CreateTags(x.Tags),
 			}).ToList();
+		}
+
+		private List<Tag> CreateTags(List<TagModel> tagModels)
+		{
+			return tagModels
+				.Distinct(TagModelEqualityComparer.Instance)
+				.Select(t => new Tag { Key = t.Key, Value = t.Value })
+				.ToList();
 		}
 
 		private Dictionary<string, List<string>> ComputeHomonyms(List<Vocab> vocabs)

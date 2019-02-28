@@ -16,7 +16,7 @@
     </div>
     <div id="app-view">
       <div id="mobile-navbar">
-        <div class="icon-btn" type="button" @click="toggleExpansion">
+        <div class="icon-btn" @click="toggleExpansion">
           <svg-bars></svg-bars>
         </div>
       </div>

@@ -37,6 +37,10 @@ input {
   display: flex;
   flex-flow: column;
   border-right: 1px solid var(--color-separator);
+  position: absolute;
+    height: 100%;
+    transition: transform ease-in-out .1s;
+    transform: translateX(calc(-1 * var(--sidebar-width)));
 
   a {
     @include flex-center();
@@ -69,42 +73,34 @@ input {
   padding: var(--padding-main);
   background: var(--color-bg);
   overflow-y: auto;
+  transition: transform ease-in-out .1s;
 }
 
 #mobile-navbar {
-  display: none;
   margin: calc(-1 * var(--padding-main));
   margin-bottom: var(--padding-main);
   padding: 5px var(--padding-main);
   background: var(--color-fg);
 }
 
-@media (max-width: 800px) {
-  #app {}
-
+.sidebar-expanded {
   #app-sidebar {
-    position: absolute;
-    height: 100%;
-    transition: transform ease-in-out .1s;
-    transform: translateX(calc(-1 * var(--sidebar-width)));
+    transform: none;
   }
 
   #app-view {
-    transition: transform ease-in-out .1s;
+    transform: translateX(var(--sidebar-width));
+  }
+}
+
+@include breakpoint(md) {
+  #app-sidebar {
+    position: static;
+    transform: none;
   }
 
   #mobile-navbar {
-    display: block;
-  }
-
-  .sidebar-expanded {
-    #app-sidebar {
-      transform: none;
-    }
-
-    #app-view {
-      transform: translateX(var(--sidebar-width));
-    }
+    display: none;
   }
 }
 

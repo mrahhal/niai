@@ -1,11 +1,6 @@
 html,
 body {
-  margin: 0;
   height: 100%;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 a {
@@ -160,10 +155,6 @@ input {
   padding: 2px 8px;
   font-size: var(--font-size-sm);
   font-weight: bold;
-}
-
-.mt-1 {
-  margin-top: var(--spacer-1);
 }
 
 .flex-1 {

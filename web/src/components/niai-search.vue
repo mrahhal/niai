@@ -38,7 +38,7 @@
 }
 
 input {
-  padding: 15px;
+  padding: 10px;
   padding-left: 45px;
   border: none;
   border-bottom: 2px solid var(--color-separator);

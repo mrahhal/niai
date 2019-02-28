@@ -6,8 +6,7 @@ module.exports = {
       sass: {
         includePaths: [path.resolve(__dirname, './src/scss')],
         data: `
-          @import 'mixins';
-          @import 'variables';
+          @import 'app';
         `
       }
     }

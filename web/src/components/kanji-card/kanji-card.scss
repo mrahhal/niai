@@ -55,6 +55,7 @@ $kanji-card-padding: 10px;
   flex: 1;
   display: flex;
   flex-flow: column;
+  align-items: flex-start;
 
   .kanji-card-link {
     &:not(:last-child) {
@@ -91,12 +92,6 @@ $kanji-card-padding: 10px;
 .kanji-card-link-text {
   font-size: var(--font-size-sm);
 }
-
-// .kanji-card-table {
-//   display: grid;
-//   grid-template-columns: 30px 1fr;
-//   grid-gap: 5px;
-// }
 
 .kanji-card-table-label {
   padding: 3px;

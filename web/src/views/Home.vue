@@ -4,12 +4,13 @@
 
     <div style="margin-top: 20px"></div>
 
-    <template v-for="(kanji, index) in kanjis">
-      <div v-if="kanji.similar.length" :key="index" style="margin-bottom: 30px">
-        <div style="font-size: 30px">{{kanji.character}}</div>
-        <kanji-card-list :kanjis="[kanji, ...kanji.similar]"></kanji-card-list>
-      </div>
-    </template>
+    <div class="similar-section similar-kanji">
+      <template v-for="kanji in kanjis">
+        <div class="similar-list-container" v-if="kanji.similar.length" :key="kanji.character">
+          <kanji-card-list :kanjis="[kanji, ...kanji.similar]"></kanji-card-list>
+        </div>
+      </template>
+    </div>
 
     <div class="text-2" v-if="!kanjis.length">
       Just start typing to search.
@@ -20,3 +21,4 @@
 </template>
 
 <script lang="ts" src="./Home.ts"></script>
+<style lang="scss" scoped src="./Home.scss"></style>

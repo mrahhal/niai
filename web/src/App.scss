@@ -30,44 +30,6 @@ input {
   display: flex;
 }
 
-#app-sidebar {
-  background: var(--color-fg);
-  width: var(--sidebar-width);
-  flex-shrink: 0;
-  display: flex;
-  flex-flow: column;
-  border-right: 1px solid var(--color-separator);
-  position: absolute;
-    height: 100%;
-    transition: transform ease-in-out .1s;
-    transform: translateX(calc(-1 * var(--sidebar-width)));
-
-  a {
-    @include flex-center();
-    @include anchor-unstyled();
-    padding: 10px 20px;
-    opacity: .6;
-    font-weight: bold;
-
-    &:not(:last-child) {
-      border-bottom: 1px solid var(--color-separator);
-    }
-
-    &:hover {
-      opacity: 1;
-    }
-
-    &.router-link-active {
-      opacity: 1;
-      color: var(--color-primary-500);
-    }
-  }
-
-  .sidebar-main {
-    flex: 1;
-  }
-}
-
 #app-view {
   flex: 1;
   padding: var(--padding-main);
@@ -84,21 +46,12 @@ input {
 }
 
 .sidebar-expanded {
-  #app-sidebar {
-    transform: none;
-  }
-
   #app-view {
     transform: translateX(var(--sidebar-width));
   }
 }
 
 @include breakpoint(md) {
-  #app-sidebar {
-    position: static;
-    transform: none;
-  }
-
   #mobile-navbar {
     display: none;
   }

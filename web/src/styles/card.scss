@@ -7,7 +7,7 @@ $card-padding: 10px;
   border: 1px solid var(--color-separator);
   background: var(--color-fg);
   padding: $card-padding;
-  transition: box-shadow linear .1s;
+  transition: all linear .1s;
   display: flex;
   flex-flow: column;
 
@@ -17,6 +17,14 @@ $card-padding: 10px;
 
   &:not(.original-item) {
     border-bottom: 2px solid var(--color-primary-500);
+  }
+
+  &.card-faded {
+    opacity: .5;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 

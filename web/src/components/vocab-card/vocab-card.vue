@@ -1,5 +1,5 @@
 <template>
-  <div class="card vocab-card">
+  <div class="card vocab-card" :class="{'card-faded': !vocab.frequency}">
     <div class="vocab-card-top">
       <div>
         <div class="vocab-card-kanji">{{vocab.kanji}}</div>

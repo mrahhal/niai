@@ -1,5 +1,8 @@
 <template>
-  <div class="card kanji-card" :class="{'original-item': isOriginal}">
+  <div
+    class="card kanji-card"
+    :class="{'original-item': isOriginal, 'card-faded': !kanji.frequency}"
+  >
     <div class="kanji-card-top">
       <div class="kanji-card-character">{{kanji.character}}</div>
       <div class="kanji-card-links">

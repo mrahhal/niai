@@ -20,6 +20,20 @@ $card-padding: 10px;
   }
 }
 
+.card-label {
+  padding: 3px;
+  @include flex-center();
+  font-size: var(--font-size-sm);
+  background: var(--color-fg-focus);
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+  &:first-child {
+    margin-top: 4px;
+  }
+}
+
 .card-footer {
   margin-top: 5px;
   margin-left: -$card-padding;

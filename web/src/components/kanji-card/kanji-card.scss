@@ -1,32 +1,7 @@
 $kanji-card-padding: 10px;
 
-.kanji-card {
-}
-
-.kanji-card-poku-list {
-  display: flex;
-  flex-flow: column;
-  align-items: flex-end;
-}
-
-.kanji-card-poku {
-  display: flex;
-  font-size: var(--font-size-sm);
-  align-items: center;
-
-  svg {
-    width: 15px;
-    height: 15px;
-  }
-}
-
-.kanji-card-poku-text {
-  margin-right: 5px;
-}
-
 .kanji-card-top {
   display: flex;
-  align-items: flex-start;
   margin-bottom: 10px;
 }
 
@@ -79,18 +54,4 @@ $kanji-card-padding: 10px;
 
 .kanji-card-link-text {
   font-size: var(--font-size-sm);
-}
-
-.kanji-card-table-label {
-  padding: 3px;
-  @include flex-center();
-  font-size: var(--font-size-sm);
-  background: var(--color-fg-focus);
-  border-radius: 3px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-
-  &:first-child {
-    margin-top: 4px;
-  }
 }

@@ -23,34 +23,16 @@
           <div class="kanji-card-link-text">{{kanji.waniKaniLevel}}</div>
         </a>
       </div>
-      <div class="kanji-card-poku-list">
-        <div
-          class="kanji-card-poku tooltipped tooltipped-n"
-          v-if="kanji.frequency"
-          aria-label="Frequency"
-        >
-          <div class="kanji-card-poku-text">{{kanji.frequency}}</div>
-          <div class="kanji-card-poku-icon">
-            <svg-clock></svg-clock>
-          </div>
-        </div>
-
-        <div class="kanji-card-poku tooltipped tooltipped-n" v-if="kanji.grade" aria-label="Grade">
-          <div class="kanji-card-poku-text">{{kanji.grade}}</div>
-          <div class="kanji-card-poku-icon">
-            <svg-school></svg-school>
-          </div>
-        </div>
-      </div>
+      <meta-list :frequency="kanji.frequency" :grade="kanji.grade"></meta-list>
     </div>
-    <div class="kanji-card-table">
-      <div class="kanji-card-table-label">Meanings</div>
+    <div>
+      <div class="card-label">Meanings</div>
       <div class="kanji-card-meaning">{{kanji.meanings.join(', ')}}</div>
 
-      <div class="kanji-card-table-label">音読み</div>
+      <div class="card-label">音読み</div>
       <div class="kanji-card-reading-on">{{kanji.onyomi}}</div>
 
-      <div class="kanji-card-table-label">訓読み</div>
+      <div class="card-label">訓読み</div>
       <div class="kanji-card-reading-kun">{{kanji.kunyomi}}</div>
     </div>
     <div class="flex-1"></div>

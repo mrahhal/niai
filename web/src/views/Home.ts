@@ -1,13 +1,13 @@
 import NiaiSearch from '@/components/niai-search/niai-search';
 import { SearchResult } from '@/models';
 import { api } from '@/services/api';
-import { Subject } from 'rxjs';
-import { switchMap, tap, throttleTime } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
+import { debounceTime, switchMap, tap } from 'rxjs/operators';
 import { Component, Vue, Watch } from 'vue-property-decorator';
 
 @Component
 export default class Home extends Vue {
-  private subject = new Subject<string>();
+  private subject = new BehaviorSubject<string>('');
   private result: SearchResult | null = null;
   private loading = false;
 
@@ -19,10 +19,18 @@ export default class Home extends Vue {
 
   created() {
     this.subject.pipe(
-      throttleTime(500, undefined, { leading: true, trailing: true }),
+      debounceTime(300),
+      // throttleTime(500, undefined, { leading: true, trailing: true }),
       tap(() => this.loading = true),
       switchMap(value => value ? api.search(value).catch(() => null) : Promise.resolve(null)),
     ).subscribe(data => {
+      const value = this.subject.value;
+      if (!value) {
+        this.$router.push({ query: {} });
+      } else if (data && (data.kanjis.length || data.homonyms.length || data.synonyms.length)) {
+        this.$router.push({ query: { q: value } });
+      }
+
       this.loading = false;
       this.result = data;
     });
@@ -39,12 +47,6 @@ export default class Home extends Vue {
   }
 
   private onSearch(value: string) {
-    if (!value) {
-      this.$router.replace({ query: {} });
-    } else {
-      this.$router.replace({ query: { q: value } });
-    }
-
     this.subject.next(value);
   }
 

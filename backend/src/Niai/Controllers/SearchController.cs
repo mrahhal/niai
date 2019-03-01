@@ -59,7 +59,7 @@ namespace Niai.Controllers
 
 				var similar = kanji.Similar.Select(x => kanjis[x]).Where(x => x != null);
 				var dto = _mapper.Map<KanjiDto>(kanji);
-				dto.Similar = similar.Select(x => _mapper.Map<KanjiSummaryDto>(x)).ToList();
+				dto.Similar = similar.Select(x => _mapper.Map<KanjiSummaryDto>(x)).OrderByDescending(x => x.Frequency).ToList();
 
 				list.Add(dto);
 			}
@@ -83,7 +83,7 @@ namespace Niai.Controllers
 			{
 				var vocab = vocabs[x];
 				return _mapper.Map<VocabDto>(vocab);
-			}).ToList();
+			}).OrderByDescending(x => x.Frequency).ToList();
 		}
 
 		private List<VocabDto> FindSynonyms(string q)
@@ -104,7 +104,7 @@ namespace Niai.Controllers
 			{
 				var vocab = vocabs[x];
 				return _mapper.Map<VocabDto>(vocab);
-			}).ToList();
+			}).OrderByDescending(x => x.Frequency).ToList();
 		}
 	}
 }

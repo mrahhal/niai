@@ -6,7 +6,22 @@
   }
 }
 
+.similar-section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
 .similar-section-name {
   margin-bottom: 5px;
   font-size: var(--font-size-lg);
+  margin-right: 5px;
+}
+
+.similar-section-counter {
+  background: var(--color-primary-500);
+  color: white;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size: var(--font-size-sm);
 }

@@ -5,7 +5,10 @@
     <div style="margin-top: 20px"></div>
 
     <template v-if="result">
-      <div class="similar-section similar-kanji">
+      <div class="similar-section similar-kanji" v-if="kanjis.length">
+        <div class="similar-section-header">
+          <div class="similar-section-name">Similar Kanji</div>
+        </div>
         <template v-for="kanji in kanjis">
           <div class="similar-list-container" v-if="kanji.similar.length" :key="kanji.character">
             <card-list>
@@ -21,7 +24,10 @@
       </div>
 
       <div class="similar-section similar-homonyms" v-if="homonyms.length">
-        <div class="similar-section-name">Homonyms</div>
+        <div class="similar-section-header">
+          <div class="similar-section-name">Homonyms</div>
+          <div class="similar-section-counter">{{homonyms.length}}</div>
+        </div>
         <card-list>
           <vocab-card
             v-for="(homonym, index) in homonyms"
@@ -33,7 +39,10 @@
       </div>
 
       <div class="similar-section similar-synonyms" v-if="synonyms.length">
-        <div class="similar-section-name">Synonyms</div>
+        <div class="similar-section-header">
+          <div class="similar-section-name">Synonyms</div>
+          <div class="similar-section-counter">{{synonyms.length}}</div>
+        </div>
         <card-list>
           <vocab-card
             v-for="(synonym, index) in synonyms"

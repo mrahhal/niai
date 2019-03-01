@@ -88,6 +88,8 @@ namespace Niai.Controllers
 
 		private List<VocabDto> FindSynonyms(string q)
 		{
+			q = q.ToLowerInvariant();
+
 			var vocabs = _dataProvider.Vocabs;
 			var synonyms = _dataProvider.Synonyms;
 

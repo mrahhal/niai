@@ -35,9 +35,14 @@
     </template>
 
     <div class="text-2" v-else>
-      Just start typing to search.
-      <br>For example, type
-      <a @click="setSearchValue('枝方寄')">枝方寄</a> to lookup several kanjis at the same time!
+      Just start typing to search for similar Kanjis, homonyms, and synonyms!
+      <br>
+      <br>Lookup several kanjis at the same time! -
+      <a @click="setSearchValue('枝方寄')">枝方寄</a>
+      <br>Lookup homonyms (same reading, different meaning) -
+      <a @click="setSearchValue('かえる')">かえる</a>
+      <br>Lookup synonyms (similar meaning) -
+      <a @click="setSearchValue('love')">love</a>
     </div>
   </div>
 </template>

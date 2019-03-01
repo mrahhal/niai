@@ -1,7 +1,17 @@
 <template>
   <div class="card vocab-card">
-    <div>{{vocab.kanji}} - {{vocab.kana}}</div>
-    <div>{{vocab.meanings.join(', ')}}</div>
+    <div class="vocab-card-top">
+      <div>
+        <div class="vocab-card-kanji">{{vocab.kanji}}</div>
+        <div>{{vocab.kana}}</div>
+      </div>
+      <div class="flex-1"></div>
+      <meta-list :frequency="vocab.frequency"></meta-list>
+    </div>
+    <div>
+      <div class="card-label">Meanings</div>
+      <div>{{vocab.meanings.join(', ')}}</div>
+    </div>
     <div class="flex-1"></div>
     <div class="card-footer vocab-card-footer">
       <div class="label-list mt-1">

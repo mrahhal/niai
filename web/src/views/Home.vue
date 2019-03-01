@@ -20,14 +20,14 @@
       </div>
 
       <div class="similar-section similar-homonyms" v-if="homonyms.length">
-        <div>Homonyms</div>
+        <div class="similar-section-name">Homonyms</div>
         <card-list>
           <vocab-card v-for="(homonym, index) in homonyms" :vocab="homonym" :key="index"></vocab-card>
         </card-list>
       </div>
 
       <div class="similar-section similar-synonyms" v-if="synonyms.length">
-        <div>Synonyms</div>
+        <div class="similar-section-name">Synonyms</div>
         <card-list>
           <vocab-card v-for="(synonym, index) in synonyms" :vocab="synonym" :key="index"></vocab-card>
         </card-list>

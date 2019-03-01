@@ -1,8 +1,11 @@
 <template>
-  <div class="niai-search" :class="{ loading: loading }">
+  <div class="niai-search" :class="{ loading: loading, 'has-text': hasText }">
     <svg-search></svg-search>
     <svg-spinner></svg-spinner>
-    <input ref="input" placeholder="Start typing to search" @input="emitValue">
+    <div class="close-btn icon-btn" @click="clear">
+      <svg-close-circle></svg-close-circle>
+    </div>
+    <input ref="input" placeholder="Start typing to search" @input="emitValue" v-model="q">
   </div>
 </template>
 
@@ -12,23 +15,52 @@
 .niai-search {
   position: relative;
 
+  > .close-btn {
+    padding: 0;
+  }
+
+  > svg,
+  > .close-btn {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    transition: opacity linear 0.1s;
+  }
+
   svg {
     fill: currentColor;
     width: 25px;
     height: 25px;
-    position: absolute;
-    left: 10px;
-    top: 12px;
-    transition: opacity linear .1s;
   }
 
-  .svg-spinner {
+  .svg-spinner,
+  .close-btn {
     opacity: 0;
+    pointer-events: none;
+  }
+
+  &.has-text {
+    .svg-search,
+    .svg-spinner {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .close-btn {
+      opacity: 0.6;
+      pointer-events: initial;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 
   &.loading {
-    .svg-search {
+    .svg-search,
+    .close-btn {
       opacity: 0;
+      pointer-events: none;
     }
 
     .svg-spinner {

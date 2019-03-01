@@ -14,6 +14,7 @@
     "indent": [true, "spaces", 2],
     "interface-name": false,
     "member-access": false,
+    "member-ordering": false,
     "no-consecutive-blank-lines": true,
     "no-console": false,
     "no-duplicate-variable": true,

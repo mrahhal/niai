@@ -24,13 +24,4 @@
   --sidebar-width: 200px;
 }
 
-#app.theme-dark {
-  --color-text: white;
-  --color-text-2: #ddd;
-  --color-separator: #444;
-  --color-bg: #272C38;
-  --color-fg: #1F232D;
-  --color-fg-focus: #323948;
-
-  --box-shadow: 0 1px 10px 0 rgba(255, 255, 255, .1);
-}
+@import 'themes';

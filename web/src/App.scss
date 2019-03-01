@@ -12,6 +12,14 @@ a {
   }
 }
 
+a.plain-link {
+  @include anchor-unstyled();
+
+  &:hover {
+    color: var(--color-blue-500);
+  }
+}
+
 input {
   color: inherit;
 }

@@ -3,14 +3,14 @@
     <div class="vocab-card-top">
       <div>
         <div class="vocab-card-kanji">{{vocab.kanji}}</div>
-        <div>{{vocab.kana}}</div>
+        <a class="plain-link" @click="$emit('navigateTo', vocab.kana)">{{vocab.kana}}</a>
       </div>
       <div class="flex-1"></div>
       <meta-list :frequency="vocab.frequency"></meta-list>
     </div>
     <div>
       <div class="card-label">Meanings</div>
-      <div>{{vocab.meanings.join(', ')}}</div>
+      <meaning-list :meanings="vocab.meanings" @navigateTo="$emit('navigateTo', $event)"></meaning-list>
     </div>
     <div class="flex-1"></div>
     <div class="card-footer vocab-card-footer">

@@ -13,6 +13,7 @@
                 v-for="kanji in [kanji, ...kanji.similar]"
                 :kanji="kanji"
                 :key="kanji.character"
+                @navigateTo="setSearchValue($event)"
               ></kanji-card>
             </card-list>
           </div>
@@ -22,14 +23,24 @@
       <div class="similar-section similar-homonyms" v-if="homonyms.length">
         <div class="similar-section-name">Homonyms</div>
         <card-list>
-          <vocab-card v-for="(homonym, index) in homonyms" :vocab="homonym" :key="index"></vocab-card>
+          <vocab-card
+            v-for="(homonym, index) in homonyms"
+            :vocab="homonym"
+            :key="index"
+            @navigateTo="setSearchValue($event)"
+          ></vocab-card>
         </card-list>
       </div>
 
       <div class="similar-section similar-synonyms" v-if="synonyms.length">
         <div class="similar-section-name">Synonyms</div>
         <card-list>
-          <vocab-card v-for="(synonym, index) in synonyms" :vocab="synonym" :key="index"></vocab-card>
+          <vocab-card
+            v-for="(synonym, index) in synonyms"
+            :vocab="synonym"
+            :key="index"
+            @navigateTo="setSearchValue($event)"
+          ></vocab-card>
         </card-list>
       </div>
     </template>

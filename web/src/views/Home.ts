@@ -1,6 +1,5 @@
-import NiaiSearch from '@/components/niai-search';
+import NiaiSearch from '@/components/niai-search/niai-search';
 import { SearchResult } from '@/models';
-import { Kanji } from '@/models/kanji';
 import { api } from '@/services/api';
 import { Subject } from 'rxjs';
 import { switchMap, tap, throttleTime } from 'rxjs/operators';

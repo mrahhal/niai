@@ -30,7 +30,7 @@
     </div>
     <div>
       <div class="card-label">Meanings</div>
-      <div class="kanji-card-meaning">{{kanji.meanings.join(', ')}}</div>
+      <meaning-list :meanings="kanji.meanings" @navigateTo="$emit('navigateTo', $event)"></meaning-list>
 
       <div class="card-label">音読み</div>
       <div class="kanji-card-reading-on">{{kanji.onyomi}}</div>

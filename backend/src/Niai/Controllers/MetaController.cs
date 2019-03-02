@@ -1,23 +1,37 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Niai.Models;
+﻿using System.Reflection;
+using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using Niai.Models.Dtos;
 using Niai.Services;
 
 namespace Niai.Controllers
 {
 	public class MetaController : NiaiControllerBase
 	{
+		private static string Version = (Assembly
+			.GetExecutingAssembly()
+			.GetCustomAttributes(typeof(AssemblyInformationalVersionAttribute), false) as AssemblyInformationalVersionAttribute[])[0]
+			.InformationalVersion;
+
+		private readonly IMapper _mapper;
 		private readonly IDataProvider _dataProvider;
 
 		public MetaController(
+			IMapper mapper,
 			IDataProvider dataProvider)
 		{
+			_mapper = mapper;
 			_dataProvider = dataProvider;
 		}
 
 		[HttpGet]
-		public ActionResult<Metadata> Get()
+		public ActionResult<MetadataDto> Get()
 		{
-			return Ok(_dataProvider.Metadata);
+			var dto = _mapper.Map<MetadataDto>(_dataProvider.Metadata);
+
+			dto.Version = Version;
+
+			return Ok(dto);
 		}
 	}
 }

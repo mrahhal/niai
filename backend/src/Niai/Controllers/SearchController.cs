@@ -74,7 +74,7 @@ namespace Niai.Controllers
 
 			var homonym = homonyms[q];
 
-			if (homonym == null || homonym.Count <= 1)
+			if (homonym == null)
 			{
 				return new List<VocabDto>();
 			}
@@ -95,7 +95,7 @@ namespace Niai.Controllers
 
 			var synonym = synonyms[q];
 
-			if (synonym == null || synonym.Count <= 1)
+			if (synonym == null)
 			{
 				return new List<VocabDto>();
 			}

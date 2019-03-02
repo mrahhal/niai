@@ -5,9 +5,9 @@
     <template v-if="recentSearches.length">
       <div style="margin-top: 10px"></div>
       <div class="text-2 recent-searches">Recent Searches:
-        <dev class="pl-3" v-for="search in recentSearches" :key="search">
+        <div class="pl-3" v-for="search in recentSearches" :key="search">
           <a @click="setSearchValue(search)" :key="search">{{search}}</a>
-        </dev>
+        </div>
       </div>
     </template>
 

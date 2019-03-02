@@ -4,7 +4,9 @@
 
     <template v-if="recentSearches.length">
       <div style="margin-top: 10px"></div>
-      <div class="text-2 recent-searches">Recent Searches:
+
+      <div class="recent-searches">
+        <span class="text-2">Recent Searches:</span>
         <div class="pl-3" v-for="search in recentSearches" :key="search">
           <a @click="setSearchValue(search)" :key="search">{{search}}</a>
         </div>

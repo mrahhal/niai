@@ -1,4 +1,4 @@
-export const KEY = 'recent_searches';
+export const KEY = 'niai_recent_searches';
 export const MAX_SEARCHES = 5;
 
 export function getRecentSearches(): string[] {

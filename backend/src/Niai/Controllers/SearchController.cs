@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Niai.Models.Dtos;
 using Niai.Services;
@@ -9,16 +8,13 @@ namespace Niai.Controllers
 {
 	public class SearchController : NiaiControllerBase
 	{
-		private readonly IMapper _mapper;
 		private readonly IDataProvider _dataProvider;
 		private readonly IModelMapper _modelMapper;
 
 		public SearchController(
-			IMapper mapper,
 			IDataProvider dataProvider,
 			IModelMapper modelMapper)
 		{
-			_mapper = mapper;
 			_dataProvider = dataProvider;
 			_modelMapper = modelMapper;
 		}

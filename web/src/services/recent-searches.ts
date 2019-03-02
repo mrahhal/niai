@@ -20,7 +20,7 @@ export function updateRecentSearches(search: string): string[] {
   } else if (searches.length < MAX_SEARCHES) {
     searches.unshift(search);
   } else {
-    searches.shift();
+    searches.pop();
     searches.unshift(search);
   }
 

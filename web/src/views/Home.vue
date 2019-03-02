@@ -2,6 +2,15 @@
   <div>
     <niai-search :loading="loading" @input="onSearch" ref="search"></niai-search>
 
+    <template v-if="recentSearches.length">
+      <div style="margin-top: 10px"></div>
+      <div class="text-2 recent-searches">Recent Searches:
+        <div class="pl-3" v-for="search in recentSearches" :key="search">
+          <a @click="setSearchValue(search)" :key="search">{{search}}</a>
+        </div>
+      </div>
+    </template>
+
     <div style="margin-top: 20px"></div>
 
     <template v-if="result">

@@ -23,7 +23,9 @@ deploy:
   name: niai - Production
   on:
     branch: master
+    APPVEYOR_REPO_TAG: true
 - provider: Environment
   name: niai-api - Production
   on:
     branch: master
+    APPVEYOR_REPO_TAG: true

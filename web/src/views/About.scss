@@ -1,0 +1,62 @@
+.about-page {
+  @include flex-center();
+
+  .niai-icon {
+    width: 25px;
+  }
+}
+
+.version {
+  background: var(--color-bg);
+  border: 1px solid var(--color-separator);
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.about-links {
+  margin-top: 20px;
+  @include flex-center();
+
+  > div {
+    display: flex;
+    align-items: center;
+
+    .niai-icon {
+      width: 25px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.about-page-loading {
+  margin-top: 50px;
+
+  svg {
+    $size: 60px;
+    width: $size;
+    height: $size;
+  }
+}
+
+.about-card {
+  width: 400px;
+  position: relative;
+  background: var(--color-fg);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  padding-top: 70px;
+  margin-top: 80px;
+  text-align: center;
+  border-bottom: 3px solid var(--color-primary-500);
+}
+
+.about-profile-pic {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}

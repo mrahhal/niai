@@ -1,6 +1,8 @@
 # niai
 
-Lookup similar looking kanjis and more!
+[![Build status](https://ci.appveyor.com/api/projects/status/8pcyjuyijui8o6ox?svg=true)](https://ci.appveyor.com/project/mrahhal/niai)
+
+Lookup similar Kanjis, Homonyms, Synonyms!
 
 ![snap_light](images/snap_light.png)
 ![snap_light](images/snap_dark.png)

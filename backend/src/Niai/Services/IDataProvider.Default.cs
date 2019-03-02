@@ -20,7 +20,11 @@ namespace Niai.Services
 
 		public SafeMap<Kanji> Kanjis { get; private set; }
 
+		public SafeMap<Tag> KanjiTags { get; private set; }
+
 		public SafeMap<Vocab> Vocabs { get; private set; }
+
+		public SafeMap<Tag> VocabTags { get; private set; }
 
 		public SafeMap<List<string>> Homonyms { get; private set; }
 
@@ -34,9 +38,17 @@ namespace Niai.Services
 			var kanjis = JsonConvert.DeserializeObject<List<Kanji>>(kanjisJson);
 			Kanjis = kanjis.ToSafeMap(x => x.Character);
 
+			var kanjiTagsJson = await _dataFileProvider.GetKanjiTagsContentsAsync();
+			var kanjiTags = JsonConvert.DeserializeObject<List<Tag>>(kanjiTagsJson);
+			KanjiTags = kanjiTags.ToSafeMap(x => x.Key);
+
 			var vocabsJson = await _dataFileProvider.GetVocabsContentsAsync();
 			var vocabs = JsonConvert.DeserializeObject<List<Vocab>>(vocabsJson);
 			Vocabs = vocabs.ToSafeMap(x => x.Kanji);
+
+			var vocabTagsJson = await _dataFileProvider.GetVocabTagsContentsAsync();
+			var vocabTags = JsonConvert.DeserializeObject<List<Tag>>(vocabTagsJson);
+			VocabTags = vocabTags.ToSafeMap(x => x.Key);
 
 			var homonymsJson = await _dataFileProvider.GetHomonymsContentsAsync();
 			var homonyms = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(homonymsJson);

@@ -42,6 +42,8 @@ namespace Aggregator.Services
 			{
 				Kanjis = kTask.Result,
 				Vocabs = vTask.Result,
+				KanjiTags = _kanjiDictionaryService.Tags,
+				VocabTags = _vocabDictionaryService.Tags,
 			};
 		}
 

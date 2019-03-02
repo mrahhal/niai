@@ -18,6 +18,8 @@ namespace Aggregator.Services
 		{
 			var kanjis = ConvertToStandardKanjiModel(result);
 			var vocabs = ConvertToStandardVocabModel(result);
+			var kanjiTags = result.KanjiTags.Select(x => new Tag { Key = x.Key, Value = x.Value.Value }).ToList();
+			var vocabTags = result.VocabTags.Select(x => new Tag { Key = x.Key, Value = x.Value.Value }).ToList();
 			var homonyms = ComputeHomonyms(vocabs);
 			var synonyms = ComputeSynonyms(vocabs);
 			var metadata = new Metadata
@@ -26,10 +28,14 @@ namespace Aggregator.Services
 				VocabCount = vocabs.Count,
 				HomonymCount = homonyms.Where(x => x.Value.Count > 1).Count(),
 				SynonymCount = synonyms.Where(x => x.Value.Count > 1).Count(),
+				KanjiTagCount = kanjiTags.Count,
+				VocabTagCount = vocabTags.Count,
 			};
 
 			await WriteJsonFileAsync(kanjis, "kanjis");
 			await WriteJsonFileAsync(vocabs, "vocabs");
+			await WriteJsonFileAsync(kanjiTags, "kanji-tags");
+			await WriteJsonFileAsync(vocabTags, "vocab-tags");
 			await WriteJsonFileAsync(homonyms, "homonyms");
 			await WriteJsonFileAsync(synonyms, "synonyms");
 			await WriteJsonFileAsync(metadata, "metadata");
@@ -68,12 +74,12 @@ namespace Aggregator.Services
 			}).OrderBy(x => x.Frequency).ToList();
 		}
 
-		private List<Tag> CreateTags(List<TagModel> tagModels)
+		private List<string> CreateTags(List<TagModel> tagModels)
 		{
 			return tagModels
 				.Distinct(TagModelEqualityComparer.Instance)
 				.OrderBy(t => t.Order)
-				.Select(t => new Tag { Key = t.Key, Value = t.Value })
+				.Select(t => t.Key)
 				.ToList();
 		}
 

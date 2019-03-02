@@ -1,0 +1,158 @@
+[
+  {
+    "Key": "jouyou",
+    "Value": "included in list of regular-use characters"
+  },
+  {
+    "Key": "jinmeiyou",
+    "Value": "included in list of characters for use in personal names"
+  },
+  {
+    "Key": "freq",
+    "Value": "Frequency"
+  },
+  {
+    "Key": "grade",
+    "Value": "Grade level"
+  },
+  {
+    "Key": "jlpt",
+    "Value": "JLPT level"
+  },
+  {
+    "Key": "strokes",
+    "Value": "Stroke count"
+  },
+  {
+    "Key": "jis208",
+    "Value": "JIS X 0208-1997 kuten code"
+  },
+  {
+    "Key": "jis212",
+    "Value": "JIS X 0212-1990 kuten code"
+  },
+  {
+    "Key": "jis213",
+    "Value": "JIS X 0213-2000 kuten code"
+  },
+  {
+    "Key": "ucs",
+    "Value": "Unicode hex code"
+  },
+  {
+    "Key": "deroo",
+    "Value": "2001 Kanji"
+  },
+  {
+    "Key": "four_corner",
+    "Value": "Four corner code"
+  },
+  {
+    "Key": "misclass",
+    "Value": "Misclassification"
+  },
+  {
+    "Key": "sh_desc",
+    "Value": "The Kanji Dictionary"
+  },
+  {
+    "Key": "skip",
+    "Value": "SKIP code"
+  },
+  {
+    "Key": "busy_people",
+    "Value": "Japanese For Busy People"
+  },
+  {
+    "Key": "crowley",
+    "Value": "The Kanji Way to Japanese Language Power"
+  },
+  {
+    "Key": "gakken",
+    "Value": "A  New Dictionary of Kanji Usage"
+  },
+  {
+    "Key": "halpern_kkd",
+    "Value": "Kodansha Kanji Dictionary"
+  },
+  {
+    "Key": "halpern_kkld",
+    "Value": "Kanji Learners Dictionary"
+  },
+  {
+    "Key": "halpern_kkld_2ed",
+    "Value": "Kanji Learners Dictionary"
+  },
+  {
+    "Key": "halpern_njecd",
+    "Value": "New Japanese-English Character Dictionary"
+  },
+  {
+    "Key": "heisig",
+    "Value": "Remembering The  Kanji"
+  },
+  {
+    "Key": "heisig6",
+    "Value": "Remembering The  Kanji, Sixth Ed."
+  },
+  {
+    "Key": "henshall",
+    "Value": "A Guide To Remembering Japanese Characters"
+  },
+  {
+    "Key": "henshall3",
+    "Value": "A Guide To Reading and Writing Japanese"
+  },
+  {
+    "Key": "jf_cards",
+    "Value": "Japanese Kanji Flashcards"
+  },
+  {
+    "Key": "kanji_in_context",
+    "Value": "Kanji in Context"
+  },
+  {
+    "Key": "kodansha_compact",
+    "Value": "Kodansha Compact Kanji Guide"
+  },
+  {
+    "Key": "maniette",
+    "Value": "Les Kanjis dans la tete"
+  },
+  {
+    "Key": "moro",
+    "Value": "Daikanwajiten"
+  },
+  {
+    "Key": "nelson_c",
+    "Value": "Modern Reader's Japanese-English Character Dictionary"
+  },
+  {
+    "Key": "nelson_n",
+    "Value": "The New Nelson Japanese-English Character Dictionary"
+  },
+  {
+    "Key": "oneill_kk",
+    "Value": "Essential Kanji"
+  },
+  {
+    "Key": "oneill_names",
+    "Value": "Japanese Names"
+  },
+  {
+    "Key": "sakade",
+    "Value": "A Guide To Reading and Writing Japanese"
+  },
+  {
+    "Key": "sh_kk",
+    "Value": "Kanji and Kana"
+  },
+  {
+    "Key": "sh_kk2",
+    "Value": "Kanji and Kana"
+  },
+  {
+    "Key": "tutt_cards",
+    "Value": "Tuttle Kanji Cards"
+  }
+]

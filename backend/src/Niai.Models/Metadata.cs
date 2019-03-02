@@ -9,5 +9,9 @@
 		public int HomonymCount { get; set; }
 
 		public int SynonymCount { get; set; }
+
+		public int KanjiTagCount { get; set; }
+
+		public int VocabTagCount { get; set; }
 	}
 }

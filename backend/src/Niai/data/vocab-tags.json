@@ -1,0 +1,714 @@
+[
+  {
+    "Key": "news",
+    "Value": "appears frequently in Mainichi Shimbun"
+  },
+  {
+    "Key": "ichi",
+    "Value": "listed as common in Ichimango Goi Bunruishuu"
+  },
+  {
+    "Key": "spec",
+    "Value": "common words not included in frequency lists"
+  },
+  {
+    "Key": "gai",
+    "Value": "common loanword"
+  },
+  {
+    "Key": "P",
+    "Value": "popular term"
+  },
+  {
+    "Key": "male",
+    "Value": "male term or language"
+  },
+  {
+    "Key": "adj-nari",
+    "Value": "archaic/formal form of na-adjective"
+  },
+  {
+    "Key": "v4g",
+    "Value": "Yodan verb with `gu' ending (archaic)"
+  },
+  {
+    "Key": "adj-f",
+    "Value": "noun or verb acting prenominally"
+  },
+  {
+    "Key": "aux",
+    "Value": "auxiliary"
+  },
+  {
+    "Key": "Buddh",
+    "Value": "Buddhist term"
+  },
+  {
+    "Key": "ctr",
+    "Value": "counter"
+  },
+  {
+    "Key": "geom",
+    "Value": "geometry term"
+  },
+  {
+    "Key": "v4b",
+    "Value": "Yodan verb with `bu' ending (archaic)"
+  },
+  {
+    "Key": "v2z-s",
+    "Value": "Nidan verb (lower class) with `zu' ending (archaic)"
+  },
+  {
+    "Key": "v2n-s",
+    "Value": "Nidan verb (lower class) with `nu' ending (archaic)"
+  },
+  {
+    "Key": "n-adv",
+    "Value": "adverbial noun (fukushitekimeishi)"
+  },
+  {
+    "Key": "v2g-s",
+    "Value": "Nidan verb (lower class) with `gu' ending (archaic)"
+  },
+  {
+    "Key": "sumo",
+    "Value": "sumo term"
+  },
+  {
+    "Key": "v2k-s",
+    "Value": "Nidan verb (lower class) with `ku' ending (archaic)"
+  },
+  {
+    "Key": "X",
+    "Value": "rude or X-rated term (not displayed in educational software)"
+  },
+  {
+    "Key": "ik",
+    "Value": "word containing irregular kana usage"
+  },
+  {
+    "Key": "ok",
+    "Value": "out-dated or obsolete kana usage"
+  },
+  {
+    "Key": "yoji",
+    "Value": "yojijukugo"
+  },
+  {
+    "Key": "n-pr",
+    "Value": "proper noun"
+  },
+  {
+    "Key": "ling",
+    "Value": "linguistics terminology"
+  },
+  {
+    "Key": "uk",
+    "Value": "word usually written using kana alone"
+  },
+  {
+    "Key": "v4h",
+    "Value": "Yodan verb with `hu/fu' ending (archaic)"
+  },
+  {
+    "Key": "med",
+    "Value": "medicine, etc. term"
+  },
+  {
+    "Key": "anat",
+    "Value": "anatomical term"
+  },
+  {
+    "Key": "v5n",
+    "Value": "Godan verb with `nu' ending"
+  },
+  {
+    "Key": "v-unspec",
+    "Value": "verb unspecified"
+  },
+  {
+    "Key": "v2g-k",
+    "Value": "Nidan verb (upper class) with `gu' ending (archaic)"
+  },
+  {
+    "Key": "adj-pn",
+    "Value": "pre-noun adjectival (rentaishi)"
+  },
+  {
+    "Key": "adj-t",
+    "Value": "`taru' adjective"
+  },
+  {
+    "Key": "derog",
+    "Value": "derogatory"
+  },
+  {
+    "Key": "int",
+    "Value": "interjection (kandoushi)"
+  },
+  {
+    "Key": "v4r",
+    "Value": "Yodan verb with `ru' ending (archaic)"
+  },
+  {
+    "Key": "v2t-k",
+    "Value": "Nidan verb (upper class) with `tsu' ending (archaic)"
+  },
+  {
+    "Key": "n-suf",
+    "Value": "noun, used as a suffix"
+  },
+  {
+    "Key": "uK",
+    "Value": "word usually written using kanji alone"
+  },
+  {
+    "Key": "v4n",
+    "Value": "Yodan verb with `nu' ending (archaic)"
+  },
+  {
+    "Key": "v2s-s",
+    "Value": "Nidan verb (lower class) with `su' ending (archaic)"
+  },
+  {
+    "Key": "iK",
+    "Value": "word containing irregular kanji usage"
+  },
+  {
+    "Key": "sl",
+    "Value": "slang"
+  },
+  {
+    "Key": "v5k",
+    "Value": "Godan verb with `ku' ending"
+  },
+  {
+    "Key": "v5u",
+    "Value": "Godan verb with `u' ending"
+  },
+  {
+    "Key": "proverb",
+    "Value": "proverb"
+  },
+  {
+    "Key": "prt",
+    "Value": "particle"
+  },
+  {
+    "Key": "v5uru",
+    "Value": "Godan verb - Uru old class verb (old form of Eru)"
+  },
+  {
+    "Key": "shogi",
+    "Value": "shogi term"
+  },
+  {
+    "Key": "rkb",
+    "Value": "Ryuukyuu-ben"
+  },
+  {
+    "Key": "geol",
+    "Value": "geology, etc. term"
+  },
+  {
+    "Key": "law",
+    "Value": "law, etc. term"
+  },
+  {
+    "Key": "conj",
+    "Value": "conjunction"
+  },
+  {
+    "Key": "fam",
+    "Value": "familiar language"
+  },
+  {
+    "Key": "poet",
+    "Value": "poetical term"
+  },
+  {
+    "Key": "v5aru",
+    "Value": "Godan verb - -aru special class"
+  },
+  {
+    "Key": "vs",
+    "Value": "noun or participle which takes the aux. verb suru"
+  },
+  {
+    "Key": "bus",
+    "Value": "business term"
+  },
+  {
+    "Key": "eK",
+    "Value": "exclusively kanji"
+  },
+  {
+    "Key": "num",
+    "Value": "numeric"
+  },
+  {
+    "Key": "pn",
+    "Value": "pronoun"
+  },
+  {
+    "Key": "vs-s",
+    "Value": "suru verb - special class"
+  },
+  {
+    "Key": "v2h-k",
+    "Value": "Nidan verb (upper class) with `hu/fu' ending (archaic)"
+  },
+  {
+    "Key": "oik",
+    "Value": "old or irregular kana form"
+  },
+  {
+    "Key": "v5s",
+    "Value": "Godan verb with `su' ending"
+  },
+  {
+    "Key": "vk",
+    "Value": "Kuru verb - special class"
+  },
+  {
+    "Key": "MA",
+    "Value": "martial arts term"
+  },
+  {
+    "Key": "adv",
+    "Value": "adverb (fukushi)"
+  },
+  {
+    "Key": "adv-to",
+    "Value": "adverb taking the `to' particle"
+  },
+  {
+    "Key": "comp",
+    "Value": "computer terminology"
+  },
+  {
+    "Key": "hon",
+    "Value": "honorific or respectful (sonkeigo) language"
+  },
+  {
+    "Key": "adj-kari",
+    "Value": "`kari' adjective (archaic)"
+  },
+  {
+    "Key": "v2m-k",
+    "Value": "Nidan verb (upper class) with `mu' ending (archaic)"
+  },
+  {
+    "Key": "sports",
+    "Value": "sports term"
+  },
+  {
+    "Key": "tsug",
+    "Value": "Tsugaru-ben"
+  },
+  {
+    "Key": "v4s",
+    "Value": "Yodan verb with `su' ending (archaic)"
+  },
+  {
+    "Key": "bot",
+    "Value": "botany term"
+  },
+  {
+    "Key": "arch",
+    "Value": "archaism"
+  },
+  {
+    "Key": "chem",
+    "Value": "chemistry term"
+  },
+  {
+    "Key": "gikun",
+    "Value": "gikun (meaning as reading) or jukujikun (special kanji reading)"
+  },
+  {
+    "Key": "v5r",
+    "Value": "Godan verb with `ru' ending"
+  },
+  {
+    "Key": "vr",
+    "Value": "irregular ru verb, plain form ends with -ri"
+  },
+  {
+    "Key": "pref",
+    "Value": "prefix"
+  },
+  {
+    "Key": "v5u-s",
+    "Value": "Godan verb with `u' ending (special class)"
+  },
+  {
+    "Key": "v4t",
+    "Value": "Yodan verb with `tsu' ending (archaic)"
+  },
+  {
+    "Key": "v2r-k",
+    "Value": "Nidan verb (upper class) with `ru' ending (archaic)"
+  },
+  {
+    "Key": "unc",
+    "Value": "unclassified"
+  },
+  {
+    "Key": "v2b-k",
+    "Value": "Nidan verb (upper class) with `bu' ending (archaic)"
+  },
+  {
+    "Key": "econ",
+    "Value": "economics term"
+  },
+  {
+    "Key": "adj-i",
+    "Value": "adjective (keiyoushi)"
+  },
+  {
+    "Key": "id",
+    "Value": "idiomatic expression"
+  },
+  {
+    "Key": "m-sl",
+    "Value": "manga slang"
+  },
+  {
+    "Key": "obs",
+    "Value": "obsolete term"
+  },
+  {
+    "Key": "physics",
+    "Value": "physics terminology"
+  },
+  {
+    "Key": "music",
+    "Value": "music term"
+  },
+  {
+    "Key": "astron",
+    "Value": "astronomy, etc. term"
+  },
+  {
+    "Key": "adj-na",
+    "Value": "adjectival nouns or quasi-adjectives (keiyodoshi)"
+  },
+  {
+    "Key": "hum",
+    "Value": "humble (kenjougo) language"
+  },
+  {
+    "Key": "v1-s",
+    "Value": "Ichidan verb - kureru special class"
+  },
+  {
+    "Key": "v5r-i",
+    "Value": "Godan verb with `ru' ending (irregular verb)"
+  },
+  {
+    "Key": "v5t",
+    "Value": "Godan verb with `tsu' ending"
+  },
+  {
+    "Key": "ek",
+    "Value": "exclusively kana"
+  },
+  {
+    "Key": "v5g",
+    "Value": "Godan verb with `gu' ending"
+  },
+  {
+    "Key": "vs-i",
+    "Value": "suru verb - irregular"
+  },
+  {
+    "Key": "v2y-s",
+    "Value": "Nidan verb (lower class) with `yu' ending (archaic)"
+  },
+  {
+    "Key": "v2h-s",
+    "Value": "Nidan verb (lower class) with `hu/fu' ending (archaic)"
+  },
+  {
+    "Key": "exp",
+    "Value": "expressions (phrases, clauses, etc.)"
+  },
+  {
+    "Key": "vi",
+    "Value": "intransitive verb"
+  },
+  {
+    "Key": "ktb",
+    "Value": "Kantou-ben"
+  },
+  {
+    "Key": "tsb",
+    "Value": "Tosa-ben"
+  },
+  {
+    "Key": "nab",
+    "Value": "Nagano-ben"
+  },
+  {
+    "Key": "vn",
+    "Value": "irregular nu verb"
+  },
+  {
+    "Key": "vt",
+    "Value": "transitive verb"
+  },
+  {
+    "Key": "vulg",
+    "Value": "vulgar expression or word"
+  },
+  {
+    "Key": "baseb",
+    "Value": "baseball term"
+  },
+  {
+    "Key": "zool",
+    "Value": "zoology term"
+  },
+  {
+    "Key": "mahj",
+    "Value": "mahjong term"
+  },
+  {
+    "Key": "iv",
+    "Value": "irregular verb"
+  },
+  {
+    "Key": "n",
+    "Value": "noun (common) (futsuumeishi)"
+  },
+  {
+    "Key": "vs-c",
+    "Value": "su verb - precursor to the modern suru"
+  },
+  {
+    "Key": "v2m-s",
+    "Value": "Nidan verb (lower class) with `mu' ending (archaic)"
+  },
+  {
+    "Key": "archit",
+    "Value": "architecture term"
+  },
+  {
+    "Key": "adj-ku",
+    "Value": "`ku' adjective (archaic)"
+  },
+  {
+    "Key": "aux-adj",
+    "Value": "auxiliary adjective"
+  },
+  {
+    "Key": "oK",
+    "Value": "word containing out-dated kanji"
+  },
+  {
+    "Key": "sens",
+    "Value": "sensitive"
+  },
+  {
+    "Key": "suf",
+    "Value": "suffix"
+  },
+  {
+    "Key": "v5m",
+    "Value": "Godan verb with `mu' ending"
+  },
+  {
+    "Key": "adj-no",
+    "Value": "nouns which may take the genitive case particle `no'"
+  },
+  {
+    "Key": "male-sl",
+    "Value": "male slang"
+  },
+  {
+    "Key": "v4k",
+    "Value": "Yodan verb with `ku' ending (archaic)"
+  },
+  {
+    "Key": "v2y-k",
+    "Value": "Nidan verb (upper class) with `yu' ending (archaic)"
+  },
+  {
+    "Key": "finc",
+    "Value": "finance term"
+  },
+  {
+    "Key": "engr",
+    "Value": "engineering term"
+  },
+  {
+    "Key": "hob",
+    "Value": "Hokkaido-ben"
+  },
+  {
+    "Key": "adj-shiku",
+    "Value": "`shiku' adjective (archaic)"
+  },
+  {
+    "Key": "v2k-k",
+    "Value": "Nidan verb (upper class) with `ku' ending (archaic)"
+  },
+  {
+    "Key": "v2t-s",
+    "Value": "Nidan verb (lower class) with `tsu' ending (archaic)"
+  },
+  {
+    "Key": "v2r-s",
+    "Value": "Nidan verb (lower class) with `ru' ending (archaic)"
+  },
+  {
+    "Key": "joc",
+    "Value": "jocular, humorous term"
+  },
+  {
+    "Key": "aux-v",
+    "Value": "auxiliary verb"
+  },
+  {
+    "Key": "v4m",
+    "Value": "Yodan verb with `mu' ending (archaic)"
+  },
+  {
+    "Key": "v2d-k",
+    "Value": "Nidan verb (upper class) with `dzu' ending (archaic)"
+  },
+  {
+    "Key": "v2b-s",
+    "Value": "Nidan verb (lower class) with `bu' ending (archaic)"
+  },
+  {
+    "Key": "biol",
+    "Value": "biology term"
+  },
+  {
+    "Key": "Shinto",
+    "Value": "Shinto term"
+  },
+  {
+    "Key": "adj-ix",
+    "Value": "adjective (keiyoushi) - yoi/ii class"
+  },
+  {
+    "Key": "rare",
+    "Value": "rare"
+  },
+  {
+    "Key": "v5k-s",
+    "Value": "Godan verb - Iku/Yuku special class"
+  },
+  {
+    "Key": "osb",
+    "Value": "Osaka-ben"
+  },
+  {
+    "Key": "kyu",
+    "Value": "Kyuushuu-ben"
+  },
+  {
+    "Key": "kyb",
+    "Value": "Kyoto-ben"
+  },
+  {
+    "Key": "chn",
+    "Value": "children's language"
+  },
+  {
+    "Key": "math",
+    "Value": "mathematics"
+  },
+  {
+    "Key": "n-pref",
+    "Value": "noun, used as a prefix"
+  },
+  {
+    "Key": "n-t",
+    "Value": "noun (temporal) (jisoumeishi)"
+  },
+  {
+    "Key": "pol",
+    "Value": "polite (teineigo) language"
+  },
+  {
+    "Key": "ateji",
+    "Value": "ateji (phonetic) reading"
+  },
+  {
+    "Key": "food",
+    "Value": "food term"
+  },
+  {
+    "Key": "v5b",
+    "Value": "Godan verb with `bu' ending"
+  },
+  {
+    "Key": "v2d-s",
+    "Value": "Nidan verb (lower class) with `dzu' ending (archaic)"
+  },
+  {
+    "Key": "v2w-s",
+    "Value": "Nidan verb (lower class) with `u' ending and `we' conjugation (archaic)"
+  },
+  {
+    "Key": "abbr",
+    "Value": "abbreviation"
+  },
+  {
+    "Key": "cop-da",
+    "Value": "copula"
+  },
+  {
+    "Key": "v2a-s",
+    "Value": "Nidan verb with 'u' ending (archaic)"
+  },
+  {
+    "Key": "thb",
+    "Value": "Touhoku-ben"
+  },
+  {
+    "Key": "vz",
+    "Value": "Ichidan verb - zuru verb (alternative form of -jiru verbs)"
+  },
+  {
+    "Key": "io",
+    "Value": "irregular okurigana usage"
+  },
+  {
+    "Key": "mil",
+    "Value": "military"
+  },
+  {
+    "Key": "obsc",
+    "Value": "obscure term"
+  },
+  {
+    "Key": "on-mim",
+    "Value": "onomatopoeic or mimetic word"
+  },
+  {
+    "Key": "ksb",
+    "Value": "Kansai-ben"
+  },
+  {
+    "Key": "col",
+    "Value": "colloquialism"
+  },
+  {
+    "Key": "fem",
+    "Value": "female term or language"
+  },
+  {
+    "Key": "v1",
+    "Value": "Ichidan verb"
+  },
+  {
+    "Key": "v5",
+    "Value": "Godan verb"
+  }
+]

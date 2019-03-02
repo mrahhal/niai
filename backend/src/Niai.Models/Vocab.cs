@@ -17,6 +17,6 @@ namespace Niai.Models
 
 		public List<string> Meanings { get; set; }
 
-		public List<Tag> Tags { get; set; }
+		public List<string> Tags { get; set; }
 	}
 }

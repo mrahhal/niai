@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Niai;
 
 namespace Aggregator.Services
 {
@@ -42,5 +43,7 @@ namespace Aggregator.Services
 	{
 		public List<AggregateKanjiModel> Kanjis { get; set; }
 		public List<AggregateVocabModel> Vocabs { get; set; }
+		public SafeMap<TagModel> KanjiTags { get; internal set; }
+		public SafeMap<TagModel> VocabTags { get; internal set; }
 	}
 }

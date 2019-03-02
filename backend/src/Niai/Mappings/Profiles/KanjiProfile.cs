@@ -9,7 +9,8 @@ namespace Niai.Mappings.Profiles
 		public KanjiProfile()
 		{
 			CreateMap<Kanji, KanjiDto>()
-				.ForMember(x => x.Similar, c => c.Ignore());
+				.ForMember(x => x.Similar, c => c.Ignore())
+				.ForMember(x => x.Tags, c => c.Ignore());
 		}
 	}
 }

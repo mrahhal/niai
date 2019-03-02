@@ -11,13 +11,16 @@ namespace Niai.Controllers
 	{
 		private readonly IMapper _mapper;
 		private readonly IDataProvider _dataProvider;
+		private readonly IModelMapper _modelMapper;
 
 		public SearchController(
 			IMapper mapper,
-			IDataProvider dataProvider)
+			IDataProvider dataProvider,
+			IModelMapper modelMapper)
 		{
 			_mapper = mapper;
 			_dataProvider = dataProvider;
+			_modelMapper = modelMapper;
 		}
 
 		[HttpGet]
@@ -40,31 +43,28 @@ namespace Niai.Controllers
 		private List<KanjiDto> FindSimilarKanjis(string q)
 		{
 			var kanjis = _dataProvider.Kanjis;
-			var list = new List<KanjiDto>();
+			var processedCharacters = new List<string>();
 
-			foreach (var character in q)
+			var dtos = _modelMapper.Map(q.Select(character =>
 			{
 				var c = character.ToString();
 
 				if (!kanjis.TryGetValue(c, out var kanji))
 				{
-					continue;
+					return null;
 				}
 
 				// Ignore if we already saw the character.
-				if (list.Any(x => x.Character == c))
+				if (processedCharacters.Any(x => x == c))
 				{
-					continue;
+					return null;
 				}
 
-				var similar = kanji.Similar.Select(x => kanjis[x]).Where(x => x != null);
-				var dto = _mapper.Map<KanjiDto>(kanji);
-				dto.Similar = similar.Select(x => _mapper.Map<KanjiSummaryDto>(x)).OrderByDescending(x => x.Frequency).ToList();
+				return kanji;
+			}).Where(x => x != null))
+			.ToList();
 
-				list.Add(dto);
-			}
-
-			return list;
+			return dtos;
 		}
 
 		private List<VocabDto> FindHomonyms(string q)
@@ -79,11 +79,11 @@ namespace Niai.Controllers
 				return new List<VocabDto>();
 			}
 
-			return homonym.Select(x =>
+			return _modelMapper.Map(homonym.Select(x =>
 			{
 				var vocab = vocabs[x];
-				return _mapper.Map<VocabDto>(vocab);
-			}).OrderByDescending(x => x.Frequency).ToList();
+				return vocab;
+			}).OrderByDescending(x => x.Frequency));
 		}
 
 		private List<VocabDto> FindSynonyms(string q)
@@ -100,11 +100,11 @@ namespace Niai.Controllers
 				return new List<VocabDto>();
 			}
 
-			return synonym.Select(x =>
+			return _modelMapper.Map(synonym.Select(x =>
 			{
 				var vocab = vocabs[x];
-				return _mapper.Map<VocabDto>(vocab);
-			}).OrderByDescending(x => x.Frequency).ToList();
+				return vocab;
+			}).OrderByDescending(x => x.Frequency));
 		}
 	}
 }

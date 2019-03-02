@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -58,12 +57,15 @@ namespace Aggregator.Services
 		{
 			return result.Vocabs.Select(x => new Vocab
 			{
+				Kanji = x.Kanji,
 				Frequency = x.Frequency,
-				Kana = x.Kana == "" ? x.Vocab : x.Kana,
-				Kanji = x.Vocab == "〃" ? x.Kana : x.Vocab,
-				Meanings = x.Meanings,
-				Tags = CreateTags(x.Tags),
-			}).OrderBy(x => x.Kana).ThenBy(x => x.Frequency).ToList();
+				Meanings = x.VocabModel.Meanings.Select(cm => new VocabContextualMeaning
+				{
+					Kana = cm.Kana,
+					Meanings = cm.Meanings,
+					Tags = CreateTags(cm.Tags),
+				}).ToList(),
+			}).OrderBy(x => x.Frequency).ToList();
 		}
 
 		private List<Tag> CreateTags(List<TagModel> tagModels)
@@ -77,8 +79,9 @@ namespace Aggregator.Services
 
 		private Dictionary<string, List<string>> ComputeHomonyms(List<Vocab> vocabs)
 		{
-			var homonyms = vocabs.GroupBy(v => v.Kana)
-				.Select(g => new { Reading = g.Key, Items = g.Select(x => x.Kanji).OrderBy(x => x).ToList() })
+			var homonyms = vocabs.SelectMany(v => v.Meanings, (v, c) => new { v.Kanji, ContextualMeaning = c })
+				.GroupBy(v => v.ContextualMeaning.Kana)
+				.Select(g => new { Reading = g.Key, Items = g.Select(x => x.Kanji).Distinct().OrderBy(x => x).ToList() })
 				.ToDictionary(x => x.Reading, x => x.Items);
 
 			return homonyms;
@@ -90,7 +93,7 @@ namespace Aggregator.Services
 
 			foreach (var vocab in vocabs)
 			{
-				foreach (var meaning in vocab.Meanings)
+				foreach (var meaning in vocab.Meanings.SelectMany(x => x.Meanings).Distinct())
 				{
 					var list = default(List<string>);
 
@@ -104,7 +107,10 @@ namespace Aggregator.Services
 						map[meaning] = list;
 					}
 
-					list.Add(vocab.Kanji);
+					if (!list.Contains(vocab.Kanji))
+					{
+						list.Add(vocab.Kanji);
+					}
 				}
 			}
 

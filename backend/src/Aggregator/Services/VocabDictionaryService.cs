@@ -79,7 +79,7 @@ namespace Aggregator.Services
 				using (var jtr = new JsonTextReader(sr))
 				{
 					var raw = serialzer.Deserialize<VocabModelRaw>(jtr);
-					var models = raw.Select(l =>
+					foreach (var l in raw)
 					{
 						var tags = (string)l[2];
 						var tags2 = (string)l[3];
@@ -94,18 +94,33 @@ namespace Aggregator.Services
 
 						var meanings = ((JArray)l[5]).ToObject<List<string>>();
 
-						return new VocabModel
+						var kanji = (string)l[0];
+						var kana = (string)l[1];
+
+						if (kanji == "〃")
 						{
-							Vocab = (string)l[0],
-							Kana = (string)l[1],
+							kanji = kana;
+						}
+						if (kana == "")
+						{
+							kana = kanji;
+						}
+
+						var vocabModel = map[kanji];
+						if (vocabModel == null)
+						{
+							vocabModel = map[kanji] = new VocabModel
+							{
+								Kanji = kanji,
+							};
+						}
+
+						vocabModel.Meanings.Add(new VocabContextualMeaningModel
+						{
+							Kana = kana,
 							Tags = tagModels,
 							Meanings = meanings,
-						};
-					});
-
-					foreach (var model in models)
-					{
-						map[model.Vocab] = model;
+						});
 					}
 				}
 			}

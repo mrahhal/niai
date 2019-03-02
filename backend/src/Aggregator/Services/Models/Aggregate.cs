@@ -29,11 +29,11 @@ namespace Aggregator.Services
 		public FrequencyModel FrequencyModel { get; set; }
 
 		public int? WaniKaniLevel => WaniKaniVocab?.Level;
-		public string Kana => VocabModel.Kana;
+		//public string Kana => VocabModel.Kana;
 
-		public string Vocab => VocabModel.Vocab;
-		public List<string> Meanings => VocabModel.Meanings;
-		public List<TagModel> Tags => VocabModel.Tags;
+		public string Kanji => VocabModel.Kanji;
+		//public List<string> Meanings => VocabModel.Meanings;
+		//public List<TagModel> Tags => VocabModel.Tags;
 
 		public int? Frequency => FrequencyModel?.Frequency;
 	}

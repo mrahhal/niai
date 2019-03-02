@@ -6,3 +6,11 @@
 .vocab-card-kanji {
   font-size: var(--font-size-lg);
 }
+
+.show-more-cont {
+  @include flex-center();
+
+  a {
+    font-size: var(--font-size-sm);
+  }
+}

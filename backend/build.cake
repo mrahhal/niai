@@ -90,6 +90,19 @@ Task("Default")
 	util.PrintInfo();
 });
 
+Task("Publish")
+	.IsDependentOn("Default")
+	.Does(() =>
+{
+	var settings = new DotNetCorePublishSettings
+	{
+		Configuration = "Release",
+		OutputDirectory = "./artifacts/publish/Niai",
+	};
+
+	DotNetCorePublish("./src/Niai", settings);
+});
+
 Task("Version")
 	.Does(() =>
 {

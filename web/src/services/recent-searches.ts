@@ -11,7 +11,7 @@ export function getRecentSearches(): string[] {
 }
 
 export function updateRecentSearches(search: string): string[] {
-  const searches = getRecentSearches();
+  const searches = getRecentSearches().reverse();
   const index = searches.indexOf(search);
 
   if (index >= 0) {
@@ -24,6 +24,6 @@ export function updateRecentSearches(search: string): string[] {
     searches.push(search);
   }
 
-  localStorage.setItem(KEY, JSON.stringify(searches));
+  localStorage.setItem(KEY, JSON.stringify(searches.reverse()));
   return searches;
 }

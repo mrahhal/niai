@@ -11,7 +11,7 @@ import { getRecentSearches, updateRecentSearches } from '../services/recent-sear
 export default class Home extends Vue {
   private subject = new BehaviorSubject<string>('');
   private result: SearchResult | null = null;
-  private recentSearches: string[] = getRecentSearches().reverse();
+  private recentSearches: string[] = getRecentSearches();
   private loading = false;
 
   private get qParam() { return this.$route.query.q as string; }
@@ -32,7 +32,7 @@ export default class Home extends Vue {
         this.$router.push({ query: {} });
       } else if (data && (data.kanjis.length || data.homonyms.length || data.synonyms.length)) {
         this.$router.push({ query: { q: value } });
-        this.recentSearches = updateRecentSearches(value).reverse();
+        this.recentSearches = updateRecentSearches(value);
       }
 
       this.loading = false;

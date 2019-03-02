@@ -11,19 +11,19 @@ export function getRecentSearches(): string[] {
 }
 
 export function updateRecentSearches(search: string): string[] {
-  const searches = getRecentSearches().reverse();
+  const searches = getRecentSearches();
   const index = searches.indexOf(search);
 
   if (index >= 0) {
     searches.splice(index, 1);
-    searches.push(search);
+    searches.unshift(search);
   } else if (searches.length < MAX_SEARCHES) {
-    searches.push(search);
+    searches.unshift(search);
   } else {
     searches.shift();
-    searches.push(search);
+    searches.unshift(search);
   }
 
-  localStorage.setItem(KEY, JSON.stringify(searches.reverse()));
+  localStorage.setItem(KEY, JSON.stringify(searches));
   return searches;
 }

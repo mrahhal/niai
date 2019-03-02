@@ -5,7 +5,7 @@ build_script:
 - ps: ./build.ps1
 - ps: Pop-Location
 - ps: Push-Location ./web
-- ps: npm i
-- ps: npm run build
+- cmd: npm i
+- cmd: npm run build
 - ps: Pop-Location
 test: off

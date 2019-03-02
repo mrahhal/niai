@@ -3,4 +3,8 @@ os: Visual Studio 2017
 build_script:
 - ps: Push-Location ./backend
 - ps: ./build.ps1
+- ps: Pop-Location
+- ps: Push-Location ./web
+- ps: npm run build
+- ps: Pop-Location
 test: off

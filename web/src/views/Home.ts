@@ -5,10 +5,13 @@ import { BehaviorSubject } from 'rxjs';
 import { debounceTime, switchMap, tap } from 'rxjs/operators';
 import { Component, Vue, Watch } from 'vue-property-decorator';
 
+import { getRecentSearches, updateRecentSearches } from '../services/recent-searches';
+
 @Component
 export default class Home extends Vue {
   private subject = new BehaviorSubject<string>('');
   private result: SearchResult | null = null;
+  private recentSearches: string[] = getRecentSearches().reverse();
   private loading = false;
 
   private get qParam() { return this.$route.query.q as string; }
@@ -29,6 +32,7 @@ export default class Home extends Vue {
         this.$router.push({ query: {} });
       } else if (data && (data.kanjis.length || data.homonyms.length || data.synonyms.length)) {
         this.$router.push({ query: { q: value } });
+        this.recentSearches = updateRecentSearches(value).reverse();
       }
 
       this.loading = false;

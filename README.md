@@ -1,3 +1,5 @@
+<p align="center"><img src="/logo/logotype-vertical.png"></p>
+
 # niai
 
 [![Build status](https://ci.appveyor.com/api/projects/status/8pcyjuyijui8o6ox?svg=true)](https://ci.appveyor.com/project/mrahhal/niai)
@@ -43,3 +45,4 @@ If you're trying to run the aggregator app, you should add your WK api key to an
 - KANJIDIC: http://nihongo.monash.edu/kanjidic2/index.html
 - Innocent Corpus: https://forum.koohii.com/post-168613.html#pid168613
 - @mwil's WK scripts: https://github.com/mwil/wanikani-userscripts
+- Logo by [@Tobaloidee](https://github.com/Tobaloidee)

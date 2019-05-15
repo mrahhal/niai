@@ -27,6 +27,15 @@
           <div>Homonyms: {{metadata.homonymCount}}</div>
           <div>Synonyms: {{metadata.synonymCount}}</div>
         </div>
+        <hr>
+
+        <div>
+          <h4>Contact</h4>
+
+          <div>
+            <a href="mailto://m.r992@hotmail.com">m.r992@hotmail.com</a>
+          </div>
+        </div>
       </div>
     </template>
   </div>

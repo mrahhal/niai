@@ -31,6 +31,17 @@ namespace Niai
 			_inner = dictionary;
 		}
 
+		public static SafeMap<T> Create<TOriginal>(Dictionary<string, TOriginal> dictionary, Func<TOriginal, T> resultSelector)
+		{
+			var newDictionary = new Dictionary<string, T>(capacity: dictionary.Count);
+			foreach (var pair in dictionary)
+			{
+				newDictionary[pair.Key] = resultSelector(pair.Value);
+			}
+
+			return new SafeMap<T>(newDictionary);
+		}
+
 		public T this[string key]
 		{
 			get

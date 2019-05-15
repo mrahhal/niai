@@ -57,8 +57,7 @@ namespace Niai.Controllers
 				}
 
 				return kanji;
-			}).Where(x => x != null))
-			.ToList();
+			}).Where(x => x != null)).ToList();
 
 			return dtos;
 		}

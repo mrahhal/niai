@@ -3,3 +3,4 @@ node_modules/
 *.nupkg
 *.user
 web/deploy.ps1
+web/.env.production

@@ -1,3 +1,5 @@
+<p align="center"><img src="/logo/logotype-vertical.png"></p>
+
 # niai
 
 [![Build status](https://ci.appveyor.com/api/projects/status/8pcyjuyijui8o6ox?svg=true)](https://ci.appveyor.com/project/mrahhal/niai)
@@ -37,9 +39,14 @@ If you're trying to run the aggregator app, you should add your WK api key to an
 
 - `WK_INFO_API_KEY`: Your WK api key. Make sure to set this to your own api key, you can find it at https://www.wanikani.com/settings/account.
 
+## News
+
+- We were featured in a Tofugu article! https://www.tofugu.com/japanese/japanese-learning-resources-march-2019/
+
 ## Credit
 
 - JMdict: http://www.edrdg.org/enamdict/enamdict_doc.html
 - KANJIDIC: http://nihongo.monash.edu/kanjidic2/index.html
 - Innocent Corpus: https://forum.koohii.com/post-168613.html#pid168613
 - @mwil's WK scripts: https://github.com/mwil/wanikani-userscripts
+- Logo by [@Tobaloidee](https://github.com/Tobaloidee)

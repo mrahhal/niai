@@ -33,7 +33,10 @@ namespace Aggregator.Services
 			dictionaryProvider.CollectFilesAsync(DictionaryConstants.Names.Vocab, "tag_bank_");
 
 		public static Task<FileInfo> GetSimilarKeiseiFileAsync(this IDictionaryProvider dictionaryProvider) =>
-			dictionaryProvider.GetFileAsync("from_keisei.json");
+			dictionaryProvider.GetFileAsync("keisei.json");
+
+		public static Task<FileInfo> GetSimilarNotoFileAsync(this IDictionaryProvider dictionaryProvider) =>
+			dictionaryProvider.GetFileAsync("noto.json");
 	}
 
 	public class DictionaryProvider : IDictionaryProvider

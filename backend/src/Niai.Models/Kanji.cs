@@ -24,6 +24,16 @@ namespace Niai.Models
 
 		public int? Grade { get; set; }
 
-		public List<string> Similar { get; set; }
+		public List<SimilarKanji> Similar { get; set; }
+	}
+
+	public class SimilarKanji
+	{
+		public string Value { get; set; }
+
+		/// <summary>
+		/// Represents the score of matching. Higher score means more similarity.
+		/// </summary>
+		public double Score { get; set; }
 	}
 }

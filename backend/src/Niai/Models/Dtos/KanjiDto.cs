@@ -25,8 +25,13 @@ namespace Niai.Models.Dtos
 		public int? Grade { get; set; }
 	}
 
+	public class KanjiSimilarDto : KanjiSummaryDto
+	{
+		public double Score { get; set; }
+	}
+
 	public class KanjiDto : KanjiSummaryDto
 	{
-		public List<KanjiSummaryDto> Similar { get; set; }
+		public List<KanjiSimilarDto> Similar { get; set; }
 	}
 }

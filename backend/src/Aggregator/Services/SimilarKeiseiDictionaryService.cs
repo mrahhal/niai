@@ -1,17 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Niai;
+using Niai.Models;
 
 namespace Aggregator.Services
 {
-	public interface ISimilarKeiseiDictionaryService : ISetupService
-	{
-		SafeMap<List<string>> Model { get; }
-	}
-
-	public class SimilarKeiseiDictionaryService : ISimilarKeiseiDictionaryService
+	public class SimilarKeiseiDictionaryService : ISimilarDictionaryService, ISetupService
 	{
 		private readonly IDictionaryProvider _dictionaryProvider;
 
@@ -21,7 +18,7 @@ namespace Aggregator.Services
 			_dictionaryProvider = dictionaryProvider;
 		}
 
-		public SafeMap<List<string>> Model { get; private set; }
+		public SafeMap<List<SimilarKanji>> Model { get; private set; }
 
 		public async Task SetupAsync()
 		{
@@ -33,7 +30,12 @@ namespace Aggregator.Services
 			using (var jtr = new JsonTextReader(sr))
 			{
 				var raw = serialzer.Deserialize<SimilarModelRaw>(jtr);
-				Model = raw.ToSafeMap();
+
+				Model = SafeMap<List<SimilarKanji>>.Create(raw, list => list.Select(x => new SimilarKanji
+				{
+					Value = x,
+					Score = 0.65, // Default score for Keisei dictionary.
+				}).ToList());
 			}
 		}
 	}

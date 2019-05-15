@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Niai.Models;
 
 namespace Aggregator.Services
 {
@@ -11,24 +13,26 @@ namespace Aggregator.Services
 
 	public class AggregatorService : IAggregatorService
 	{
+		private const double MinimumScore = 0.5;
+
 		private readonly IWaniKaniDictionaryService _waniKaniDictionaryService;
 		private readonly IFrequencyDictionaryService _frequencyDictionaryService;
 		private readonly IKanjiDictionaryService _kanjiDictionaryService;
 		private readonly IVocabDictionaryService _vocabDictionaryService;
-		private readonly ISimilarKeiseiDictionaryService _similarKeiseiDictionaryService;
+		private readonly List<ISimilarDictionaryService> _similarDictionaryServices;
 
 		public AggregatorService(
 			IWaniKaniDictionaryService waniKaniDictionaryService,
 			IFrequencyDictionaryService frequencyDictionaryService,
 			IKanjiDictionaryService kanjiDictionaryService,
 			IVocabDictionaryService vocabDictionaryService,
-			ISimilarKeiseiDictionaryService similarKeiseiDictionaryService)
+			IEnumerable<ISimilarDictionaryService> similarDictionaryServices)
 		{
 			_waniKaniDictionaryService = waniKaniDictionaryService;
 			_frequencyDictionaryService = frequencyDictionaryService;
 			_kanjiDictionaryService = kanjiDictionaryService;
 			_vocabDictionaryService = vocabDictionaryService;
-			_similarKeiseiDictionaryService = similarKeiseiDictionaryService;
+			_similarDictionaryServices = similarDictionaryServices.ToList();
 		}
 
 		public async Task<AggregationResult> AggregateDataAsync()
@@ -57,17 +61,38 @@ namespace Aggregator.Services
 					var character = kanji.Key;
 					var waniKaniKanji = _waniKaniDictionaryService.Kanjis[character];
 					var frequencyModel = _frequencyDictionaryService.Kanjis[character];
-					var similar = _similarKeiseiDictionaryService.Model[character];
+
+					var allSimilarKanjiModels = _similarDictionaryServices
+						.Where(x => x.Model.ContainsKey(character))
+						.SelectMany(x => x.Model[character])
+						.ToList();
+					var allSimilarValues = allSimilarKanjiModels
+						.Select(x => x.Value)
+						.Distinct()
+						.ToList();
+					var similarValues = allSimilarValues
+						.Select(value => ElectBestCandidate(value, allSimilarKanjiModels))
+						.Where(x => x.Score > MinimumScore)
+						.OrderByDescending(x => x.Score)
+						.ToList();
 
 					return new AggregateKanjiModel
 					{
 						WaniKaniKanji = waniKaniKanji,
 						FrequencyModel = frequencyModel,
 						KanjiModel = kanji.Value,
-						Similar = similar ?? new List<string>(),
+						Similar = similarValues,
 					};
 				})
 				.ToList());
+		}
+
+		private SimilarKanji ElectBestCandidate(string value, List<SimilarKanji> similarKanjis)
+		{
+			return similarKanjis
+				.Where(x => x.Value == value)
+				.OrderByDescending(x => x.Score)
+				.First();
 		}
 
 		private Task<List<AggregateVocabModel>> AggregateVocabAsync()

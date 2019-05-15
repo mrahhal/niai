@@ -40,7 +40,7 @@ namespace Niai.Services
 					similarDto.Score = x.Score;
 					similarDto.Tags = x.Kanji.Tags.Select(tag => dbKanjiTags[tag]).ToList();
 					return similarDto;
-				}).OrderByDescending(x => x.Frequency).ToList();
+				}).OrderByDescending(x => x.Score).ToList();
 
 				dto.Tags = kanji.Tags.Select(tag => dbKanjiTags[tag]).ToList();
 

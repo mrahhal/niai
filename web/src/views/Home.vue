@@ -74,6 +74,10 @@
       <a @click="setSearchValue('かえる')">かえる</a>
       <br>Lookup synonyms (similar meaning) -
       <a @click="setSearchValue('love')">love</a>
+
+      <hr>
+
+      <recent-changes></recent-changes>
     </div>
   </div>
 </template>

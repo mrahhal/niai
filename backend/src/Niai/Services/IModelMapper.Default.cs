@@ -28,14 +28,17 @@ namespace Niai.Services
 
 			return kanjis.Select(kanji =>
 			{
-				var similar = kanji.Similar.Select(x => dbKanjis[x]).Where(x => x != null);
+				var similar = kanji.Similar
+					.Select(x => (Kanji: dbKanjis[x.Value], x.Score))
+					.Where(x => x.Kanji != null);
 
 				var dto = _mapper.Map<KanjiDto>(kanji);
 
 				dto.Similar = similar.Select(x =>
 				{
-					var similarDto = _mapper.Map<KanjiSummaryDto>(x);
-					similarDto.Tags = x.Tags.Select(tag => dbKanjiTags[tag]).ToList();
+					var similarDto = _mapper.Map<KanjiSimilarDto>(x.Kanji);
+					similarDto.Score = x.Score;
+					similarDto.Tags = x.Kanji.Tags.Select(tag => dbKanjiTags[tag]).ToList();
 					return similarDto;
 				}).OrderByDescending(x => x.Frequency).ToList();
 

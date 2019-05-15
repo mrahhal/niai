@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Niai;
+using Niai.Models;
 
 namespace Aggregator.Services
 {
@@ -20,7 +21,7 @@ namespace Aggregator.Services
 
 		public int? Frequency => FrequencyModel?.Frequency;
 
-		public List<string> Similar { get; set; }
+		public List<SimilarKanji> Similar { get; set; }
 	}
 
 	public class AggregateVocabModel

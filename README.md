@@ -39,6 +39,10 @@ If you're trying to run the aggregator app, you should add your WK api key to an
 
 - `WK_INFO_API_KEY`: Your WK api key. Make sure to set this to your own api key, you can find it at https://www.wanikani.com/settings/account.
 
+## News
+
+- We were featured in a Tofugu article! https://www.tofugu.com/japanese/japanese-learning-resources-march-2019/
+
 ## Credit
 
 - JMdict: http://www.edrdg.org/enamdict/enamdict_doc.html

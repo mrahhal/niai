@@ -13,6 +13,8 @@ namespace Aggregator.Services
 
 	public class AggregatorService : IAggregatorService
 	{
+		private const double MinimumScore = 0.5;
+
 		private readonly IWaniKaniDictionaryService _waniKaniDictionaryService;
 		private readonly IFrequencyDictionaryService _frequencyDictionaryService;
 		private readonly IKanjiDictionaryService _kanjiDictionaryService;
@@ -70,6 +72,7 @@ namespace Aggregator.Services
 						.ToList();
 					var similarValues = allSimilarValues
 						.Select(value => ElectBestCandidate(value, allSimilarKanjiModels))
+						.Where(x => x.Score > MinimumScore)
 						.OrderByDescending(x => x.Score)
 						.ToList();
 

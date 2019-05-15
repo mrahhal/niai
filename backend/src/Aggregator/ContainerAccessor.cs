@@ -27,6 +27,7 @@ namespace Aggregator
 			builder.RegisterType<VocabDictionaryService>().AsImplementedInterfaces().SingleInstance();
 			builder.RegisterType<WaniKaniDictionaryService>().AsImplementedInterfaces().SingleInstance();
 			builder.RegisterType<SimilarKeiseiDictionaryService>().AsImplementedInterfaces().SingleInstance();
+			builder.RegisterType<SimilarNotoDictionaryService>().AsImplementedInterfaces().SingleInstance();
 			builder.RegisterType<AggregatorService>().AsImplementedInterfaces().SingleInstance();
 			builder.RegisterType<ExportService>().AsImplementedInterfaces().SingleInstance();
 

@@ -34,6 +34,9 @@ namespace Aggregator.Services
 
 		public static Task<FileInfo> GetSimilarKeiseiFileAsync(this IDictionaryProvider dictionaryProvider) =>
 			dictionaryProvider.GetFileAsync("keisei.json");
+
+		public static Task<FileInfo> GetSimilarNotoFileAsync(this IDictionaryProvider dictionaryProvider) =>
+			dictionaryProvider.GetFileAsync("noto.json");
 	}
 
 	public class DictionaryProvider : IDictionaryProvider

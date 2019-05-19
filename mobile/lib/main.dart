@@ -64,21 +64,25 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Niai'),
+        leading: DecoratedBox(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/logo.png'),
+            ),
+          ),
+        ),
+        title: TextField(
+          autofocus: true,
+          onChanged: _onTextChange,
+          style: new TextStyle(color: Colors.white),
+          decoration: InputDecoration(
+              hintText: 'Search',
+              prefixIcon: Icon(Icons.search, color: Colors.white),
+              hintStyle: new TextStyle(color: Colors.white)),
+        ),
       ),
       body: Column(
         children: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(0),
-            child: TextField(
-              autofocus: true,
-              onChanged: _onTextChange,
-              decoration: InputDecoration(
-                hintText: 'Search',
-                prefixIcon: Icon(Icons.search),
-              ),
-            ),
-          ),
           Container(
             child: SizedBox(
               child: _loading ? LinearProgressIndicator() : null,

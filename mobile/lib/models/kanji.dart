@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import 'tag.dart';
+
 part 'kanji.g.dart';
 
 @JsonSerializable()
@@ -8,6 +10,14 @@ class KanjiSummary {
 
   String character;
   List<String> meanings;
+  String onyomi;
+  String kunyomi;
+  int waniKaniLevel;
+  List<Tag> tags;
+  int frequency;
+  int strokes;
+  int jlpt;
+  int grade;
 
   factory KanjiSummary.fromJson(Map<String, dynamic> json) =>
       _$KanjiSummaryFromJson(json);

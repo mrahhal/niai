@@ -13,6 +13,7 @@ dependencies:
   json_annotation: ^2.0.0
   http: ^0.12.0+2
   rxdart: ^0.22.0
+  sticky_headers: ^0.1.7
 
 dev_dependencies:
   flutter_test:

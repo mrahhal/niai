@@ -3,6 +3,9 @@ import 'package:niai/models/search_result.dart';
 import 'package:niai/services/api.dart';
 import 'package:rxdart/rxdart.dart';
 
+import 'widgets/kanji_list_view.dart';
+import 'widgets/vocab_view.dart';
+
 void main() => runApp(MyApp());
 
 var api = Api();
@@ -55,20 +58,24 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.all(8),
+            padding: EdgeInsets.all(0),
             child: TextField(
               autofocus: true,
               onChanged: _onTextChange,
+              decoration: InputDecoration(
+                hintText: 'Search',
+                prefixIcon: Icon(Icons.search),
+              ),
             ),
           ),
           Expanded(
             child: ListView(
               children: <Widget>[
-                if (_result != null)
-                  for (var item in _result.synonyms)
-                    ListTile(
-                      title: Text(item.kanji),
-                    ),
+                if (_result != null) ...<Widget>[
+                  for (var item in _result.synonyms) VocabView(item),
+                  for (var item in _result.homonyms) VocabView(item),
+                  for (var item in _result.kanjis) KanjiListView(item),
+                ],
               ],
             ),
           ),

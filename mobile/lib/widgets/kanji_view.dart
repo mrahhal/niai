@@ -14,10 +14,34 @@ class KanjiView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(
-        kanji.character,
-        style: TextStyle(fontSize: 18),
+      padding: EdgeInsets.all(8),
+      alignment: Alignment.centerLeft,
+      child: Row(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+            margin: EdgeInsets.only(right: 8),
+            decoration: BoxDecoration(
+                border: Border.all(width: 2),
+                borderRadius: BorderRadius.all(Radius.circular(2))),
+            child: Text(
+              kanji.character,
+              style: TextStyle(fontSize: 30),
+            ),
+          ),
+          Flexible(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(kanji.meanings.join(',')),
+                Text(kanji.onyomi ?? ''),
+                Text(kanji.kunyomi ?? ''),
+              ],
+            ),
+          )
+        ],
       ),
+      color: Theme.of(context).cardColor,
     );
   }
 }

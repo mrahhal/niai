@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:niai/models/models.dart';
-
+import 'package:sticky_headers/sticky_headers.dart';
 import 'kanji_view.dart';
 
 class KanjiListView extends StatelessWidget {
@@ -13,16 +13,22 @@ class KanjiListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
-        Container(
-          padding: EdgeInsets.all(8),
-          child: Text(kanji.character),
+    return StickyHeader(
+      header: Container(
+        color: Theme.of(context).backgroundColor,
+        padding: EdgeInsets.all(8),
+        alignment: Alignment.centerLeft,
+        child: Text(
+          kanji.character,
+          style: TextStyle(color: Colors.white),
         ),
-        KanjiView(kanji, original: true),
-        for (var item in kanji.similar) KanjiView(item),
-      ],
+      ),
+      content: Column(
+        children: <Widget>[
+          KanjiView(kanji, original: true),
+          for (var item in kanji.similar) KanjiView(item),
+        ],
+      ),
     );
   }
 }

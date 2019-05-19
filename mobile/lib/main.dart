@@ -33,12 +33,23 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Subject<String> _searchResultSubject = PublishSubject<String>();
   SearchResult _result;
+  bool _loading = false;
 
   _HomePageState() {
     _searchResultSubject.switchMap((value) {
       if (value == '') return Observable.just(null);
-      return Observable.fromFuture(api.search(value));
+
+      setState(() {
+        _loading = true;
+      });
+
+      return Observable.fromFuture(
+          api.search(value).catchError((o) => _result));
     }).listen((result) {
+      setState(() {
+        _loading = false;
+      });
+
       setState(() {
         _result = result;
       });
@@ -66,6 +77,12 @@ class _HomePageState extends State<HomePage> {
                 hintText: 'Search',
                 prefixIcon: Icon(Icons.search),
               ),
+            ),
+          ),
+          Container(
+            child: SizedBox(
+              child: _loading ? LinearProgressIndicator() : null,
+              height: 1,
             ),
           ),
           Expanded(

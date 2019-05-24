@@ -15,10 +15,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Niai',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-      ),
+      theme: _buildTheme(),
       home: HomePage(),
+    );
+  }
+
+  _buildTheme() {
+    return ThemeData(
+      brightness: Brightness.dark,
     );
   }
 }
@@ -74,19 +78,18 @@ class _HomePageState extends State<HomePage> {
         title: TextField(
           autofocus: true,
           onChanged: _onTextChange,
-          style: new TextStyle(color: Colors.white),
           decoration: InputDecoration(
-              hintText: 'Search',
-              prefixIcon: Icon(Icons.search, color: Colors.white),
-              hintStyle: new TextStyle(color: Colors.white)),
+            hintText: 'Search',
+            prefixIcon: Icon(Icons.search),
+          ),
         ),
       ),
       body: Column(
         children: <Widget>[
           Container(
             child: SizedBox(
-              child: _loading ? LinearProgressIndicator() : null,
-              height: 1,
+              child: LinearProgressIndicator(value: _loading ? null : 0),
+              height: 2,
             ),
           ),
           Expanded(

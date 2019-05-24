@@ -21,9 +21,8 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.121",
-    "@vue/cli-plugin-typescript": "^3.4.0",
-    "@vue/cli-service": "^3.4.0",
-    "fibers": "^3.1.1",
+    "@vue/cli-plugin-typescript": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
     "sass": "^1.16.0",
     "sass-loader": "^7.1.0",
     "typescript": "^3.0.0",

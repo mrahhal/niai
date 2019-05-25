@@ -8,22 +8,14 @@ class Api {
   Future<Metadata> getMetadata() async {
     final response = await http.get(_buildUrl(path: '/meta'));
 
-    if (response.statusCode == 200) {
-      return Metadata.fromJson(json.decode(response.body));
-    } else {
-      throw Exception('Failed to load metadata.');
-    }
+    return Metadata.fromJson(json.decode(response.body));
   }
 
   Future<SearchResult> search(String q) async {
     final response =
         await http.get(_buildUrl(path: '/search', params: {'q': q}));
 
-    if (response.statusCode == 200) {
-      return SearchResult.fromJson(json.decode(response.body));
-    } else {
-      throw Exception('Failed to load search result.');
-    }
+    return SearchResult.fromJson(json.decode(response.body));
   }
 
   _buildUrl({String path, dynamic params}) {

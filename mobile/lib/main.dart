@@ -75,14 +75,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        title: TextField(
-          autofocus: true,
-          onChanged: _onTextChange,
-          decoration: InputDecoration(
-            hintText: 'Search',
-            prefixIcon: Icon(Icons.search),
-          ),
-        ),
+        title: Text('Niai'),
       ),
       body: Column(
         children: <Widget>[
@@ -90,6 +83,14 @@ class _HomePageState extends State<HomePage> {
             child: SizedBox(
               child: LinearProgressIndicator(value: _loading ? null : 0),
               height: 2,
+            ),
+          ),
+          TextField(
+            autofocus: true,
+            onChanged: _onTextChange,
+            decoration: InputDecoration(
+              hintText: 'Search',
+              prefixIcon: Icon(Icons.search),
             ),
           ),
           Expanded(

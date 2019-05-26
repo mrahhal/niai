@@ -12,6 +12,12 @@ class VocabView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Theme.of(context).cardColor,
+        border: Border.all(width: 1),
+        borderRadius: BorderRadius.all(Radius.circular(2)),
+      ),
       child: Text(vocab.kanji),
     );
   }

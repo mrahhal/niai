@@ -1,3 +1,4 @@
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:niai/models/search_result.dart';
 import 'package:niai/services/api.dart';
@@ -41,16 +42,48 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var currentBrightness = DynamicTheme.of(context).data.brightness;
+
     return Scaffold(
       appBar: AppBar(
-        leading: DecoratedBox(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/logo.png'),
-            ),
-          ),
-        ),
+        // leading: DecoratedBox(
+        //   decoration: BoxDecoration(
+        //     image: DecorationImage(
+        //       image: AssetImage('assets/logo.png'),
+        //     ),
+        //   ),
+        // ),
         title: Text('Niai'),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/logo.png'),
+                  ),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.title),
+              title: new Text(
+                  currentBrightness == Brightness.dark ? 'Light' : 'Dark'),
+              onTap: () {
+                if (currentBrightness == Brightness.dark) {
+                  DynamicTheme.of(context).setBrightness(Brightness.light);
+                } else {
+                  DynamicTheme.of(context).setBrightness(Brightness.dark);
+                }
+
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
       ),
       body: Column(
         children: <Widget>[

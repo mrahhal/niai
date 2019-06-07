@@ -18,26 +18,30 @@ class KanjiListView extends StatelessWidget {
       header: Container(
         color: Theme.of(context).backgroundColor,
         padding: EdgeInsets.all(8),
-        alignment: Alignment.centerLeft,
-        child: Text(
-          kanji.character,
-          style: TextStyle(color: Colors.white),
+        child: Row(
+          children: <Widget>[
+            Flexible(
+              fit: FlexFit.tight,
+              child: Text(
+                kanji.character,
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Text(
+              '${kanji.similar.length} similar',
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            )
+          ],
         ),
       ),
       content: Column(
         children: <Widget>[
-          _buildKanjiCard(kanji, true),
-          for (var item in kanji.similar) _buildKanjiCard(item, false),
+          KanjiView(kanji, original: true),
+          for (var item in kanji.similar) KanjiView(item, original: false),
         ],
       ),
-    );
-  }
-
-  _buildKanjiCard(KanjiSummary kanji, bool original) {
-    return Container(
-      margin:
-          EdgeInsets.only(left: 8, top: original ? 8 : 0, right: 8, bottom: 8),
-      child: KanjiView(kanji, original: original),
     );
   }
 }

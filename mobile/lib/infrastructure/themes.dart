@@ -9,4 +9,5 @@ final ThemeData darkTheme = new ThemeData(
 final ThemeData lightTheme = new ThemeData(
   primarySwatch: Colors.green,
   backgroundColor: Colors.green[400],
+  accentColor: Colors.purple,
 );

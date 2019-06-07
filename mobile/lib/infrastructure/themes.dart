@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 final ThemeData darkTheme = new ThemeData(
   brightness: Brightness.dark,
-  primarySwatch: Colors.green,
-  accentColor: Colors.green,
+  primarySwatch: Colors.deepPurple,
+  accentColor: Colors.deepPurple,
 );
 
 final ThemeData lightTheme = new ThemeData(
-  primarySwatch: Colors.green,
-  backgroundColor: Colors.green[400],
-  accentColor: Colors.purple,
+  primarySwatch: Colors.deepPurple,
+  backgroundColor: Colors.deepPurple[400],
+  accentColor: Colors.green,
 );

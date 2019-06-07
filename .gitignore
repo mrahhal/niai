@@ -4,3 +4,4 @@ node_modules/
 *.user
 web/deploy.ps1
 web/.env.production
+mobile/android/key.properties

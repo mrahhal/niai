@@ -2,7 +2,12 @@
   <div class="recent-changes">
     <div class="recent-changes-tag">Recent Changes</div>
     <br>
-    <div>- Added more dictionaries and enhanced the matching process. Let me know if you have any suggestions/reports. Right now it's really a problem of having way more data than I need so I filter a lot of it. I'll be having a second look later to see what can be improved.</div>
+    <div>
+      - An android mobile app is now available! (An ios version is coming soon)
+      <div class="play-store-image-wrapper"><a href='https://play.google.com/store/apps/details?id=net.mrahhal.niai&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a></div>
+    </div>
+    <br>
+    <div>- Added more dictionaries and enhanced the matching process. Let me know if you have any suggestions/reports.</div>
   </div>
 </template>
 

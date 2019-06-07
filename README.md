@@ -33,6 +33,12 @@ This is the website.
 
 Technology stack: vue.js, TypeScript, scss
 
+### Mobile
+
+Currently in development.
+
+Technology stack: flutter
+
 ## Usage
 
 If you're trying to run the aggregator app, you should add your WK api key to an environment variable:

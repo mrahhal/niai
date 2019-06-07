@@ -22,7 +22,12 @@ namespace Niai.Controllers
 		[HttpGet]
 		public ActionResult<SearchResultDto> Get(string q)
 		{
-			var result = new SearchResultDto();
+			var result = new SearchResultDto
+			{
+				Kanjis = new List<KanjiDto>(),
+				Homonyms = new List<VocabDto>(),
+				Synonyms = new List<VocabDto>(),
+			};
 
 			if (string.IsNullOrWhiteSpace(q))
 			{

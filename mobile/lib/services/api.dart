@@ -1,8 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:niai/models/metadata.dart';
-import 'package:niai/models/search_result.dart';
+import 'package:niai/models/models.dart';
 
 class Api {
   Future<Metadata> getMetadata() async {
@@ -22,3 +21,5 @@ class Api {
     return Uri.http('api.niai.mrahhal.net', 'api$path', params);
   }
 }
+
+Api api = Api();

@@ -37,7 +37,7 @@ Technology stack: vue.js, TypeScript, scss
 
 <img src="https://raw.githubusercontent.com/mrahhal/niai/dev/images/snap_mobile.png" width="300" />
 
-<a href='https://play.google.com/store/apps/details?id=net.mrahhal.niai&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img height="200" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+<a href='https://play.google.com/store/apps/details?id=net.mrahhal.niai&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img height="100" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
 
 ios version coming soon.
 

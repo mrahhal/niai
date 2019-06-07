@@ -1,4 +1,4 @@
-package com.example.mobile;
+package net.mrahhal.niai;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

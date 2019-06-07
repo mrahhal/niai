@@ -19,6 +19,11 @@ class KanjiView extends StatelessWidget {
 
     return InkWell(
       onTap: () {
+        Clipboard.setData(new ClipboardData(text: kanji.character));
+
+        Scaffold.of(context).showSnackBar(SnackBar(
+          content: Text('Copied "${kanji.character}"'),
+        ));
       },
       child: Container(
         child: Row(

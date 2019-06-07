@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "202612968557",
+    "firebase_url": "https://niai-3878f.firebaseio.com",
+    "project_id": "niai-3878f",
+    "storage_bucket": "niai-3878f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202612968557:android:2e5a3ded19465663",
+        "android_client_info": {
+          "package_name": "net.mrahhal.niai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "202612968557-46lb1iprr6joptj5p2ecakak9o2jcdp5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClUE4x5S7oqmZWZM8mBrD_lebBIjZ0cyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "202612968557-46lb1iprr6joptj5p2ecakak9o2jcdp5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

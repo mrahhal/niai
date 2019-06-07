@@ -20,8 +20,7 @@ class KanjiListView extends StatelessWidget {
         padding: EdgeInsets.all(8),
         child: Row(
           children: <Widget>[
-            Flexible(
-              fit: FlexFit.tight,
+            Expanded(
               child: Text(
                 kanji.character,
                 style:

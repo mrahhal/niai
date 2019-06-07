@@ -36,8 +36,7 @@ class KanjiView extends StatelessWidget {
                 style: TextStyle(fontSize: 30),
               ),
             ),
-            Flexible(
-              fit: FlexFit.tight,
+            Expanded(
               child: Container(
                 padding: EdgeInsets.all(8),
                 decoration: original
@@ -52,8 +51,7 @@ class KanjiView extends StatelessWidget {
                       ),
                 child: Row(
                   children: <Widget>[
-                    Flexible(
-                      fit: FlexFit.tight,
+                    Expanded(
                       child: Container(
                         margin: EdgeInsets.only(right: 8),
                         child: Column(

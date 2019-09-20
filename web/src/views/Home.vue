@@ -65,17 +65,24 @@
       </div>
     </template>
 
+    <template v-else-if="noResultsFound">
+      <div class="no-results">
+        <h1>無</h1>
+        <h3>No results found</h3>
+      </div>
+    </template>
+
     <div class="text-2" v-else>
       Just start typing to search for similar Kanjis, homonyms, and synonyms!
-      <br>
-      <br>Lookup several kanjis at the same time! -
+      <br />
+      <br />Lookup several kanjis at the same time! -
       <a @click="setSearchValue('枝方寄')">枝方寄</a>
-      <br>Lookup homonyms (same reading, different meaning) -
+      <br />Lookup homonyms (same reading, different meaning) -
       <a @click="setSearchValue('かえる')">かえる</a>
-      <br>Lookup synonyms (similar meaning) -
+      <br />Lookup synonyms (similar meaning) -
       <a @click="setSearchValue('love')">love</a>
 
-      <hr>
+      <hr />
 
       <recent-changes></recent-changes>
     </div>

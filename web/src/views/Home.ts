@@ -13,6 +13,7 @@ export default class Home extends Vue {
   private result: SearchResult | null = null;
   private recentSearches: string[] = getRecentSearches();
   private loading = false;
+  private noResultsFound = false;
 
   private get qParam() { return this.$route.query.q as string; }
 
@@ -27,16 +28,19 @@ export default class Home extends Vue {
       tap(() => this.loading = true),
       switchMap(value => value ? api.search(value).catch(() => null) : Promise.resolve(null)),
     ).subscribe(data => {
+      this.noResultsFound = false;
       const value = this.subject.value;
       if (!value) {
         this.$router.push({ query: {} });
+      } else if (data && !data.kanjis.length && !data.homonyms.length && !data.synonyms.length) {
+        this.noResultsFound = true;
       } else if (data && (data.kanjis.length || data.homonyms.length || data.synonyms.length)) {
         this.$router.push({ query: { q: value } });
         this.recentSearches = updateRecentSearches(value);
       }
 
       this.loading = false;
-      this.result = data;
+      this.result = this.noResultsFound ? null : data;
     });
   }
 

@@ -65,6 +65,13 @@
       </div>
     </template>
 
+    <template v-else-if="noResultsFound">
+      <div class="no-results">
+        <h1>無</h1>
+        <h3>No results found</h3>
+      </div>
+    </template>
+
     <div class="text-2" v-else>
       Just start typing to search for similar Kanjis, homonyms, and synonyms!
       <br>

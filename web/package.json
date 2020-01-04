@@ -25,8 +25,8 @@
     "@types/lodash": "^4.14.121",
     "@vue/cli-plugin-typescript": "^3.7.0",
     "@vue/cli-service": "^3.7.0",
-    "sass": "^1.16.0",
-    "sass-loader": "^7.1.0",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0",
     "typescript": "^3.0.0",
     "vue-template-compiler": "^2.6.10"
   }

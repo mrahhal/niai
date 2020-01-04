@@ -4,10 +4,12 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        includePaths: [path.resolve(__dirname, './src/scss')],
-        data: `
-          @import 'app';
-        `
+        sassOptions: {
+          includePaths: [path.resolve(__dirname, './src/scss')]
+        },
+        prependData: `
+        @import 'app';
+        `,
       }
     }
   }

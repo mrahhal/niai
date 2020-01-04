@@ -13,7 +13,7 @@
     "@primer/css": "^12.0.2",
     "axios": "^0.18.0",
     "css-theming": "^1.0.0-beta.3",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "rxjs": "^6.4.0",
     "vue": "^2.6.10",
     "vue-analytics": "^5.16.2",

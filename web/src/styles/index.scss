@@ -1,8 +1,9 @@
+@import '../../node_modules/css-theming/src/scss/css-theming';
+
 @import '../../node_modules/@primer/css/utilities/margin';
 @import '../../node_modules/@primer/css/utilities/padding';
 @import '../../node_modules/@primer/css/base';
 @import '../../node_modules/@primer/css/tooltips';
 
-@import 'themes';
 @import 'app';
 @import 'card';

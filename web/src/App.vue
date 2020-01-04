@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="['theme-' + theme, {'sidebar-expanded': expanded}]">
+  <div id="app" :class="[{'sidebar-expanded': expanded}]">
     <app-sidebar @theme-toggled="toggleTheme"></app-sidebar>
     <div id="app-view">
       <div id="mobile-navbar">

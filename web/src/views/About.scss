@@ -7,8 +7,8 @@
 }
 
 .version {
-  background: var(--color-bg);
-  border: 1px solid var(--color-separator);
+  background: var(--bg);
+  border: 1px solid var(--bd);
   padding: 3px;
   border-radius: 3px;
 }
@@ -41,14 +41,14 @@
 .about-card {
   width: 400px;
   position: relative;
-  background: var(--color-fg);
+  background: var(--fg-0);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
   padding: 20px;
   padding-top: 70px;
   margin-top: 80px;
   text-align: center;
-  border-bottom: 3px solid var(--color-primary-500);
+  border-bottom: 3px solid var(--primary);
 }
 
 .about-profile-pic {

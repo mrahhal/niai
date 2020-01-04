@@ -4,8 +4,8 @@ $card-padding: 10px;
   --card-padding: #{$card-padding};
 
   border-radius: var(--border-radius);
-  border: 1px solid var(--color-separator);
-  background: var(--color-fg);
+  border: 1px solid var(--bd);
+  background: var(--fg-0);
   padding: $card-padding;
   transition: box-shadow linear .1s, opacity linear .1s;
   display: flex;
@@ -16,7 +16,7 @@ $card-padding: 10px;
   }
 
   &:not(.original-item) {
-    border-bottom: 2px solid var(--color-primary-500);
+    border-bottom: 2px solid var(--primary);
   }
 
   &.card-faded {
@@ -32,7 +32,7 @@ $card-padding: 10px;
   padding: 3px;
   @include flex-center();
   font-size: var(--font-size-sm);
-  background: var(--color-fg-focus);
+  background: var(--fg-1);
   border-radius: 3px;
   margin-top: 10px;
   margin-bottom: 5px;
@@ -47,6 +47,6 @@ $card-padding: 10px;
   margin-left: -$card-padding;
   margin-right: -$card-padding;
   margin-bottom: -$card-padding;
-  background: var(--color-fg-focus);
+  background: var(--fg-1);
   padding: $card-padding / 2 $card-padding;
 }

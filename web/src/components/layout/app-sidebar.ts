@@ -1,10 +1,10 @@
 import { Component, Vue } from 'vue-property-decorator';
 
-import { getTheme, themeChanges } from '../../services/theme';
+import { getAppTheme, themeChanges } from '../../services/theme';
 
 @Component
 export default class AppSidebar extends Vue {
-  private theme = getTheme();
+  private theme = getAppTheme();
 
   created() {
     themeChanges.subscribe(theme => {

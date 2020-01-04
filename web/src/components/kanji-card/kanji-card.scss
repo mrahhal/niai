@@ -9,9 +9,9 @@ $kanji-card-padding: 10px;
   font-size: 40px;
   padding: 5px 10px;
   border-radius: var(--border-radius);
-  color: var(color-var(green));
-  background: rgba(color(green), .1);
-  border: 1px solid var(--color-separator);
+  color: var(--green-text);
+  background: var(--green-50);
+  border: 1px solid var(--bd);
 }
 
 .kanji-card-links {

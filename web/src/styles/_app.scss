@@ -1,3 +1,24 @@
+body {
+  --color-link: var(--blue);
+  --color-link-hover: var(--blue);
+
+  --padding-main: 15px;
+
+  --box-shadow: 0 1px 10px 0 rgba(0, 0, 0, .1);
+
+  --border-radius: 3px;
+
+  --font-size-sm: 12px;
+  --font-size: 14px;
+  --font-size-lg: 16px;
+
+  --spacer-1: 5px;
+  --spacer-2: 10px;
+  --spacer-3: 15px;
+
+  --sidebar-width: 200px;
+}
+
 html,
 body {
   height: 100%;
@@ -25,14 +46,14 @@ input {
 }
 
 .text-2 {
-  color: var(--color-text-2);
+  color: var(--text-color-secondary);
 }
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--color-text);
+  color: var(--text-color);
 
   height: 100%;
   display: flex;
@@ -41,7 +62,7 @@ input {
 #app-view {
   flex: 1;
   padding: var(--padding-main);
-  background: var(--color-bg);
+  background: var(--bg-main);
   overflow-y: auto;
   transition: transform ease-in-out .1s;
 }
@@ -50,7 +71,7 @@ input {
   margin: calc(-1 * var(--padding-main));
   margin-bottom: var(--padding-main);
   padding: 5px var(--padding-main);
-  background: var(--color-fg);
+  background: var(--fg-0);
 }
 
 .sidebar-expanded {
@@ -106,8 +127,8 @@ input {
 }
 
 .label {
-  background: var(--color-primary-100);
-  color: var(--color-primary-500);
+  background: var(--primary-50);
+  color: var(--primary);
   border-radius: 10px;
   padding: 2px 8px;
   font-size: var(--font-size-sm);

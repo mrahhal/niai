@@ -1,0 +1,22 @@
+$ct-semantic-colors: (
+  'primary': 'indigo',
+  'success': 'green',
+  'info': 'blue',
+  'warning': 'orange',
+  'danger': 'red',
+);
+
+$ct-themes: (
+  'default': (
+    'brightness': 'light',
+  ),
+  'default-dark': (
+    'brightness': 'dark',
+  ),
+);
+
+@import '../../node_modules/css-theming/src/scss/pure';
+
+@import '../../node_modules/@primer/css/support';
+
+@import 'mixins';

@@ -8,7 +8,7 @@ module.exports = {
           includePaths: [path.resolve(__dirname, './src/scss')]
         },
         prependData: `
-        @import 'app';
+        @import 'variables';
         `,
       }
     }

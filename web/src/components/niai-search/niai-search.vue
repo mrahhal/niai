@@ -73,14 +73,14 @@ input {
   padding: 10px;
   padding-left: 45px;
   border: none;
-  border-bottom: 2px solid var(--color-separator);
-  background: var(--color-fg);
+  border-bottom: 2px solid var(--bd);
+  background: var(--fg-0);
   outline: none;
   width: 100%;
   font-size: 20px;
 
   &:focus {
-    border-bottom-color: var(--color-primary-500);
+    border-bottom-color: var(--primary);
   }
 }
 </style>

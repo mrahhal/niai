@@ -2,7 +2,7 @@
   &:not(:last-child) {
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px dashed var(--color-separator);
+    border-bottom: 1px dashed var(--bd);
   }
 }
 
@@ -18,7 +18,7 @@
 }
 
 .similar-section-counter {
-  background: var(--color-primary-500);
+  background: var(--primary);
   color: white;
   padding: 2px 4px;
   border-radius: 2px;

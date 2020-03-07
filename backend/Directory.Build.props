@@ -14,8 +14,4 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
-  <PropertyGroup>
-    <AspNetCoreVersion>2.2.0</AspNetCoreVersion>
-  </PropertyGroup>
-
 </Project>

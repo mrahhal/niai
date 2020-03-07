@@ -8,9 +8,9 @@ namespace Niai.Services
 	[AddToServices(Lifetime.Singleton, AsImplementedInterface = true)]
 	public class DataFileProvider : IDataFileProvider
 	{
-		private readonly IHostingEnvironment _env;
+		private readonly IWebHostEnvironment _env;
 
-		public DataFileProvider(IHostingEnvironment env)
+		public DataFileProvider(IWebHostEnvironment env)
 		{
 			_env = env;
 		}

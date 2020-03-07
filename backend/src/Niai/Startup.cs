@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -7,12 +6,11 @@ using AutoMapper;
 using AutoMapper.Mappers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using MR.AttributeDI.ServiceCollection;
-using Swashbuckle.AspNetCore.Swagger;
 
 namespace Niai
 {
@@ -27,8 +25,7 @@ namespace Niai
 
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddMvc()
-				.SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+			services.AddControllers()
 				.AddNestedRouting(useKebabCase: true);
 
 			services.ConfigureFromAttributes(typeof(Startup).Assembly);
@@ -73,19 +70,8 @@ namespace Niai
 
 			services.AddSwaggerGen(c =>
 			{
-				c.SwaggerDoc("v0.1", new Info { Title = entryAssembly.GetName().Name, Version = "v0.1" });
+				c.SwaggerDoc("v1", new OpenApiInfo { Title = "Niai API", Version = "v1" });
 				c.CustomSchemaIds(x => x.FullName);
-				c.DescribeAllEnumsAsStrings();
-				c.DescribeStringEnumsInCamelCase();
-				c.DescribeAllParametersInCamelCase();
-
-				//c.TagActionsBy(api =>
-				//{
-				//	return new List<string>
-				//	{
-				//		((ControllerActionDescriptor)api.ActionDescriptor).ControllerTypeInfo.Namespace
-				//	};
-				//});
 
 				var xmlFile = $"{entryAssembly.GetName().Name}.xml";
 				var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
@@ -93,26 +79,31 @@ namespace Niai
 			});
 		}
 
-		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
 			}
 
-			app.UseCors();
-
 			app.UseResponseCompression();
+
+			app.UseRouting();
+
+			app.UseAuthentication();
+			app.UseAuthorization();
 
 			app.UseSwagger();
 
-			var apiAssemblyName = Assembly.GetCallingAssembly().GetName().Name;
 			app.UseSwaggerUI(c =>
 			{
-				c.SwaggerEndpoint("/swagger/v0.1/swagger.json", apiAssemblyName);
+				c.SwaggerEndpoint("/swagger/v1/swagger.json", "Niai");
 			});
 
-			app.UseMvc();
+			app.UseEndpoints(endpoints =>
+			{
+				endpoints.MapControllers();
+			});
 		}
 	}
 }

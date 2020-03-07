@@ -92,6 +92,8 @@ namespace Niai
 				ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto,
 			});
 
+			app.UseCors();
+
 			app.UseResponseCompression();
 
 			app.UseRouting();

@@ -18,6 +18,7 @@ jobs:
     - name: Build Api
       run: |
         cd ./backend
+        chmod +x ./build.sh
         ./build.sh -Target Publish
         cd ..
     - name: Build Api

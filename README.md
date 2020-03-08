@@ -1,4 +1,4 @@
-<p align="center"><img src="/logo/logotype-vertical.png"></p>
+<!--<p align="center"><img src="/logo/logotype-vertical.png"></p>-->
 
 # niai
 

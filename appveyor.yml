@@ -1,6 +1,5 @@
 version: '{build}'
 os: Visual Studio 2019
-dotnet: 3.1.102
 build_script:
 - ps: Push-Location ./backend
 - ps: ./build.ps1 -Target Publish

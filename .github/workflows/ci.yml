@@ -19,7 +19,7 @@ jobs:
       run: |
         cd ./backend
         chmod +x ./build.sh
-        ./build.sh --target Publish
+        ./build.sh --target=Publish
         cd ..
     - name: Build Web
       run: |

@@ -18,7 +18,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niai", "src\Niai\Niai.cspro
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{DE37B190-87B5-438D-B3DF-2E6CE101C375}"
 	ProjectSection(SolutionItems) = preProject
-		..\appveyor.yml = ..\appveyor.yml
 		build.cake = build.cake
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets

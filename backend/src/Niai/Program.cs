@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Niai.Services;
 
 namespace Niai
@@ -12,7 +12,7 @@ namespace Niai
 	{
 		public static async Task Main(string[] args)
 		{
-			var host = CreateWebHostBuilder(args).Build();
+			var host = CreateHostBuilder(args).Build();
 
 			var setupServices = host.Services.GetService<IEnumerable<ISetupService>>();
 			await Task.WhenAll(setupServices.Select(service => service.SetupAsync()));
@@ -20,8 +20,11 @@ namespace Niai
 			host.Run();
 		}
 
-		public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-			WebHost.CreateDefaultBuilder(args)
-				.UseStartup<Startup>();
+		public static IHostBuilder CreateHostBuilder(string[] args) =>
+			Host.CreateDefaultBuilder(args)
+				.ConfigureWebHostDefaults(webBuilder =>
+				{
+					webBuilder.UseStartup<Startup>();
+				});
 	}
 }

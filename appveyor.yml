@@ -1,5 +1,5 @@
 version: '{build}'
-os: Visual Studio 2017
+os: Visual Studio 2019
 build_script:
 - ps: Push-Location ./backend
 - ps: ./build.ps1 -Target Publish

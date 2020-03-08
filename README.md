@@ -1,8 +1,8 @@
-<p align="center"><img src="/logo/logotype-vertical.png"></p>
+<!--<p align="center"><img src="/logo/logotype-vertical.png"></p>-->
 
 # niai
 
-[![Build status](https://ci.appveyor.com/api/projects/status/8pcyjuyijui8o6ox?svg=true)](https://ci.appveyor.com/project/mrahhal/niai)
+![CI](https://github.com/mrahhal/niai/workflows/CI/badge.svg)
 
 Lookup similar Kanjis, Homonyms, Synonyms!
 

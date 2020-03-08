@@ -24,6 +24,9 @@ namespace Niai.Controllers
 			_dataProvider = dataProvider;
 		}
 
+		/// <summary>
+		/// Returns metadata about the app.
+		/// </summary>
 		[HttpGet]
 		public ActionResult<MetadataDto> Get()
 		{

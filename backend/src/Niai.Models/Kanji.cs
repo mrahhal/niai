@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Niai.Models
 {
@@ -27,12 +28,14 @@ namespace Niai.Models
 		public List<SimilarKanji> Similar { get; set; }
 	}
 
+	[DebuggerDisplay("{Kanji,nq}: {Score,nq}")]
 	public class SimilarKanji
 	{
-		public string Value { get; set; }
+		public string Kanji { get; set; }
 
 		/// <summary>
 		/// Represents the score of matching. Higher score means more similarity.
+		/// The score range is from 0 to 1.
 		/// </summary>
 		public double Score { get; set; }
 	}

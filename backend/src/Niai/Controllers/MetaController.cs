@@ -8,7 +8,7 @@ namespace Niai.Controllers
 {
 	public class MetaController : NiaiControllerBase
 	{
-		private static string Version = (Assembly
+		private static readonly string Version = (Assembly
 			.GetExecutingAssembly()
 			.GetCustomAttributes(typeof(AssemblyInformationalVersionAttribute), false) as AssemblyInformationalVersionAttribute[])[0]
 			.InformationalVersion;

@@ -6,14 +6,12 @@ namespace Aggregator
 {
 	public static class ContainerAccessor
 	{
-		private static readonly IContainer _container;
-
 		static ContainerAccessor()
 		{
-			_container = ConfigureServices();
+			Container = ConfigureServices();
 		}
 
-		public static IContainer Container => _container;
+		public static IContainer Container { get; private set; }
 
 		private static IContainer ConfigureServices()
 		{
@@ -21,13 +19,14 @@ namespace Aggregator
 
 			builder.RegisterType<Program>().AsSelf().SingleInstance();
 			builder.RegisterType<DictionaryProvider>().AsImplementedInterfaces().SingleInstance();
+			builder.RegisterType<KradFileProvider>().AsImplementedInterfaces().SingleInstance();
+			builder.RegisterType<NiaiFileProvider>().AsImplementedInterfaces().SingleInstance();
 			builder.RegisterType<WaniKaniService>().AsImplementedInterfaces().SingleInstance();
 			builder.RegisterType<FrequencyDictionaryService>().AsImplementedInterfaces().SingleInstance();
 			builder.RegisterType<KanjiDictionaryService>().AsImplementedInterfaces().SingleInstance();
 			builder.RegisterType<VocabDictionaryService>().AsImplementedInterfaces().SingleInstance();
 			builder.RegisterType<WaniKaniDictionaryService>().AsImplementedInterfaces().SingleInstance();
-			builder.RegisterType<SimilarKeiseiDictionaryService>().AsImplementedInterfaces().SingleInstance();
-			builder.RegisterType<SimilarNotoDictionaryService>().AsImplementedInterfaces().SingleInstance();
+			builder.RegisterType<SimilarScoringService>().AsImplementedInterfaces().SingleInstance();
 			builder.RegisterType<AggregatorService>().AsImplementedInterfaces().SingleInstance();
 			builder.RegisterType<ExportService>().AsImplementedInterfaces().SingleInstance();
 

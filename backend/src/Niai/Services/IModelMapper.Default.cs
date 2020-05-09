@@ -29,7 +29,7 @@ namespace Niai.Services
 			return kanjis.Select(kanji =>
 			{
 				var similar = kanji.Similar
-					.Select(x => (Kanji: dbKanjis[x.Value], x.Score))
+					.Select(x => (Kanji: dbKanjis[x.Kanji], x.Score))
 					.Where(x => x.Kanji != null);
 
 				var dto = _mapper.Map<KanjiDto>(kanji);

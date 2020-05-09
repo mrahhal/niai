@@ -32,11 +32,20 @@ namespace Aggregator.Services
 		public static Task<List<FileInfo>> CollectVocabTagFilesAsync(this IDictionaryProvider dictionaryProvider) =>
 			dictionaryProvider.CollectFilesAsync(DictionaryConstants.Names.Vocab, "tag_bank_");
 
-		public static Task<FileInfo> GetSimilarKeiseiFileAsync(this IDictionaryProvider dictionaryProvider) =>
-			dictionaryProvider.GetFileAsync("keisei.json");
+		public static Task<FileInfo> GetKradFileAsync(this IDictionaryProvider dictionaryProvider) =>
+			dictionaryProvider.GetFileAsync("kradzip/kradfile");
 
-		public static Task<FileInfo> GetSimilarNotoFileAsync(this IDictionaryProvider dictionaryProvider) =>
-			dictionaryProvider.GetFileAsync("noto.json");
+		public static Task<FileInfo> GetKradFile2Async(this IDictionaryProvider dictionaryProvider) =>
+			dictionaryProvider.GetFileAsync("kradzip/kradfile2");
+
+		public static Task<FileInfo> GetRadkFileAsync(this IDictionaryProvider dictionaryProvider) =>
+			dictionaryProvider.GetFileAsync("kradzip/radkfile");
+
+		public static Task<FileInfo> GetRadkFile2Async(this IDictionaryProvider dictionaryProvider) =>
+			dictionaryProvider.GetFileAsync("kradzip/radkfile2");
+
+		public static Task<FileInfo> GetNiaiSimilarRadicalsAsync(this IDictionaryProvider dictionaryProvider) =>
+			dictionaryProvider.GetFileAsync("niai/similar-radicals.txt");
 	}
 
 	public class DictionaryProvider : IDictionaryProvider

@@ -1,0 +1,71 @@
+#
+#                           K R A D F I L E
+#
+#	Copyright 2001/2007 Michael Raine, James Breen and the Electronic
+#       Dictionary Research & Development Group 
+#	See: http://www.edrdg.org/edrdg/licence.html
+#       for permissions for use and redistribution.
+# 
+# This is the data file from which the "radkfile" is made, which in turn
+# drives the multi-radical lookup method in XJDIC, WWWJDIC and possibly 
+# other dictionary and related software.
+# 
+# The file is based on work done in 1994/1995 by Michael Raine in which he
+# analyzed all the JIS1/2 kanji and identified the constituent radicals and 
+# other common elements, with the intention of facilitating the selection of
+# kanji within a dictionary program by identifying multiple elements.
+# The file was revised by Jim Breen in September 1995. Further revisions were
+# done in 1998/9 at the suggestion of Wolfgang Conrath, then a revision was
+# carried out in 2001 using suggestions from Yutaka Ohno based on a similar
+# decomposition made by Kobayashi. Further amendments were made in July
+# 2001 after suggestions from Hendrik.
+#
+# The file has been updated on numerous occasions since then.
+# 
+# The file consists of 6,355 lines of text; one for each of the 
+# JIS X 0208-1997 kanji. Each line is a follows:
+# - the kanji itself,
+# - a space followed by a colon (:) followed by a space,
+# - one or more radicals/elements which can be seen in the kanji. These
+#   are drawn from JIS X 0208-1997. Where the element alone is not in
+#   JIS X 0208, a kanji which contains the element is used instead.
+#
+# The decomposition is based on what can be seen in typical kanji
+# glyphs. Elements themselves can be further subdivided. For example,
+# Àå is an element and so is ¸ý, so the elements in ÏÃ are <¸ý Àå ¸À>.
+# 
+# The elements used have been drawn from JIS X 0208. As this codeset
+# does not contain the exact elements, characters have been chosen
+# which contain the element. For example, çè is used for the kusa-kanmuri
+# element at the top, and Ë® is used for the kozato element on the right.
+#
+# The mappings of the characters used to the characters in the Unicode,
+# mostly in the, "CJK Radicals Supplement" and "KangXi Radicals", are below.
+#
+# ²½ 2E85
+# Ð¤ 2F09
+# Öõ none available - upside-down ¥Ï
+# ´¢ 2E89
+# ¹þ 2ECC
+# ¾° 2E8C
+# Ë» 2E96
+# Ù© 2E97
+# ½Á 2EA1
+# ÈÈ 2EA8
+# çè 2EBE
+# Ë® 2ECF
+# ïô 2ED9
+# Ï· 2EB9
+# Û¿ 2EA3
+# Îé 2EAD
+# áË 2F67
+# ã» 2F71
+# ½é 2EC2
+# Çã 2EB2
+# Å© 5547
+# 
+# Jim Breen, Tokyo, January 2001
+#            Melbourne, July 2001
+#            Melbourne, Dec  2004
+#            Melbourne, Oct  2013
+#

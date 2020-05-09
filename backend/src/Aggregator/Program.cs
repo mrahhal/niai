@@ -3,40 +3,28 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Autofac;
 using Aggregator.Services;
+using Autofac;
 
 namespace Aggregator
 {
 	public class Program
 	{
 		private readonly IEnumerable<ISetupService> _setupServices;
-		private readonly IFrequencyDictionaryService _frequencyDictionaryService;
-		private readonly IKanjiDictionaryService _kanjiDictionaryService;
-		private readonly IVocabDictionaryService _vocabDictionaryService;
-		private readonly IWaniKaniDictionaryService _waniKaniDictionaryService;
 		private readonly IAggregatorService _aggregatorService;
 		private readonly IExportService _exportService;
 
-		private static Task Main(string[] args)
+		private static Task Main()
 		{
 			return ContainerAccessor.Container.Resolve<Program>().RunAsync();
 		}
 
 		public Program(
 			IEnumerable<ISetupService> setupServices,
-			IFrequencyDictionaryService frequencyDictionaryService,
-			IKanjiDictionaryService kanjiDictionaryService,
-			IVocabDictionaryService vocabDictionaryService,
-			IWaniKaniDictionaryService waniKaniDictionaryService,
 			IAggregatorService aggregatorService,
 			IExportService exportService)
 		{
 			_setupServices = setupServices;
-			_frequencyDictionaryService = frequencyDictionaryService;
-			_kanjiDictionaryService = kanjiDictionaryService;
-			_vocabDictionaryService = vocabDictionaryService;
-			_waniKaniDictionaryService = waniKaniDictionaryService;
 			_aggregatorService = aggregatorService;
 			_exportService = exportService;
 		}

@@ -6,14 +6,12 @@ namespace Aggregator
 {
 	public static class ContainerAccessor
 	{
-		private static readonly IContainer _container;
-
 		static ContainerAccessor()
 		{
-			_container = ConfigureServices();
+			Container = ConfigureServices();
 		}
 
-		public static IContainer Container => _container;
+		public static IContainer Container { get; private set; }
 
 		private static IContainer ConfigureServices()
 		{

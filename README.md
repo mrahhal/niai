@@ -17,7 +17,8 @@ This solution consists of several modules listed below.
 
 This is a console application that incorporates several dictionaries, as well as data from [WaniKani](https://www.wanikani.com), and produces various aggregated data readily available for usage in the backend.
 
-This is basically run only once to produce the json files. You can execute `./produce.ps1` to produce the files.
+This is basically run only once to produce the json files. You can execute `./produce.ps1` to run this.
+Note that running the aggregator can take up to 3GBs of memory.
 
 Technology stack: .Net Core
 
@@ -55,8 +56,8 @@ If you're trying to run the aggregator app, you should add your WK api key to an
 
 ## Credit
 
-- JMdict: http://www.edrdg.org/enamdict/enamdict_doc.html
-- KANJIDIC: http://nihongo.monash.edu/kanjidic2/index.html
+- JMdict: http://www.edrdg.org
+- KANJIDIC: http://www.edrdg.org
+- KRADFILE/RADKFILE: http://www.edrdg.org
 - Innocent Corpus: https://forum.koohii.com/post-168613.html#pid168613
-- @mwil's WK scripts: https://github.com/mwil/wanikani-userscripts
 - Logo by [@Tobaloidee](https://github.com/Tobaloidee)

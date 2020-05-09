@@ -53,7 +53,7 @@ jobs:
       uses: actions/download-artifact@v1.0.0
       with:
         name: NiaiWeb
-        path: ./artifacts/web/*
+        path: ./artifacts/web
     - name: Deploy Api
       uses: wlixcc/SFTP-Deploy-Action@v1.0
       with:

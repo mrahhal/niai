@@ -1,4 +1,6 @@
-<p align="center"><img src="/logo/logo.png"></p>
+<p align="center">
+  <img align="center" width="100px" height="100px" src="logo/logo.svg">
+</p>
 
 # niai
 

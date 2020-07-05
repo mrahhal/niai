@@ -1,4 +1,4 @@
-<!--<p align="center"><img src="/logo/logotype-vertical.png"></p>-->
+<p align="center"><img src="/logo/logo.png"></p>
 
 # niai
 
@@ -60,4 +60,5 @@ If you're trying to run the aggregator app, you should add your WK api key to an
 - KANJIDIC: http://www.edrdg.org
 - KRADFILE/RADKFILE: http://www.edrdg.org
 - Innocent Corpus: https://forum.koohii.com/post-168613.html#pid168613
-- Logo by [@Tobaloidee](https://github.com/Tobaloidee)
+- Logo by [@AliMzahem](https://github.com/AliMzahem)
+- Old logo by [@Tobaloidee](https://github.com/Tobaloidee)

@@ -18,7 +18,7 @@ class Api {
   }
 
   _buildUrl({String path, dynamic params}) {
-    return Uri.http('api.niai.mrahhal.net', 'api$path', params);
+    return Uri.https('niai-api.mrahhal.net', 'api$path', params);
   }
 }
 

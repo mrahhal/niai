@@ -6,3 +6,6 @@ web/deploy.ps1
 web/.env.production
 mobile/android/key.properties
 backend/src/Aggregator/sample-score.txt
+
+deploy/
+deploy.ps1

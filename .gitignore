@@ -9,3 +9,5 @@ backend/src/Aggregator/sample-score.txt
 
 deploy/
 deploy.ps1
+mobile/.flutter-plugins-dependencies
+mobile/ios/Flutter/flutter_export_environment.sh

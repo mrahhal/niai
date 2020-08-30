@@ -36,9 +36,9 @@ namespace Niai
 			services.AddCors(options =>
 			{
 				options.AddDefaultPolicy(p => p
+					.AllowAnyOrigin()
 					.AllowAnyHeader()
-					.AllowAnyMethod()
-					.AllowAnyOrigin());
+					.AllowAnyMethod());
 			});
 
 			var entryAssembly = Assembly.GetExecutingAssembly();
@@ -82,21 +82,21 @@ namespace Niai
 
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
-			if (env.IsDevelopment())
-			{
-				app.UseDeveloperExceptionPage();
-			}
-
 			app.UseForwardedHeaders(new ForwardedHeadersOptions
 			{
 				ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto,
 			});
 
-			app.UseCors();
+			if (env.IsDevelopment())
+			{
+				app.UseDeveloperExceptionPage();
+			}
 
-			app.UseResponseCompression();
+			app.UseHttpsRedirection();
 
 			app.UseRouting();
+
+			app.UseCors();
 
 			app.UseAuthentication();
 			app.UseAuthorization();

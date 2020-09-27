@@ -16,6 +16,6 @@ export default class KanjiCard extends Vue {
 
   private get jishoHref() {
     const c = this.kanji.character;
-    return `https://jisho.org/search/${c}`;
+    return `https://jisho.org/search/${c}%20%23kanji`;
   }
 }

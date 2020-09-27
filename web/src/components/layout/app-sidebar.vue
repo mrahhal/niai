@@ -3,6 +3,7 @@
     <div class="sidebar-main">
       <router-link to="/similar">Niai</router-link>
       <router-link to="/about">About</router-link>
+      <a href="mailto://m.r992@hotmail.com" class="tooltipped tooltipped-n" aria-label="Suggestions/Feedback/Bugs">Feedback</a>
     </div>
     <div class="sidebar-footer">
       <div class="theme-btn">

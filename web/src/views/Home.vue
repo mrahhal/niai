@@ -84,6 +84,10 @@
 
       <hr>
 
+      <strong><a href="https://lapisapp.com" target="_blank">Check out Lapis, a new project we're working on.</a></strong>
+
+      <hr>
+
       <div class="mb-3">
         <strong>Donations help keep the server running, improve this app and work on new ones for Japanese, all while keeping everything ad-free. Thank you!</strong>
       </div>

@@ -4,7 +4,6 @@ $card-padding: 10px;
   --card-padding: #{$card-padding};
 
   border-radius: var(--border-radius);
-  border: 1px solid var(--bd);
   background: var(--fg-0);
   padding: $card-padding;
   transition: box-shadow linear .1s, opacity linear .1s;

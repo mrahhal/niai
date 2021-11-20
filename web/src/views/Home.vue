@@ -84,6 +84,11 @@
 
       <hr>
 
+      <strong>IMPORTANT! Niai will be merging with <a href="https://lapisapp.com" target="_blank">Lapis</a> soon, a new project we're working on!</strong><br>
+      The features from Niai will always be free to use in Lapis after the merge (you'll only need a free account).
+
+      <hr>
+
       <div class="mb-3">
         <strong>Donations help keep the server running, improve this app and work on new ones for Japanese, all while keeping everything ad-free. Thank you!</strong>
       </div>

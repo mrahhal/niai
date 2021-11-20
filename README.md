@@ -36,6 +36,8 @@ This is the website.
 
 Technology stack: vue.js, TypeScript, scss
 
+Use [css-theming](https://github.com/mrahhal/css-theming) for theme management.
+
 ### Mobile
 
 <img src="https://raw.githubusercontent.com/mrahhal/niai/dev/images/snap_mobile.png" width="300" />

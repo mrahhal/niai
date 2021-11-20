@@ -84,8 +84,8 @@
 
       <hr>
 
-      <strong>IMPORTANT! Niai will be merging with <a href="https://lapisapp.com" target="_blank">Lapis</a> soon, a new project we're working on!</strong><br>
-      The features from Niai will always be free to use in Lapis after the merge (you'll only need a free account).
+      <strong>IMPORTANT! Niai will be merging with <a href="https://lapisapp.com" target="_blank">Lapis</a> soon, a much bigger project we're working on!</strong><br>
+      The features from Niai will always be free to use in Lapis after the merge.
 
       <hr>
 

@@ -56,7 +56,7 @@ If you're trying to run the aggregator app, you should add your WK api key to an
 
 ## News
 
-- We were featured in a Tofugu article! https://www.tofugu.com/japanese/japanese-learning-resources-march-2019/
+- We were featured in a Tofugu article! https://www.tofugu.com/japanese/japanese-learning-resources-march-2019/#niai
 
 ## Credit
 

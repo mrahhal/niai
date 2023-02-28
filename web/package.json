@@ -16,8 +16,8 @@
     "lodash": "^4.17.11",
     "rxjs": "^6.4.0",
     "vue": "^2.6.10",
-    "vue-analytics": "^5.16.2",
     "vue-class-component": "^6.0.0",
+    "vue-gtag": "^1.16.1",
     "vue-property-decorator": "^7.0.0",
     "vue-router": "^3.0.6"
   },
